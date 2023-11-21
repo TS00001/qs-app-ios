@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C70BAAD22B0CF9B50064660F /* QsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAD12B0CF9B50064660F /* QsListItem.swift */; };
+		C70BAAD62B0D378A0064660F /* BarlowSemiCondensed-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAD32B0D378A0064660F /* BarlowSemiCondensed-Black.ttf */; };
+		C70BAAD72B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAD42B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf */; };
+		C70BAAD82B0D378A0064660F /* BarlowSemiCondensed-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAD52B0D378A0064660F /* BarlowSemiCondensed-ExtraBold.ttf */; };
+		C70BAADD2B0D3C6A0064660F /* FontStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAADC2B0D3C6A0064660F /* FontStrings.swift */; };
 		C773227C2B06649200BE2866 /* QS_APPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C773227B2B06649200BE2866 /* QS_APPApp.swift */; };
 		C77322802B06649300BE2866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C773227F2B06649300BE2866 /* Assets.xcassets */; };
 		C77322832B06649300BE2866 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C77322822B06649300BE2866 /* Preview Assets.xcassets */; };
@@ -52,6 +57,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C70BAAD12B0CF9B50064660F /* QsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QsListItem.swift; sourceTree = "<group>"; };
+		C70BAAD32B0D378A0064660F /* BarlowSemiCondensed-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Black.ttf"; sourceTree = "<group>"; };
+		C70BAAD42B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		C70BAAD52B0D378A0064660F /* BarlowSemiCondensed-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-ExtraBold.ttf"; sourceTree = "<group>"; };
+		C70BAAD92B0D37EE0064660F /* QS-APP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "QS-APP-Info.plist"; sourceTree = SOURCE_ROOT; };
+		C70BAADC2B0D3C6A0064660F /* FontStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStrings.swift; sourceTree = "<group>"; };
 		C77322782B06649200BE2866 /* QS_APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QS_APP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C773227B2B06649200BE2866 /* QS_APPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QS_APPApp.swift; sourceTree = "<group>"; };
 		C773227F2B06649300BE2866 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +118,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C70BAAD02B0CF98A0064660F /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				C70BAAD12B0CF9B50064660F /* QsListItem.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		C70BAADA2B0D3C220064660F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C70BAAD32B0D378A0064660F /* BarlowSemiCondensed-Black.ttf */,
+				C70BAAD42B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf */,
+				C70BAAD52B0D378A0064660F /* BarlowSemiCondensed-ExtraBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C70BAADB2B0D3C500064660F /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				C70BAADC2B0D3C6A0064660F /* FontStrings.swift */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		C773226F2B06649200BE2866 = {
 			isa = PBXGroup;
 			children = (
@@ -130,13 +167,16 @@
 		C773227A2B06649200BE2866 /* QS_APP */ = {
 			isa = PBXGroup;
 			children = (
+				C70BAADB2B0D3C500064660F /* Strings */,
+				C773227B2B06649200BE2866 /* QS_APPApp.swift */,
+				C70BAAD92B0D37EE0064660F /* QS-APP-Info.plist */,
 				C77322C52B0B97F200BE2866 /* Enums */,
 				C77322BD2B0B66B800BE2866 /* Managers */,
 				C77322A52B0B4E2800BE2866 /* Models */,
 				C77322A62B0B4E3C00BE2866 /* ViewModels */,
 				C77322A72B0B4E4A00BE2866 /* Views */,
-				C773227B2B06649200BE2866 /* QS_APPApp.swift */,
 				C773227F2B06649300BE2866 /* Assets.xcassets */,
+				C70BAADA2B0D3C220064660F /* Fonts */,
 				C77322812B06649300BE2866 /* Preview Content */,
 				C77322A82B0B627600BE2866 /* GoogleService-Info.plist */,
 			);
@@ -188,6 +228,7 @@
 		C77322A72B0B4E4A00BE2866 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C70BAAD02B0CF98A0064660F /* Items */,
 				C77322D12B0B9D4100BE2866 /* MainViews */,
 				C77322C82B0B995600BE2866 /* SubViews */,
 			);
@@ -355,8 +396,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C77322832B06649300BE2866 /* Preview Assets.xcassets in Resources */,
+				C70BAAD82B0D378A0064660F /* BarlowSemiCondensed-ExtraBold.ttf in Resources */,
+				C70BAAD72B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf in Resources */,
 				C77322802B06649300BE2866 /* Assets.xcassets in Resources */,
 				C77322A92B0B627600BE2866 /* GoogleService-Info.plist in Resources */,
+				C70BAAD62B0D378A0064660F /* BarlowSemiCondensed-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +430,7 @@
 				C77322B82B0B647E00BE2866 /* AuthenticationViewModel.swift in Sources */,
 				C77322BA2B0B651900BE2866 /* FireUser.swift in Sources */,
 				C77322C22B0B8B3000BE2866 /* HomeViewModel.swift in Sources */,
+				C70BAAD22B0CF9B50064660F /* QsListItem.swift in Sources */,
 				C77322CE2B0B99F300BE2866 /* CalculatorView.swift in Sources */,
 				C77322BF2B0B66E100BE2866 /* FirebaseManager.swift in Sources */,
 				C773227C2B06649200BE2866 /* QS_APPApp.swift in Sources */,
@@ -393,6 +438,7 @@
 				C77322B62B0B643D00BE2866 /* AuthenticationView.swift in Sources */,
 				C77322BC2B0B663100BE2866 /* FireUserViewModel.swift in Sources */,
 				C77322C72B0B980500BE2866 /* TabItem.swift in Sources */,
+				C70BAADD2B0D3C6A0064660F /* FontStrings.swift in Sources */,
 				C77322D02B0B9A0600BE2866 /* SettingeView.swift in Sources */,
 				C77322CC2B0B99B000BE2866 /* ObjektView.swift in Sources */,
 			);
@@ -560,6 +606,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"QS_APP/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "QS-APP-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -588,6 +635,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"QS_APP/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "QS-APP-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -9,6 +9,9 @@
 		<string>BarlowSemiCondensed-Black.ttf</string>
 		<string>BarlowSemiCondensed-Bold.ttf</string>
 		<string>BarlowSemiCondensed-ExtraBold.ttf</string>
+		<string>BarlowSemiCondensed-Regular.ttf</string>
+		<string>BarlowSemiCondensed-Medium.ttf</string>
+		<string>BarlowSemiCondensed-Light.ttf</string>
 	</array>
 </dict>
 </plist>

@@ -12,6 +12,9 @@
 		C70BAAD72B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAD42B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf */; };
 		C70BAAD82B0D378A0064660F /* BarlowSemiCondensed-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAD52B0D378A0064660F /* BarlowSemiCondensed-ExtraBold.ttf */; };
 		C70BAADD2B0D3C6A0064660F /* FontStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAADC2B0D3C6A0064660F /* FontStrings.swift */; };
+		C70BAAE12B0D58D10064660F /* BarlowSemiCondensed-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAADE2B0D58D00064660F /* BarlowSemiCondensed-Medium.ttf */; };
+		C70BAAE22B0D58D10064660F /* BarlowSemiCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAADF2B0D58D00064660F /* BarlowSemiCondensed-Regular.ttf */; };
+		C70BAAE32B0D58D10064660F /* BarlowSemiCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAE02B0D58D10064660F /* BarlowSemiCondensed-Light.ttf */; };
 		C773227C2B06649200BE2866 /* QS_APPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C773227B2B06649200BE2866 /* QS_APPApp.swift */; };
 		C77322802B06649300BE2866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C773227F2B06649300BE2866 /* Assets.xcassets */; };
 		C77322832B06649300BE2866 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C77322822B06649300BE2866 /* Preview Assets.xcassets */; };
@@ -63,6 +66,9 @@
 		C70BAAD52B0D378A0064660F /* BarlowSemiCondensed-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-ExtraBold.ttf"; sourceTree = "<group>"; };
 		C70BAAD92B0D37EE0064660F /* QS-APP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "QS-APP-Info.plist"; sourceTree = SOURCE_ROOT; };
 		C70BAADC2B0D3C6A0064660F /* FontStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStrings.swift; sourceTree = "<group>"; };
+		C70BAADE2B0D58D00064660F /* BarlowSemiCondensed-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Medium.ttf"; sourceTree = "<group>"; };
+		C70BAADF2B0D58D00064660F /* BarlowSemiCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		C70BAAE02B0D58D10064660F /* BarlowSemiCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Light.ttf"; sourceTree = "<group>"; };
 		C77322782B06649200BE2866 /* QS_APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QS_APP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C773227B2B06649200BE2866 /* QS_APPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QS_APPApp.swift; sourceTree = "<group>"; };
 		C773227F2B06649300BE2866 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +135,9 @@
 		C70BAADA2B0D3C220064660F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				C70BAAE02B0D58D10064660F /* BarlowSemiCondensed-Light.ttf */,
+				C70BAADE2B0D58D00064660F /* BarlowSemiCondensed-Medium.ttf */,
+				C70BAADF2B0D58D00064660F /* BarlowSemiCondensed-Regular.ttf */,
 				C70BAAD32B0D378A0064660F /* BarlowSemiCondensed-Black.ttf */,
 				C70BAAD42B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf */,
 				C70BAAD52B0D378A0064660F /* BarlowSemiCondensed-ExtraBold.ttf */,
@@ -397,7 +406,10 @@
 			files = (
 				C77322832B06649300BE2866 /* Preview Assets.xcassets in Resources */,
 				C70BAAD82B0D378A0064660F /* BarlowSemiCondensed-ExtraBold.ttf in Resources */,
+				C70BAAE22B0D58D10064660F /* BarlowSemiCondensed-Regular.ttf in Resources */,
 				C70BAAD72B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf in Resources */,
+				C70BAAE12B0D58D10064660F /* BarlowSemiCondensed-Medium.ttf in Resources */,
+				C70BAAE32B0D58D10064660F /* BarlowSemiCondensed-Light.ttf in Resources */,
 				C77322802B06649300BE2866 /* Assets.xcassets in Resources */,
 				C77322A92B0B627600BE2866 /* GoogleService-Info.plist in Resources */,
 				C70BAAD62B0D378A0064660F /* BarlowSemiCondensed-Black.ttf in Resources */,

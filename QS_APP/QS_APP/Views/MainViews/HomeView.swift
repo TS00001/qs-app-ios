@@ -9,11 +9,15 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
+        
         ZStack{
             Rectangle()
-                .foregroundColor(.appBlue)
-                .ignoresSafeArea()     
+                .foregroundColor(.appBackground)
+                .ignoresSafeArea()
             
+            VStack {
+                
+            }
             
         }
     }

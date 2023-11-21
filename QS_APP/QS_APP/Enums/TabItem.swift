@@ -24,7 +24,7 @@ enum TabItem {
     var icon: String {
         switch self {
         case .home: return "house"
-        case .objekte: return "magnifyingglass"
+        case .objekte: return "building.2"
         case .rechner: return "square.grid.3x3.bottommiddle.filled"
         case .einstellungen: return "gearshape"
         }

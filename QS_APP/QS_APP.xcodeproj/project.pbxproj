@@ -31,6 +31,7 @@
 		C77322CC2B0B99B000BE2866 /* ObjektView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77322CB2B0B99B000BE2866 /* ObjektView.swift */; };
 		C77322CE2B0B99F300BE2866 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77322CD2B0B99F300BE2866 /* CalculatorView.swift */; };
 		C77322D02B0B9A0600BE2866 /* SettingeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77322CF2B0B9A0600BE2866 /* SettingeView.swift */; };
+		C77322D32B0BB24700BE2866 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77322D22B0BB24700BE2866 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		C77322CB2B0B99B000BE2866 /* ObjektView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjektView.swift; sourceTree = "<group>"; };
 		C77322CD2B0B99F300BE2866 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		C77322CF2B0B9A0600BE2866 /* SettingeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingeView.swift; sourceTree = "<group>"; };
+		C77322D22B0BB24700BE2866 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 				C77322CB2B0B99B000BE2866 /* ObjektView.swift */,
 				C77322CD2B0B99F300BE2866 /* CalculatorView.swift */,
 				C77322CF2B0B9A0600BE2866 /* SettingeView.swift */,
+				C77322D22B0BB24700BE2866 /* MainView.swift */,
 			);
 			path = MainViews;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C77322CA2B0B996E00BE2866 /* TabBarView.swift in Sources */,
+				C77322D32B0BB24700BE2866 /* MainView.swift in Sources */,
 				C77322B82B0B647E00BE2866 /* AuthenticationViewModel.swift in Sources */,
 				C77322BA2B0B651900BE2866 /* FireUser.swift in Sources */,
 				C77322C22B0B8B3000BE2866 /* HomeViewModel.swift in Sources */,

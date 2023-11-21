@@ -9,6 +9,9 @@ import SwiftUI
 
 struct TabBarView: View {
     
+    @EnvironmentObject var authenticationVM: AuthenticationViewModel
+
+    
     // MARK: - Variables
     
     @State var selectedTab: TabItem = .home
@@ -24,27 +27,32 @@ struct TabBarView: View {
                 }
                 .tag(TabItem.home)
                 
+
             ObjektView()
                 .tabItem {
                     Label(TabItem.objekte.title, systemImage: TabItem.objekte.icon)
                 }
                 .tag(TabItem.objekte)
+                
             
             CalculatorView()
                 .tabItem {
                     Label(TabItem.rechner.title, systemImage: TabItem.rechner.icon)
                 }
                 .tag(TabItem.rechner)
+                
             
-            SettingeView()
+            SettingeView(selectedTab: $selectedTab)
                 .tabItem {
                     Label(TabItem.einstellungen.title, systemImage: TabItem.einstellungen.icon)
                 }
                 .tag(TabItem.einstellungen)
+                .environmentObject(authenticationVM)
         }
-//        .toolbarBackground(.appBlue, for: .tabBar)
-//        .accentColor(Color.appBlue)
-        
+        .accentColor(Color.appBlue)
+        .onAppear(){
+            UITabBar.appearance().backgroundColor = .appBackground
+        }
     }
 }
 

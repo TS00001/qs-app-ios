@@ -22,24 +22,16 @@ struct QS_APPApp: App {
     
     var body: some Scene {
         
-        
-        
         WindowGroup {
             
-            VStack{
-                
-                if authenticationVM.userIsLoggedIn{
-                    HomeView()
-                        .environmentObject(authenticationVM)
-                        .environmentObject(homeVM)
-                }else {
-                    AuthenticationView()
-                        .environmentObject(authenticationVM)
-                }
-
+            if authenticationVM.userIsLoggedIn{
+                MainView()
+                    .environmentObject(authenticationVM)
+                    .environmentObject(homeVM)
+            }else {
+                AuthenticationView()
+                    .environmentObject(authenticationVM)
             }
-            
-            
         }
     }
 }

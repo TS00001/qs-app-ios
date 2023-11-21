@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ObjektView: View {
     var body: some View {
-        Text("Hello, OBJEKTE!")
+        VStack {
+            
+        }
     }
 }
 

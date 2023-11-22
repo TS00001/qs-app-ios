@@ -40,6 +40,7 @@ struct QsListItem: View {
                 .bold()
                 .foregroundColor(.appBackground)
         }
+//        .background(Color.appBlue)
         
         
         

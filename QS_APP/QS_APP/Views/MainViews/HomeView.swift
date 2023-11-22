@@ -20,34 +20,11 @@ struct HomeView: View {
                 
                 VStack {
                     HStack{
-                        Button(action: {
-                            
-                        }, label: {
-                            Image(systemName: "calendar")
-                                .resizable()
-                                .frame(width: 75, height: 75)
-                                .padding(40)
-                                .foregroundColor(.appBackground)
-                                .background(Color.appBlue)
-                                .cornerRadius(10)
-                        })
-                        .shadow(radius: 1)
+                        ButtonSquare(icon: "calendar", action: { })
                         
                         Spacer()
                         
-                        Button(action: {
-                            
-                        }, label: {
-                            Image(systemName: "list.star")
-                                .resizable()
-                                .frame(width: 75, height: 75)
-                                .padding(40)
-                                .foregroundColor(.appBackground)
-                                .background(Color.appBlue)
-                                .cornerRadius(10)
-                                
-                        })
-                        .shadow(radius: 1)
+                        ButtonSquare(icon: "list.star", action:{ })
                         
                     }
                     .padding([.top, .leading, .trailing], 20)
@@ -98,6 +75,7 @@ struct HomeView: View {
                 
             
             }
+            
             
         }
     }

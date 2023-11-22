@@ -15,6 +15,10 @@
 		C70BAAE12B0D58D10064660F /* BarlowSemiCondensed-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAADE2B0D58D00064660F /* BarlowSemiCondensed-Medium.ttf */; };
 		C70BAAE22B0D58D10064660F /* BarlowSemiCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAADF2B0D58D00064660F /* BarlowSemiCondensed-Regular.ttf */; };
 		C70BAAE32B0D58D10064660F /* BarlowSemiCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAE02B0D58D10064660F /* BarlowSemiCondensed-Light.ttf */; };
+		C70BAAE62B0E07510064660F /* ButtonSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAE52B0E07510064660F /* ButtonSquare.swift */; };
+		C70BAAE82B0E42340064660F /* SettingsTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAE72B0E42340064660F /* SettingsTopBar.swift */; };
+		C70BAAEB2B0E447D0064660F /* SettingsUserProfilCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAEA2B0E447D0064660F /* SettingsUserProfilCard.swift */; };
+		C70BAAED2B0E79A60064660F /* SettingsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAEC2B0E79A60064660F /* SettingsListItem.swift */; };
 		C773227C2B06649200BE2866 /* QS_APPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C773227B2B06649200BE2866 /* QS_APPApp.swift */; };
 		C77322802B06649300BE2866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C773227F2B06649300BE2866 /* Assets.xcassets */; };
 		C77322832B06649300BE2866 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C77322822B06649300BE2866 /* Preview Assets.xcassets */; };
@@ -69,6 +73,10 @@
 		C70BAADE2B0D58D00064660F /* BarlowSemiCondensed-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Medium.ttf"; sourceTree = "<group>"; };
 		C70BAADF2B0D58D00064660F /* BarlowSemiCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		C70BAAE02B0D58D10064660F /* BarlowSemiCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Light.ttf"; sourceTree = "<group>"; };
+		C70BAAE52B0E07510064660F /* ButtonSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSquare.swift; sourceTree = "<group>"; };
+		C70BAAE72B0E42340064660F /* SettingsTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTopBar.swift; sourceTree = "<group>"; };
+		C70BAAEA2B0E447D0064660F /* SettingsUserProfilCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUserProfilCard.swift; sourceTree = "<group>"; };
+		C70BAAEC2B0E79A60064660F /* SettingsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListItem.swift; sourceTree = "<group>"; };
 		C77322782B06649200BE2866 /* QS_APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QS_APP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C773227B2B06649200BE2866 /* QS_APPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QS_APPApp.swift; sourceTree = "<group>"; };
 		C773227F2B06649300BE2866 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,6 +161,14 @@
 			path = Strings;
 			sourceTree = "<group>";
 		};
+		C70BAAE42B0E06AB0064660F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C70BAAE52B0E07510064660F /* ButtonSquare.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		C773226F2B06649200BE2866 = {
 			isa = PBXGroup;
 			children = (
@@ -176,16 +192,17 @@
 		C773227A2B06649200BE2866 /* QS_APP */ = {
 			isa = PBXGroup;
 			children = (
-				C70BAADB2B0D3C500064660F /* Strings */,
+				C70BAAE42B0E06AB0064660F /* Components */,
 				C773227B2B06649200BE2866 /* QS_APPApp.swift */,
 				C70BAAD92B0D37EE0064660F /* QS-APP-Info.plist */,
-				C77322C52B0B97F200BE2866 /* Enums */,
-				C77322BD2B0B66B800BE2866 /* Managers */,
 				C77322A52B0B4E2800BE2866 /* Models */,
-				C77322A62B0B4E3C00BE2866 /* ViewModels */,
 				C77322A72B0B4E4A00BE2866 /* Views */,
+				C77322A62B0B4E3C00BE2866 /* ViewModels */,
+				C77322BD2B0B66B800BE2866 /* Managers */,
+				C77322C52B0B97F200BE2866 /* Enums */,
 				C773227F2B06649300BE2866 /* Assets.xcassets */,
 				C70BAADA2B0D3C220064660F /* Fonts */,
+				C70BAADB2B0D3C500064660F /* Strings */,
 				C77322812B06649300BE2866 /* Preview Content */,
 				C77322A82B0B627600BE2866 /* GoogleService-Info.plist */,
 			);
@@ -272,7 +289,10 @@
 		C77322C82B0B995600BE2866 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				C70BAAE72B0E42340064660F /* SettingsTopBar.swift */,
 				C77322C92B0B996E00BE2866 /* TabBarView.swift */,
+				C70BAAEA2B0E447D0064660F /* SettingsUserProfilCard.swift */,
+				C70BAAEC2B0E79A60064660F /* SettingsListItem.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -438,12 +458,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C77322CA2B0B996E00BE2866 /* TabBarView.swift in Sources */,
+				C70BAAE62B0E07510064660F /* ButtonSquare.swift in Sources */,
 				C77322D32B0BB24700BE2866 /* MainView.swift in Sources */,
 				C77322B82B0B647E00BE2866 /* AuthenticationViewModel.swift in Sources */,
+				C70BAAE82B0E42340064660F /* SettingsTopBar.swift in Sources */,
 				C77322BA2B0B651900BE2866 /* FireUser.swift in Sources */,
 				C77322C22B0B8B3000BE2866 /* HomeViewModel.swift in Sources */,
 				C70BAAD22B0CF9B50064660F /* QsListItem.swift in Sources */,
 				C77322CE2B0B99F300BE2866 /* CalculatorView.swift in Sources */,
+				C70BAAED2B0E79A60064660F /* SettingsListItem.swift in Sources */,
 				C77322BF2B0B66E100BE2866 /* FirebaseManager.swift in Sources */,
 				C773227C2B06649200BE2866 /* QS_APPApp.swift in Sources */,
 				C77322C42B0B8C4700BE2866 /* HomeView.swift in Sources */,
@@ -452,6 +475,7 @@
 				C77322C72B0B980500BE2866 /* TabItem.swift in Sources */,
 				C70BAADD2B0D3C6A0064660F /* FontStrings.swift in Sources */,
 				C77322D02B0B9A0600BE2866 /* SettingeView.swift in Sources */,
+				C70BAAEB2B0E447D0064660F /* SettingsUserProfilCard.swift in Sources */,
 				C77322CC2B0B99B000BE2866 /* ObjektView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,7 +20,7 @@ struct SettingeView: View {
                     .foregroundColor(.appBackground)
                     .ignoresSafeArea()
                 
-                VStack {
+                VStack(spacing: 0) {
                     SettingsTopBar(title: "EINSTELLUNGEN", BtnIcon: "power.circle.fill", BtnAction: logout)
                     
                     SettingsUserProfilCard(name: "Tom Salih", position: "Qualitässicherung", profilImage: "profilImage")

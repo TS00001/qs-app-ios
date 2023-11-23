@@ -43,6 +43,7 @@ struct SettingsListItem: View {
         .background(Color.appBlue)
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .padding(.horizontal, 16)
+        .padding(.bottom, 8)
         .cornerRadius(10)
     }
 }

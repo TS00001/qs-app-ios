@@ -64,19 +64,12 @@ struct HomeView: View {
                                     QsListItem()
                                 }.listRowBackground(Color.appBlue)
                         }
-                        .tint(.pink)
                         .background(Color.appBackground)
                         .scrollContentBackground(.hidden)
                     }
-                    
-                    
                     Spacer()
                 }
-                
-            
             }
-            
-            
         }
     }
 }

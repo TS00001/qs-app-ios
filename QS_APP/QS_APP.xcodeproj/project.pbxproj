@@ -192,7 +192,6 @@
 		C773227A2B06649200BE2866 /* QS_APP */ = {
 			isa = PBXGroup;
 			children = (
-				C70BAAE42B0E06AB0064660F /* Components */,
 				C773227B2B06649200BE2866 /* QS_APPApp.swift */,
 				C70BAAD92B0D37EE0064660F /* QS-APP-Info.plist */,
 				C77322A52B0B4E2800BE2866 /* Models */,
@@ -200,11 +199,12 @@
 				C77322A62B0B4E3C00BE2866 /* ViewModels */,
 				C77322BD2B0B66B800BE2866 /* Managers */,
 				C77322C52B0B97F200BE2866 /* Enums */,
-				C773227F2B06649300BE2866 /* Assets.xcassets */,
+				C70BAAE42B0E06AB0064660F /* Components */,
 				C70BAADA2B0D3C220064660F /* Fonts */,
 				C70BAADB2B0D3C500064660F /* Strings */,
 				C77322812B06649300BE2866 /* Preview Content */,
 				C77322A82B0B627600BE2866 /* GoogleService-Info.plist */,
+				C773227F2B06649300BE2866 /* Assets.xcassets */,
 			);
 			path = QS_APP;
 			sourceTree = "<group>";

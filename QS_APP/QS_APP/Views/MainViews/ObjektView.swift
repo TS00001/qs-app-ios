@@ -8,57 +8,43 @@
 import SwiftUI
 
 struct ObjektView: View {
+    
+    //MARK: VRIABLES
+    @State var showAddObjektSheet = false
+    
     var body: some View {
+        
         ZStack{
-            Rectangle()
-                .foregroundColor(.appBackground)
-                .ignoresSafeArea()
             
+            AppBackground(color: .appBackground)
             
-            VStack{
-                HStack {
-                    Text("OBJEKTE")
-                        .foregroundStyle(Color.appBlue)
-                        .font(.custom(FontStrings.appFontBlack, size: 35))
-                        .bold()
-                    .padding(20)
-                    Spacer()
+            VStack {
+                CustomHeader(title: "OBJEKTE"){
+                    Button(action: {
+                        showAddObjektSheet = true
+                    }, label: {
+                        CustomHeaderIcon(icon: Values.plus)
+                    })
+                }
+                .sheet(isPresented: $showAddObjektSheet) {
+                    AddObjektSheet()
                 }
                 
-                //TO DO: SearchBar Implementieren
-                
-                NavigationStack{
-                    Form{
-                        Section{
-                            QsListItem()
-                        }.listRowBackground(Color.appBlue)
-                        
-                            Section{
-                                QsListItem()
-                            }.listRowBackground(Color.appBlue)
-                        
-                            Section{
-                                QsListItem()
-                            }.listRowBackground(Color.appBlue)
-                        
-                            Section{
-                                QsListItem()
-                            }.listRowBackground(Color.appBlue)
-                        
-                            Section{
-                                QsListItem()
-                            }.listRowBackground(Color.appBlue)
-                        
-                            Section{
-                                QsListItem()
-                            }.listRowBackground(Color.appBlue)
+                ScrollView{
+                    ForEach(1...10, id: \.self){ item in
+                        QsListItem(icon: Values.objektIcon, title: "Bäckerei Gauker", adress: "Eugenstraße 10, 72072 Tübingen")
                     }
-//                    .tint(.pink)
-                    .background(Color.appBackground)
-                    .scrollContentBackground(.hidden)
+                    .padding(.horizontal, Values.middlePadding)
+                    
                 }
             }
+            
         }
+    }
+    
+    func addObjekt(){
+        
+        // TODO: Funktion um ein neues Objekt zu erstellen.
     }
 }
 

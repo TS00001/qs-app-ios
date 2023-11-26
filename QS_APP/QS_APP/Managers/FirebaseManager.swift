@@ -16,6 +16,7 @@ class FirebaseManager {
     let auth = Auth.auth()
     let database = Firestore.firestore()
     
+    // Bereitstellung der aktuellen Benutzer-ID, wenn ein Benutzer angemeldet ist, andernfalls nil
     var userId: String? {
         auth.currentUser?.uid
     }

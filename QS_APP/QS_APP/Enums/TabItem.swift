@@ -23,10 +23,10 @@ enum TabItem {
     // Hier werden die Icons für die TabBar definiert
     var icon: String {
         switch self {
-        case .home: return "house"
-        case .objekte: return "building.2"
-        case .rechner: return "square.grid.3x3.bottommiddle.filled"
-        case .einstellungen: return "gearshape"
+        case .home: return Values.homeIcon
+        case .objekte: return Values.objektIcon
+        case .rechner: return Values.calculatorIcon
+        case .einstellungen: return Values.settingsIcon
         }
     }
 }

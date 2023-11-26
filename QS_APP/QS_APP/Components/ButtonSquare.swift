@@ -9,22 +9,23 @@ import SwiftUI
 
 struct ButtonSquare: View {
     
+    let icon: String
+    let action: () -> Void
+    
     var body: some View {
         Button(action: action) {
             
             Image(systemName: icon)
                 .resizable()
-                .frame(width: 75, height: 75)
-                .padding(40)
+                .frame(width: Values.squareButtonFrame, height: Values.squareButtonFrame)
+                .padding(Values.squareButtoninnerPadding)
                 .foregroundColor(.appBackground)
                 .background(Color.appBlue)
-                .cornerRadius(10)
+                .cornerRadius(Values.majorRadius)
         }
         .shadow(radius: 1)
     }
-    
-    let icon: String
-    let action: () -> Void
+   
     
 }
 

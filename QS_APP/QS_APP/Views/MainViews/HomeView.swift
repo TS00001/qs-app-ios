@@ -10,67 +10,40 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         
-        
         ZStack{
-            Rectangle()
-                .foregroundColor(.appBackground)
-                .ignoresSafeArea()
+            
+            AppBackground(color: .appBackground)
             
             VStack {
+                CustomHeader(title: "FÄLLIGE QS"){
+                    Button(action: {
+                        
+                    }, label: {
+                        CustomHeaderIcon(icon: Values.qsIcon)
+                    })
+                   
+                    Button(action: {
+                        
+                    }, label: {
+                        CustomHeaderIcon(icon: Values.calendar)
+                    })
+                }
                 
-                VStack {
-                    HStack{
-                        ButtonSquare(icon: "calendar", action: { })
+                ScrollView{
+                    ForEach(1...10, id: \.self){ item in
                         
-                        Spacer()
-                        
-                        ButtonSquare(icon: "list.star", action:{ })
-                        
+                        QsListItem(icon: Values.qsIcon, title: "Bäckerei Gauker", adress: "Eugenstraße 10, 72072 Tübingen")
                     }
-                    .padding([.top, .leading, .trailing], 20)
+                    .padding(.horizontal, Values.middlePadding)
                     
-                    HStack {
-                        Text("FÄLLIGE QS")
-                            .foregroundStyle(Color.appBlue)
-                            .font(.custom(FontStrings.appFontBlack, size: 35))
-                            .bold()
-                        .padding(20)
-                        Spacer()
-                    }
-                    
-                    NavigationStack{
-                        Form{
-                            Section{
-                                QsListItem()
-                            }.listRowBackground(Color.appBlue)
-                            
-                                Section{
-                                    QsListItem()
-                                }.listRowBackground(Color.appBlue)
-                            
-                                Section{
-                                    QsListItem()
-                                }.listRowBackground(Color.appBlue)
-                            
-                                Section{
-                                    QsListItem()
-                                }.listRowBackground(Color.appBlue)
-                            
-                                Section{
-                                    QsListItem()
-                                }.listRowBackground(Color.appBlue)
-                            
-                                Section{
-                                    QsListItem()
-                                }.listRowBackground(Color.appBlue)
-                        }
-                        .background(Color.appBackground)
-                        .scrollContentBackground(.hidden)
-                    }
-                    Spacer()
                 }
             }
+            
         }
+    }
+    
+    func planQs(){
+        //Funktion zum planen einer QS (ein Sheet soll sich beim klick öffnen)
     }
 }
 

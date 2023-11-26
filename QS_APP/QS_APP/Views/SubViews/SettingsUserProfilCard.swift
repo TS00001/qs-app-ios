@@ -9,13 +9,14 @@ import SwiftUI
 
 struct SettingsUserProfilCard: View {
     
+    //MARK: Variables
     let name: String
     let position: String
     let profilImage: String
     
     var body: some View {
         HStack {
-            Image("profilImage")
+            Image(profilImage)
                 .resizable()
                 .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                 .frame(width: 100, height: 100)
@@ -25,9 +26,8 @@ struct SettingsUserProfilCard: View {
             .shadow(radius: 1)
             
             VStack {
-                
                 HStack {
-                    Text("Tom Salih")
+                    Text(name)
                         .font(.custom(FontStrings.appFontExtraBold, size: 32))
                         .foregroundColor(.appBackground)
                     .padding(.leading, 20)
@@ -35,7 +35,7 @@ struct SettingsUserProfilCard: View {
                 }
                 
                 HStack {
-                    Text("Qualitässicherung")
+                    Text(position)
                         .font(.custom(FontStrings.appFontRegular, size: 18))
                         .foregroundColor(.appBackground)
                     .padding(.leading, 20)

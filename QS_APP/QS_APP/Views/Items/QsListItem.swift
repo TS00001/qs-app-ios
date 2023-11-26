@@ -8,39 +8,45 @@
 import SwiftUI
 
 struct QsListItem: View {
+    
+    let icon: String
+    let title: String
+    let adress: String
+    
     var body: some View {
         
         HStack{
-            Image(systemName: "list.star")
+            Image(systemName: icon)
                 .resizable()
-                .frame(width: 40,height: 40)
-                .padding(.vertical, 20)
+                .frame(width: Values.listItemIconFrame, height: Values.listItemIconFrame)
+                .padding(.vertical, Values.middlePadding)
+                .padding(.horizontal, Values.middlePadding)
                 .foregroundColor(.appBackground)
             
             VStack {
                 HStack {
                     
-                        Text("Bäckerei Gauker")
+                        Text(title)
                             .foregroundStyle(Color.appBackground)
-                            .font(.custom(FontStrings.appFontBold, size: 22))
+                            .font(.custom(FontStrings.appFontBold, size: Values.appSubtitle))
                             .bold()
-                            .padding(.leading)
                     Spacer()
                 }
                 HStack{
-                    Text("Eugenstraße 37, 72072 Tübingen")
+                    Text(adress)
                                 .foregroundStyle(Color.appBackground)
                                 .font(.footnote)
                                 .bold()
-                                .padding(.leading)
                     Spacer()
                 } }
-            Image(systemName: "chevron.right")
+            Image(systemName: Values.arrowRight)
                 .font(.title)
                 .bold()
                 .foregroundColor(.appBackground)
+                .padding(.trailing, Values.middlePadding)
         }
-//        .background(Color.appBlue)
+        .background(Color.appBlue)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
         
         
         
@@ -49,5 +55,5 @@ struct QsListItem: View {
 }
 
 #Preview {
-    QsListItem()
+    QsListItem(icon: Values.qsIcon, title: "Bäckerei Gauker", adress: "Eugenstraße 10, 72070 Tübingen")
 }

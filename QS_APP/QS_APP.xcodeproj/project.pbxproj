@@ -19,6 +19,7 @@
 		C70BAAE82B0E42340064660F /* SettingsTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAE72B0E42340064660F /* SettingsTopBar.swift */; };
 		C70BAAEB2B0E447D0064660F /* SettingsUserProfilCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAEA2B0E447D0064660F /* SettingsUserProfilCard.swift */; };
 		C70BAAED2B0E79A60064660F /* SettingsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAEC2B0E79A60064660F /* SettingsListItem.swift */; };
+		C76C1E352B10C9D300A27BE5 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76C1E342B10C9D300A27BE5 /* Values.swift */; };
 		C773227C2B06649200BE2866 /* QS_APPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C773227B2B06649200BE2866 /* QS_APPApp.swift */; };
 		C77322802B06649300BE2866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C773227F2B06649300BE2866 /* Assets.xcassets */; };
 		C77322832B06649300BE2866 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C77322822B06649300BE2866 /* Preview Assets.xcassets */; };
@@ -44,6 +45,13 @@
 		C77322CE2B0B99F300BE2866 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77322CD2B0B99F300BE2866 /* CalculatorView.swift */; };
 		C77322D02B0B9A0600BE2866 /* SettingeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77322CF2B0B9A0600BE2866 /* SettingeView.swift */; };
 		C77322D32B0BB24700BE2866 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77322D22B0BB24700BE2866 /* MainView.swift */; };
+		C7B24F812B13C68A002A4642 /* CustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B24F802B13C68A002A4642 /* CustomHeader.swift */; };
+		C7B24F832B13CF6A002A4642 /* AppBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B24F822B13CF6A002A4642 /* AppBackground.swift */; };
+		C7B24F872B13DBD6002A4642 /* CustomHeaderIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B24F862B13DBD6002A4642 /* CustomHeaderIcon.swift */; };
+		C7B24F892B13E3FD002A4642 /* AddObjektSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B24F882B13E3FD002A4642 /* AddObjektSheet.swift */; };
+		C7B24F8B2B13E5B7002A4642 /* ObjektDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B24F8A2B13E5B7002A4642 /* ObjektDetailView.swift */; };
+		C7B24F8D2B13E710002A4642 /* FormItemStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B24F8C2B13E710002A4642 /* FormItemStyle.swift */; };
+		C7B24F8F2B13FF32002A4642 /* StandardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B24F8E2B13FF32002A4642 /* StandardButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +85,7 @@
 		C70BAAE72B0E42340064660F /* SettingsTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTopBar.swift; sourceTree = "<group>"; };
 		C70BAAEA2B0E447D0064660F /* SettingsUserProfilCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUserProfilCard.swift; sourceTree = "<group>"; };
 		C70BAAEC2B0E79A60064660F /* SettingsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListItem.swift; sourceTree = "<group>"; };
+		C76C1E342B10C9D300A27BE5 /* Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
 		C77322782B06649200BE2866 /* QS_APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QS_APP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C773227B2B06649200BE2866 /* QS_APPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QS_APPApp.swift; sourceTree = "<group>"; };
 		C773227F2B06649300BE2866 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,6 +109,13 @@
 		C77322CD2B0B99F300BE2866 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		C77322CF2B0B9A0600BE2866 /* SettingeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingeView.swift; sourceTree = "<group>"; };
 		C77322D22B0BB24700BE2866 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C7B24F802B13C68A002A4642 /* CustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeader.swift; sourceTree = "<group>"; };
+		C7B24F822B13CF6A002A4642 /* AppBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackground.swift; sourceTree = "<group>"; };
+		C7B24F862B13DBD6002A4642 /* CustomHeaderIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderIcon.swift; sourceTree = "<group>"; };
+		C7B24F882B13E3FD002A4642 /* AddObjektSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddObjektSheet.swift; sourceTree = "<group>"; };
+		C7B24F8A2B13E5B7002A4642 /* ObjektDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjektDetailView.swift; sourceTree = "<group>"; };
+		C7B24F8C2B13E710002A4642 /* FormItemStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormItemStyle.swift; sourceTree = "<group>"; };
+		C7B24F8E2B13FF32002A4642 /* StandardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +159,7 @@
 		C70BAADA2B0D3C220064660F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				C70BAADB2B0D3C500064660F /* Strings */,
 				C70BAAE02B0D58D10064660F /* BarlowSemiCondensed-Light.ttf */,
 				C70BAADE2B0D58D00064660F /* BarlowSemiCondensed-Medium.ttf */,
 				C70BAADF2B0D58D00064660F /* BarlowSemiCondensed-Regular.ttf */,
@@ -165,8 +182,22 @@
 			isa = PBXGroup;
 			children = (
 				C70BAAE52B0E07510064660F /* ButtonSquare.swift */,
+				C7B24F802B13C68A002A4642 /* CustomHeader.swift */,
+				C7B24F822B13CF6A002A4642 /* AppBackground.swift */,
+				C7B24F862B13DBD6002A4642 /* CustomHeaderIcon.swift */,
+				C7B24F8C2B13E710002A4642 /* FormItemStyle.swift */,
+				C7B24F8E2B13FF32002A4642 /* StandardButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		C76C1E332B10C96F00A27BE5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C70BAADA2B0D3C220064660F /* Fonts */,
+				C76C1E342B10C9D300A27BE5 /* Values.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		C773226F2B06649200BE2866 = {
@@ -200,8 +231,7 @@
 				C77322BD2B0B66B800BE2866 /* Managers */,
 				C77322C52B0B97F200BE2866 /* Enums */,
 				C70BAAE42B0E06AB0064660F /* Components */,
-				C70BAADA2B0D3C220064660F /* Fonts */,
-				C70BAADB2B0D3C500064660F /* Strings */,
+				C76C1E332B10C96F00A27BE5 /* Resources */,
 				C77322812B06649300BE2866 /* Preview Content */,
 				C77322A82B0B627600BE2866 /* GoogleService-Info.plist */,
 				C773227F2B06649300BE2866 /* Assets.xcassets */,
@@ -293,6 +323,7 @@
 				C77322C92B0B996E00BE2866 /* TabBarView.swift */,
 				C70BAAEA2B0E447D0064660F /* SettingsUserProfilCard.swift */,
 				C70BAAEC2B0E79A60064660F /* SettingsListItem.swift */,
+				C7B24F882B13E3FD002A4642 /* AddObjektSheet.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -306,6 +337,7 @@
 				C77322CD2B0B99F300BE2866 /* CalculatorView.swift */,
 				C77322CF2B0B9A0600BE2866 /* SettingeView.swift */,
 				C77322D22B0BB24700BE2866 /* MainView.swift */,
+				C7B24F8A2B13E5B7002A4642 /* ObjektDetailView.swift */,
 			);
 			path = MainViews;
 			sourceTree = "<group>";
@@ -458,24 +490,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				C77322CA2B0B996E00BE2866 /* TabBarView.swift in Sources */,
+				C7B24F8D2B13E710002A4642 /* FormItemStyle.swift in Sources */,
 				C70BAAE62B0E07510064660F /* ButtonSquare.swift in Sources */,
 				C77322D32B0BB24700BE2866 /* MainView.swift in Sources */,
 				C77322B82B0B647E00BE2866 /* AuthenticationViewModel.swift in Sources */,
 				C70BAAE82B0E42340064660F /* SettingsTopBar.swift in Sources */,
 				C77322BA2B0B651900BE2866 /* FireUser.swift in Sources */,
 				C77322C22B0B8B3000BE2866 /* HomeViewModel.swift in Sources */,
+				C76C1E352B10C9D300A27BE5 /* Values.swift in Sources */,
 				C70BAAD22B0CF9B50064660F /* QsListItem.swift in Sources */,
 				C77322CE2B0B99F300BE2866 /* CalculatorView.swift in Sources */,
 				C70BAAED2B0E79A60064660F /* SettingsListItem.swift in Sources */,
+				C7B24F8F2B13FF32002A4642 /* StandardButton.swift in Sources */,
+				C7B24F812B13C68A002A4642 /* CustomHeader.swift in Sources */,
 				C77322BF2B0B66E100BE2866 /* FirebaseManager.swift in Sources */,
 				C773227C2B06649200BE2866 /* QS_APPApp.swift in Sources */,
 				C77322C42B0B8C4700BE2866 /* HomeView.swift in Sources */,
+				C7B24F832B13CF6A002A4642 /* AppBackground.swift in Sources */,
 				C77322B62B0B643D00BE2866 /* AuthenticationView.swift in Sources */,
 				C77322BC2B0B663100BE2866 /* FireUserViewModel.swift in Sources */,
 				C77322C72B0B980500BE2866 /* TabItem.swift in Sources */,
 				C70BAADD2B0D3C6A0064660F /* FontStrings.swift in Sources */,
+				C7B24F8B2B13E5B7002A4642 /* ObjektDetailView.swift in Sources */,
 				C77322D02B0B9A0600BE2866 /* SettingeView.swift in Sources */,
 				C70BAAEB2B0E447D0064660F /* SettingsUserProfilCard.swift in Sources */,
+				C7B24F872B13DBD6002A4642 /* CustomHeaderIcon.swift in Sources */,
+				C7B24F892B13E3FD002A4642 /* AddObjektSheet.swift in Sources */,
 				C77322CC2B0B99B000BE2866 /* ObjektView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -640,6 +680,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QS_APP/Preview Content\"";
+				DEVELOPMENT_TEAM = J9PNCTV3N5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "QS-APP-Info.plist";
@@ -669,6 +710,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QS_APP/Preview Content\"";
+				DEVELOPMENT_TEAM = J9PNCTV3N5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "QS-APP-Info.plist";

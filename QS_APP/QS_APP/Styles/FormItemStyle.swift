@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct FormItemStyle: ViewModifier {
-    //MARK: FUNKTIONS
     
     func body(content: Content) -> some View {
         content

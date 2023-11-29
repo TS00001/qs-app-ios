@@ -15,7 +15,7 @@ struct HomeView: View {
             AppBackground(color: .appBackground)
             
             VStack {
-                CustomHeader(title: "FÄLLIGE QS"){
+                CustomHeader(title: "HOME"){
                     Button(action: {
                         
                     }, label: {
@@ -29,15 +29,21 @@ struct HomeView: View {
                     })
                 }
                 
+                QsOverviewItem()
+                    
+                
                 ScrollView{
-                    ForEach(1...10, id: \.self){ item in
+                    Text("FÄLLIGE QS")
+                        .titleStyle()
+                    ForEach(1...5, id: \.self){ item in
                         
-                        QsListItem(icon: Values.qsIcon, title: "Bäckerei Gauker", adress: "Eugenstraße 10, 72072 Tübingen")
+                        QsListItem(icon: Values.qsIcon, title: "Bäckerei Gauker", street: "Eugenstraße 10", postalCode: "72072", city: "Tübingen")
                     }
                     .padding(.horizontal, Values.middlePadding)
                     
                 }
             }
+//            .padding(.horizontal, Values.middlePadding)
             
         }
     }

@@ -1,5 +1,5 @@
 //
-//  SettingeView.swift
+//  SettingsView.swift
 //  QS_APP
 //
 //  Created by Tom Salih on 20.11.23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SettingeView: View {
+struct SettingsView: View {
     
     @EnvironmentObject var authenticationVM: AuthenticationViewModel
     @Binding var selectedTab: TabItem
@@ -21,7 +21,10 @@ struct SettingeView: View {
                     .ignoresSafeArea()
                 
                 VStack(spacing: 0) {
-                    SettingsTopBar(title: "EINSTELLUNGEN", BtnIcon: "power.circle.fill", BtnAction: logout)
+                    
+                    CustomHeader(title: "EINSTELLUNGEN"){
+                        LogoutButton(action: logout)
+                    }
                     
                     SettingsUserProfilCard(name: "Tom Salih", position: "Qualitässicherung", profilImage: "profilImage")
                       
@@ -41,5 +44,5 @@ struct SettingeView: View {
 }
 
 #Preview {
-    SettingeView(selectedTab: .constant(.einstellungen))
+    SettingsView(selectedTab: .constant(.einstellungen))
 }

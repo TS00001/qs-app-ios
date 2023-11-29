@@ -9,7 +9,19 @@ import SwiftUI
 
 struct CalculatorView: View {
     var body: some View {
-        Text("Hello, CALCULATOR!")
+        ZStack{
+            AppBackground(color: .appBackground)
+            
+            VStack(spacing: 0){
+                CustomHeader(title: "RECHNER"){
+                    CustomHeaderIcon(icon: Values.plus)
+                }
+                
+                ScrollView{
+                    
+                }
+            }
+        }
     }
 }
 

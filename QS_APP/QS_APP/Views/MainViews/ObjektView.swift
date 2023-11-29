@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ObjektView: View {
     
+    @StateObject private var objektVM = ObjektViewModel()
+    
     //MARK: VRIABLES
     @State var showAddObjektSheet = false
     
@@ -20,19 +22,22 @@ struct ObjektView: View {
             
             VStack {
                 CustomHeader(title: "OBJEKTE"){
+                    
                     Button(action: {
                         showAddObjektSheet = true
                     }, label: {
                         CustomHeaderIcon(icon: Values.plus)
                     })
+                    
                 }
                 .sheet(isPresented: $showAddObjektSheet) {
-                    AddObjektSheet()
+                    AddObjektSheet(showAddObjektSheet: $showAddObjektSheet)
+                        .environmentObject(objektVM)
                 }
                 
                 ScrollView{
-                    ForEach(1...10, id: \.self){ item in
-                        QsListItem(icon: Values.objektIcon, title: "Bäckerei Gauker", adress: "Eugenstraße 10, 72072 Tübingen")
+                    ForEach(objektVM.objektList, id: \.id){ objekt in
+                        QsListItem(icon: Values.objektIcon, title: objekt.name, street: objekt.adress.street, postalCode: objekt.adress.postalCode, city: objekt.adress.city)
                     }
                     .padding(.horizontal, Values.middlePadding)
                     
@@ -42,10 +47,6 @@ struct ObjektView: View {
         }
     }
     
-    func addObjekt(){
-        
-        // TODO: Funktion um ein neues Objekt zu erstellen.
-    }
 }
 
 #Preview {

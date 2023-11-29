@@ -9,16 +9,21 @@ import SwiftUI
 
 struct AddObjektSheet: View {
     
+    @EnvironmentObject var addObjektVM: ObjektViewModel
+    
+    @Binding var showAddObjektSheet: Bool
+    
     //MARK: VARIABLES
-    @State var objectName = ""
+    @State var name = ""
     @State var street = ""
     @State var postalCode = ""
     @State var city = ""
     @State var mail = ""
-    
     @State var contactPerson = ""
     @State var objectManager = ""
     @State var cleaningPerson = ""
+    let listOfServices = [Area]()
+    let qualityAssurance = [QualityAssurance]()
     
     
     var body: some View {
@@ -26,19 +31,19 @@ struct AddObjektSheet: View {
             AppBackground(color: .appBlue)
             
             ScrollView{
-                TextField("Objektname", text: $objectName)
+                TextField("Objektname", text: $name)
                     .formItemStyle(with: .appBlue)
                 
                 TextField("Straße", text: $street)
-                    .formItemStyle(with: .appBlue)
-                
-                TextField("Mail", text: $mail)
                     .formItemStyle(with: .appBlue)
                 
                 TextField("Postleitzahl", text: $postalCode)
                     .formItemStyle(with: .appBlue)
                     .textContentType(.oneTimeCode)
                     .keyboardType(.numberPad)
+                
+                TextField("Mail", text: $mail)
+                    .formItemStyle(with: .appBlue)
                 
                 TextField("Stadt", text: $city)
                     .formItemStyle(with: .appBlue)
@@ -54,6 +59,7 @@ struct AddObjektSheet: View {
                 
                 HStack(spacing: 40){
                     StandardButton(label: "Abbrechen", color: .appRed, fontColor: .appBackground, action: saveObjekt)
+                    
                     StandardButton(label: "Speichern", color: .appBackground, fontColor: .appBlue, action: saveObjekt)
                 }
                 .padding(.top, Values.middlePadding)
@@ -69,12 +75,14 @@ struct AddObjektSheet: View {
     
     
     func saveObjekt(){
-        //TODO: Funkrion die das neue Objekt abspeichert.
+        addObjektVM.createObjekt(name: self.name, street: self.street, postalCode: self.postalCode, city: self.city, mail: self.mail, contactPerson: self.contactPerson, objectManager: self.objectManager, cleaningPerson: self.cleaningPerson, listOfServices: self.listOfServices, qualityAssurance: self.qualityAssurance)
+        
+        showAddObjektSheet = false
     }
     
 }
 
 
 #Preview {
-    AddObjektSheet()
+    AddObjektSheet(showAddObjektSheet: .constant(false))
 }

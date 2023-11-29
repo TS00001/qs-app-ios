@@ -40,7 +40,6 @@ struct SettingsListItem: View {
             Spacer()
         }
         .background(Color.appBlue)
-        .background(Color.appBlue)
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .padding(.horizontal, 16)
         .padding(.bottom, 8)

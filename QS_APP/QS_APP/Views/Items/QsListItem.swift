@@ -11,7 +11,9 @@ struct QsListItem: View {
     
     let icon: String
     let title: String
-    let adress: String
+    let street: String
+    let postalCode: String
+    let city: String
     
     var body: some View {
         
@@ -33,7 +35,17 @@ struct QsListItem: View {
                     Spacer()
                 }
                 HStack{
-                    Text(adress)
+                    Text("\(street),")
+                                .foregroundStyle(Color.appBackground)
+                                .font(.footnote)
+                                .bold()
+                    
+                    Text(postalCode)
+                                .foregroundStyle(Color.appBackground)
+                                .font(.footnote)
+                                .bold()
+                    
+                    Text(city)
                                 .foregroundStyle(Color.appBackground)
                                 .font(.footnote)
                                 .bold()
@@ -55,5 +67,5 @@ struct QsListItem: View {
 }
 
 #Preview {
-    QsListItem(icon: Values.qsIcon, title: "Bäckerei Gauker", adress: "Eugenstraße 10, 72070 Tübingen")
+    QsListItem(icon: Values.qsIcon, title: "Bäckerei Gauker", street: "Eugenstraße 10", postalCode: "72072", city: "Tübingen")
 }

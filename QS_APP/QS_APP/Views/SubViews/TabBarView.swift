@@ -42,7 +42,7 @@ struct TabBarView: View {
                 .tag(TabItem.rechner)
                 
             
-            SettingeView(selectedTab: $selectedTab)
+            SettingsView(selectedTab: $selectedTab)
                 .tabItem {
                     Label(TabItem.einstellungen.title, systemImage: TabItem.einstellungen.icon)
                 }

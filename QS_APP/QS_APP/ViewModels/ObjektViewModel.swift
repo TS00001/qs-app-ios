@@ -18,12 +18,11 @@ class ObjektViewModel: ObservableObject {
     init(){
         fetchObjekt()
     }
-    
-    func createObjekt(name: String, street: String, postalCode: String, city: String, mail: String, contactPerson: String?, objectManager: String?, cleaningPerson: String?, listOfServices: [Area], qualityAssurance: [QualityAssurance]){
-        
-        let adress = Adress(street: street, postalCode: postalCode, city: city)
-        
-        let objekt = Objekt(name: name, adress: adress, mail: mail, contactPerson: contactPerson, cleaningPerson: cleaningPerson, objectManager: objectManager, interval: Interval.one.intervalString, listOfServices: listOfServices, qualityAssurance: qualityAssurance)
+    /**
+     Funktion um ein Objekt in Firestore zu erstellen
+     @param objekt: Erwartet eine instanz des Models Objekt
+     */
+    func createObjekt(objekt: Objekt){
         
         do{
             try FirebaseManager.shared.database.collection("objekt").addDocument(from: objekt)

@@ -69,13 +69,16 @@ struct AddObjektSheet: View {
             .padding(Values.middlePadding)
             
         }
-        
-        
     }
     
     
     func saveObjekt(){
-        addObjektVM.createObjekt(name: self.name, street: self.street, postalCode: self.postalCode, city: self.city, mail: self.mail, contactPerson: self.contactPerson, objectManager: self.objectManager, cleaningPerson: self.cleaningPerson, listOfServices: self.listOfServices, qualityAssurance: self.qualityAssurance)
+        
+        let adress = Adress(street: self.street, postalCode: self.postalCode, city: self.city)
+        
+        let objekt = Objekt(name: self.name, adress: adress, mail: self.mail, contactPerson: self.contactPerson, cleaningPerson: self.cleaningPerson, objectManager: self.objectManager, interval: Interval.one.intervalString, listOfServices: self.listOfServices, qualityAssurance: self.qualityAssurance)
+        
+        addObjektVM.createObjekt(objekt: objekt)
         
         showAddObjektSheet = false
     }

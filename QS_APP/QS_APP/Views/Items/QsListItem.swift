@@ -35,20 +35,20 @@ struct QsListItem: View {
                     Spacer()
                 }
                 HStack{
-                    Text("\(street),")
+                    Text("\(street), \(postalCode) \(city)")
                                 .foregroundStyle(Color.appBackground)
                                 .font(.footnote)
                                 .bold()
                     
-                    Text(postalCode)
-                                .foregroundStyle(Color.appBackground)
-                                .font(.footnote)
-                                .bold()
-                    
-                    Text(city)
-                                .foregroundStyle(Color.appBackground)
-                                .font(.footnote)
-                                .bold()
+//                    Text(postalCode)
+//                                .foregroundStyle(Color.appBackground)
+//                                .font(.footnote)
+//                                .bold()
+//                    
+//                    Text(city)
+//                                .foregroundStyle(Color.appBackground)
+//                                .font(.footnote)
+//                                .bold()
                     Spacer()
                 } }
             Image(systemName: Values.arrowRight)
@@ -57,7 +57,7 @@ struct QsListItem: View {
                 .foregroundColor(.appBackground)
                 .padding(.trailing, Values.middlePadding)
         }
-        .background(Color.appBlue)
+        .background(Color.appBlue )
         .clipShape(RoundedRectangle(cornerRadius: 10))
         
         

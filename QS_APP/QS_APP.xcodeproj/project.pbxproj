@@ -62,6 +62,7 @@
 		C7B24F932B140F00002A4642 /* LogoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B24F922B140F00002A4642 /* LogoutButton.swift */; };
 		C7B24F962B14BE6F002A4642 /* QsOverviewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B24F952B14BE6F002A4642 /* QsOverviewItem.swift */; };
 		C7B24F982B14D221002A4642 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B24F972B14D221002A4642 /* RatingView.swift */; };
+		C7D1C0112B19475800D18399 /* ObjektDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D1C0102B19475800D18399 /* ObjektDetailItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		C7B24F922B140F00002A4642 /* LogoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButton.swift; sourceTree = "<group>"; };
 		C7B24F952B14BE6F002A4642 /* QsOverviewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QsOverviewItem.swift; sourceTree = "<group>"; };
 		C7B24F972B14D221002A4642 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		C7D1C0102B19475800D18399 /* ObjektDetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjektDetailItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 				C7B24F922B140F00002A4642 /* LogoutButton.swift */,
 				C7B24F952B14BE6F002A4642 /* QsOverviewItem.swift */,
 				C7B24F972B14D221002A4642 /* RatingView.swift */,
+				C7D1C0102B19475800D18399 /* ObjektDetailItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				C77322B62B0B643D00BE2866 /* AuthenticationView.swift in Sources */,
 				C77322BC2B0B663100BE2866 /* FireUserViewModel.swift in Sources */,
 				C77322C72B0B980500BE2866 /* TabItem.swift in Sources */,
+				C7D1C0112B19475800D18399 /* ObjektDetailItem.swift in Sources */,
 				C7965C772B1764E300E8A0FB /* ObjektViewModel.swift in Sources */,
 				C70BAADD2B0D3C6A0064660F /* FontStrings.swift in Sources */,
 				C7B24F8B2B13E5B7002A4642 /* ObjektDetailView.swift in Sources */,

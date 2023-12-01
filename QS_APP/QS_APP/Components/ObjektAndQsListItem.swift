@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QsListItem: View {
+struct ObjektAndQsListItem: View {
     
     let icon: String
     let title: String
@@ -39,16 +39,7 @@ struct QsListItem: View {
                                 .foregroundStyle(Color.appBackground)
                                 .font(.footnote)
                                 .bold()
-                    
-//                    Text(postalCode)
-//                                .foregroundStyle(Color.appBackground)
-//                                .font(.footnote)
-//                                .bold()
-//                    
-//                    Text(city)
-//                                .foregroundStyle(Color.appBackground)
-//                                .font(.footnote)
-//                                .bold()
+
                     Spacer()
                 } }
             Image(systemName: Values.arrowRight)
@@ -67,5 +58,5 @@ struct QsListItem: View {
 }
 
 #Preview {
-    QsListItem(icon: Values.qsIcon, title: "Bäckerei Gauker", street: "Eugenstraße 10", postalCode: "72072", city: "Tübingen")
+    ObjektAndQsListItem(icon: Values.qsIcon, title: "Bäckerei Gauker", street: "Eugenstraße 10", postalCode: "72072", city: "Tübingen")
 }

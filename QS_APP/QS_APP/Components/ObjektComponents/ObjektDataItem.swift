@@ -1,19 +1,17 @@
 //
-//  ObjektDetailItem.swift
+//  ObjektDataComponente.swift
 //  QS_APP
 //
-//  Created by Tom Salih on 30.11.23.
+//  Created by Tom Salih on 01.12.23.
 //
 
 import SwiftUI
 
-struct ObjektDetailItem: View {
+struct ObjektDataItem: View {
     
     //MARK: VARIABLES
     let title: String
-    let street: String
-    let postalCode: String
-    let city: String
+    let content: String
     
     var body: some View {
         HStack(spacing: 0){
@@ -25,7 +23,7 @@ struct ObjektDetailItem: View {
                     .font(.custom(FontStrings.appFontBold, size: Values.appSubtitle))
                     .bold()
                 
-                Text("\(street), \(postalCode) \(city)")
+                Text(content)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.bottom, Values.middlePadding)
                     .foregroundStyle(Color.appBackground)
@@ -33,12 +31,6 @@ struct ObjektDetailItem: View {
                     .bold()
             }
             .padding(.leading, Values.middlePadding)
-                        
-//            Image(systemName: Values.arrowRight)
-//                .font(.title)
-//                .bold()
-//                .foregroundColor(.appBlue)
-//                .padding(.trailing, Values.middlePadding)
         }
         .background(Color.appBlue )
         .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -47,5 +39,5 @@ struct ObjektDetailItem: View {
 }
 
 #Preview {
-    ObjektDetailItem(title: "Musterfirma GmbH", street: "Musterstrasse 112", postalCode: "72070", city: "Musterstadt")
+    ObjektDataItem(title: "Mail", content: "info@mustermann.de")
 }

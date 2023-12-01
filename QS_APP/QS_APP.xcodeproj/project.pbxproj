@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C70BAAD22B0CF9B50064660F /* QsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAD12B0CF9B50064660F /* QsListItem.swift */; };
+		C70BAAD22B0CF9B50064660F /* ObjektAndQsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAD12B0CF9B50064660F /* ObjektAndQsListItem.swift */; };
 		C70BAAD62B0D378A0064660F /* BarlowSemiCondensed-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAD32B0D378A0064660F /* BarlowSemiCondensed-Black.ttf */; };
 		C70BAAD72B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAD42B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf */; };
 		C70BAAD82B0D378A0064660F /* BarlowSemiCondensed-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAD52B0D378A0064660F /* BarlowSemiCondensed-ExtraBold.ttf */; };
@@ -18,6 +18,7 @@
 		C70BAAE62B0E07510064660F /* ButtonSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAE52B0E07510064660F /* ButtonSquare.swift */; };
 		C70BAAEB2B0E447D0064660F /* SettingsUserProfilCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAEA2B0E447D0064660F /* SettingsUserProfilCard.swift */; };
 		C70BAAED2B0E79A60064660F /* SettingsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAEC2B0E79A60064660F /* SettingsListItem.swift */; };
+		C7595DD72B1A0365003392A2 /* ObjektDataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7595DD62B1A0365003392A2 /* ObjektDataItem.swift */; };
 		C76C1E352B10C9D300A27BE5 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76C1E342B10C9D300A27BE5 /* Values.swift */; };
 		C773227C2B06649200BE2866 /* QS_APPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C773227B2B06649200BE2866 /* QS_APPApp.swift */; };
 		C77322802B06649300BE2866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C773227F2B06649300BE2866 /* Assets.xcassets */; };
@@ -62,7 +63,7 @@
 		C7B24F932B140F00002A4642 /* LogoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B24F922B140F00002A4642 /* LogoutButton.swift */; };
 		C7B24F962B14BE6F002A4642 /* QsOverviewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B24F952B14BE6F002A4642 /* QsOverviewItem.swift */; };
 		C7B24F982B14D221002A4642 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B24F972B14D221002A4642 /* RatingView.swift */; };
-		C7D1C0112B19475800D18399 /* ObjektDetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D1C0102B19475800D18399 /* ObjektDetailItem.swift */; };
+		C7D1C0112B19475800D18399 /* AdressItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D1C0102B19475800D18399 /* AdressItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C70BAAD12B0CF9B50064660F /* QsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QsListItem.swift; sourceTree = "<group>"; };
+		C70BAAD12B0CF9B50064660F /* ObjektAndQsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjektAndQsListItem.swift; sourceTree = "<group>"; };
 		C70BAAD32B0D378A0064660F /* BarlowSemiCondensed-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Black.ttf"; sourceTree = "<group>"; };
 		C70BAAD42B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Bold.ttf"; sourceTree = "<group>"; };
 		C70BAAD52B0D378A0064660F /* BarlowSemiCondensed-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -95,6 +96,7 @@
 		C70BAAE52B0E07510064660F /* ButtonSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSquare.swift; sourceTree = "<group>"; };
 		C70BAAEA2B0E447D0064660F /* SettingsUserProfilCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUserProfilCard.swift; sourceTree = "<group>"; };
 		C70BAAEC2B0E79A60064660F /* SettingsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListItem.swift; sourceTree = "<group>"; };
+		C7595DD62B1A0365003392A2 /* ObjektDataItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjektDataItem.swift; sourceTree = "<group>"; };
 		C76C1E342B10C9D300A27BE5 /* Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
 		C77322782B06649200BE2866 /* QS_APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QS_APP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C773227B2B06649200BE2866 /* QS_APPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QS_APPApp.swift; sourceTree = "<group>"; };
@@ -137,7 +139,7 @@
 		C7B24F922B140F00002A4642 /* LogoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButton.swift; sourceTree = "<group>"; };
 		C7B24F952B14BE6F002A4642 /* QsOverviewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QsOverviewItem.swift; sourceTree = "<group>"; };
 		C7B24F972B14D221002A4642 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
-		C7D1C0102B19475800D18399 /* ObjektDetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjektDetailItem.swift; sourceTree = "<group>"; };
+		C7D1C0102B19475800D18399 /* AdressItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,14 +172,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C70BAAD02B0CF98A0064660F /* Items */ = {
-			isa = PBXGroup;
-			children = (
-				C70BAAD12B0CF9B50064660F /* QsListItem.swift */,
-			);
-			path = Items;
-			sourceTree = "<group>";
-		};
 		C70BAADA2B0D3C220064660F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,19 +197,53 @@
 		C70BAAE42B0E06AB0064660F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				C70BAAEA2B0E447D0064660F /* SettingsUserProfilCard.swift */,
-				C70BAAEC2B0E79A60064660F /* SettingsListItem.swift */,
-				C70BAAE52B0E07510064660F /* ButtonSquare.swift */,
-				C7B24F802B13C68A002A4642 /* CustomHeader.swift */,
+				C7595DD52B1A0192003392A2 /* Buttons */,
+				C7595DD42B1A0175003392A2 /* Header */,
+				C7595DD32B1A0141003392A2 /* ObjektComponents */,
+				C7595DD22B19FEB0003392A2 /* SettingComponents */,
+				C70BAAD12B0CF9B50064660F /* ObjektAndQsListItem.swift */,
 				C7B24F822B13CF6A002A4642 /* AppBackground.swift */,
-				C7B24F862B13DBD6002A4642 /* CustomHeaderIcon.swift */,
-				C7B24F8E2B13FF32002A4642 /* StandardButton.swift */,
-				C7B24F922B140F00002A4642 /* LogoutButton.swift */,
 				C7B24F952B14BE6F002A4642 /* QsOverviewItem.swift */,
 				C7B24F972B14D221002A4642 /* RatingView.swift */,
-				C7D1C0102B19475800D18399 /* ObjektDetailItem.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		C7595DD22B19FEB0003392A2 /* SettingComponents */ = {
+			isa = PBXGroup;
+			children = (
+				C70BAAEA2B0E447D0064660F /* SettingsUserProfilCard.swift */,
+				C70BAAEC2B0E79A60064660F /* SettingsListItem.swift */,
+			);
+			path = SettingComponents;
+			sourceTree = "<group>";
+		};
+		C7595DD32B1A0141003392A2 /* ObjektComponents */ = {
+			isa = PBXGroup;
+			children = (
+				C7D1C0102B19475800D18399 /* AdressItem.swift */,
+				C7595DD62B1A0365003392A2 /* ObjektDataItem.swift */,
+			);
+			path = ObjektComponents;
+			sourceTree = "<group>";
+		};
+		C7595DD42B1A0175003392A2 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				C7B24F802B13C68A002A4642 /* CustomHeader.swift */,
+				C7B24F862B13DBD6002A4642 /* CustomHeaderIcon.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		C7595DD52B1A0192003392A2 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				C70BAAE52B0E07510064660F /* ButtonSquare.swift */,
+				C7B24F8E2B13FF32002A4642 /* StandardButton.swift */,
+				C7B24F922B140F00002A4642 /* LogoutButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		C76C1E332B10C96F00A27BE5 /* Resources */ = {
@@ -314,7 +342,6 @@
 		C77322A72B0B4E4A00BE2866 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C70BAAD02B0CF98A0064660F /* Items */,
 				C77322D12B0B9D4100BE2866 /* MainViews */,
 				C77322C82B0B995600BE2866 /* SubViews */,
 			);
@@ -566,7 +593,7 @@
 				C77322C22B0B8B3000BE2866 /* HomeViewModel.swift in Sources */,
 				C76C1E352B10C9D300A27BE5 /* Values.swift in Sources */,
 				C7B24F982B14D221002A4642 /* RatingView.swift in Sources */,
-				C70BAAD22B0CF9B50064660F /* QsListItem.swift in Sources */,
+				C70BAAD22B0CF9B50064660F /* ObjektAndQsListItem.swift in Sources */,
 				C77322CE2B0B99F300BE2866 /* CalculatorView.swift in Sources */,
 				C70BAAED2B0E79A60064660F /* SettingsListItem.swift in Sources */,
 				C7B24F8F2B13FF32002A4642 /* StandardButton.swift in Sources */,
@@ -576,9 +603,10 @@
 				C77322C42B0B8C4700BE2866 /* HomeView.swift in Sources */,
 				C7B24F832B13CF6A002A4642 /* AppBackground.swift in Sources */,
 				C77322B62B0B643D00BE2866 /* AuthenticationView.swift in Sources */,
+				C7595DD72B1A0365003392A2 /* ObjektDataItem.swift in Sources */,
 				C77322BC2B0B663100BE2866 /* FireUserViewModel.swift in Sources */,
 				C77322C72B0B980500BE2866 /* TabItem.swift in Sources */,
-				C7D1C0112B19475800D18399 /* ObjektDetailItem.swift in Sources */,
+				C7D1C0112B19475800D18399 /* AdressItem.swift in Sources */,
 				C7965C772B1764E300E8A0FB /* ObjektViewModel.swift in Sources */,
 				C70BAADD2B0D3C6A0064660F /* FontStrings.swift in Sources */,
 				C7B24F8B2B13E5B7002A4642 /* ObjektDetailView.swift in Sources */,

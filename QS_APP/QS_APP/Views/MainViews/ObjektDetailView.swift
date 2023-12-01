@@ -14,15 +14,20 @@ struct ObjektDetailView: View {
             
             VStack(spacing: 0){
                 CustomHeader(title: "OBJEKTNAME"){
-                    CustomHeaderIcon(icon: Values.plus)
                     
+                    Button(action: {
+                        
+                    }, label: {
+                        CustomHeaderIcon(icon: Values.qsIcon)
+                    })
                 }
-                
+                Spacer()
+
                 ScrollView{
-                    ForEach(1...5, id: \.self){ item in
-                        ObjektDetailItem(title: "Muster Objekt", street: "Musterstraße 112", postalCode: "72072", city: "Musterdtadt")
-//                            .padding(.top, Values.minorPadding)
-                    }
+                    AdressItem(title: "Adresse", street: "Musterstraße 112", postalCode: "72072", city: "Musterdtadt")
+                     .padding(.top, Values.minorPadding)
+                    
+                    
                     
                     
                 }

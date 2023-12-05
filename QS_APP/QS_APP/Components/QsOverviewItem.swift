@@ -22,7 +22,6 @@ struct QsOverviewItem: View {
             
             
             RatingView(rating: $rating)
-//                .frame(maxWidth: .infinity, alignment: .center)
                 .padding(.horizontal, Values.middlePadding)
                 .padding(.vertical, Values.middlePadding)
             
@@ -31,8 +30,6 @@ struct QsOverviewItem: View {
         .background(Color.appBlue)
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .frame(maxWidth: .infinity)
-        .padding(.horizontal, Values.middlePadding)
-//        .cornerRadius(10)
     }
 }
 

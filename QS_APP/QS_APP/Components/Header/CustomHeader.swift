@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CustomHeader<Content: View>: View {
     var body: some View {
-        HStack(spacing: Values.middlePadding){
+        HStack(spacing: 0){
             Text(title)
                 .font(.custom(FontStrings.appFontBlack, size: Values.appTitle))
                 .bold()
@@ -19,6 +19,7 @@ struct CustomHeader<Content: View>: View {
             
             content()
         }
+        .background(Color.appBackground)
     }
     
     

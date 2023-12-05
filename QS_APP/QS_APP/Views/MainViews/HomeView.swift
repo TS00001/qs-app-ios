@@ -28,23 +28,18 @@ struct HomeView: View {
                         CustomHeaderIcon(icon: Values.calendar)
                     })
                 }
-                
-                QsOverviewItem()
-                    
-                
+        
                 ScrollView{
+                    QsOverviewItem()
                     Text("FÄLLIGE QS")
                         .titleStyle()
                     ForEach(1...5, id: \.self){ item in
                         
                         ObjektAndQsListItem(icon: Values.qsIcon, title: "Bäckerei Gauker", street: "Eugenstraße 10", postalCode: "72072", city: "Tübingen")
                     }
-                    .padding(.horizontal, Values.middlePadding)
-                    
                 }
+                .padding(.horizontal, Values.middlePadding)
             }
-//            .padding(.horizontal, Values.middlePadding)
-            
         }
     }
     

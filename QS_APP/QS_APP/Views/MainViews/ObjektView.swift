@@ -15,16 +15,15 @@ struct ObjektView: View {
     @State var showAddObjektSheet = false
     
     var body: some View {
+        
         NavigationStack{
             VStack {
                 CustomHeader(title: "OBJEKTE"){
-                    
                     Button(action: {
                         showAddObjektSheet = true
                     }, label: {
                         CustomHeaderIcon(icon: Values.plus)
                     })
-                    
                 }
                 .sheet(isPresented: $showAddObjektSheet) {
                     AddObjektSheet(showAddObjektSheet: $showAddObjektSheet)
@@ -33,34 +32,17 @@ struct ObjektView: View {
                 
                 VStack{
                     ScrollView{
-                        
                         ForEach(objektVM.objektList, id: \.id){ objekt in
                             NavigationLink(destination: ObjektDetailView()){
                                 ObjektAndQsListItem(icon: Values.objektIcon, title: objekt.name, street: objekt.adress.street, postalCode: objekt.adress.postalCode, city: objekt.adress.city)
-                                
                             }
                         }
-                        
                         .padding(.horizontal, Values.middlePadding)
                     }
                 }
-                
-                
-                
-                
-                
-                
             }
-            //        ZStack{
-            //
-            //            AppBackground(color: .appBackground)
-            //
-            //
-            //            }
-            
         }
     }
-    
 }
 
 #Preview {

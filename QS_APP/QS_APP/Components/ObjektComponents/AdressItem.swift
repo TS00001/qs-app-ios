@@ -19,18 +19,10 @@ struct AdressItem: View {
         HStack(spacing: 0){
             VStack(spacing: 0){
                 Text(title)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.top, Values.middlePadding)
-                    .foregroundStyle(Color.appBackground)
-                    .font(.custom(FontStrings.appFontBold, size: Values.appSubtitle))
-                    .bold()
-                
+                    .itemTitleModi()
+
                 Text("\(street), \(postalCode) \(city)")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.bottom, Values.middlePadding)
-                    .foregroundStyle(Color.appBackground)
-                    .font(.footnote)
-                    .bold()
+                    .itemSubtitleModi()
             }
             .padding(.leading, Values.middlePadding)
         }

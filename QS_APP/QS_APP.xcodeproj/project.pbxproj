@@ -19,6 +19,8 @@
 		C70BAAEB2B0E447D0064660F /* SettingsUserProfilCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAEA2B0E447D0064660F /* SettingsUserProfilCard.swift */; };
 		C70BAAED2B0E79A60064660F /* SettingsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAEC2B0E79A60064660F /* SettingsListItem.swift */; };
 		C7595DD72B1A0365003392A2 /* ObjektDataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7595DD62B1A0365003392A2 /* ObjektDataItem.swift */; };
+		C7595DD92B1A1D5E003392A2 /* ItemSubTitleModi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7595DD82B1A1D5E003392A2 /* ItemSubTitleModi.swift */; };
+		C7595DDB2B1A256D003392A2 /* ItemTitleModi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7595DDA2B1A256D003392A2 /* ItemTitleModi.swift */; };
 		C76C1E352B10C9D300A27BE5 /* Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76C1E342B10C9D300A27BE5 /* Values.swift */; };
 		C773227C2B06649200BE2866 /* QS_APPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C773227B2B06649200BE2866 /* QS_APPApp.swift */; };
 		C77322802B06649300BE2866 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C773227F2B06649300BE2866 /* Assets.xcassets */; };
@@ -64,6 +66,8 @@
 		C7B24F962B14BE6F002A4642 /* QsOverviewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B24F952B14BE6F002A4642 /* QsOverviewItem.swift */; };
 		C7B24F982B14D221002A4642 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B24F972B14D221002A4642 /* RatingView.swift */; };
 		C7D1C0112B19475800D18399 /* AdressItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D1C0102B19475800D18399 /* AdressItem.swift */; };
+		C7DA2DC72B1FCB9200510677 /* CheckmarkComponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA2DC62B1FCB9200510677 /* CheckmarkComponente.swift */; };
+		C7DA2DC92B1FE5B200510677 /* IntervallComponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA2DC82B1FE5B200510677 /* IntervallComponente.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,8 @@
 		C70BAAEA2B0E447D0064660F /* SettingsUserProfilCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUserProfilCard.swift; sourceTree = "<group>"; };
 		C70BAAEC2B0E79A60064660F /* SettingsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListItem.swift; sourceTree = "<group>"; };
 		C7595DD62B1A0365003392A2 /* ObjektDataItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjektDataItem.swift; sourceTree = "<group>"; };
+		C7595DD82B1A1D5E003392A2 /* ItemSubTitleModi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSubTitleModi.swift; sourceTree = "<group>"; };
+		C7595DDA2B1A256D003392A2 /* ItemTitleModi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTitleModi.swift; sourceTree = "<group>"; };
 		C76C1E342B10C9D300A27BE5 /* Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Values.swift; sourceTree = "<group>"; };
 		C77322782B06649200BE2866 /* QS_APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QS_APP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C773227B2B06649200BE2866 /* QS_APPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QS_APPApp.swift; sourceTree = "<group>"; };
@@ -140,6 +146,8 @@
 		C7B24F952B14BE6F002A4642 /* QsOverviewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QsOverviewItem.swift; sourceTree = "<group>"; };
 		C7B24F972B14D221002A4642 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		C7D1C0102B19475800D18399 /* AdressItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressItem.swift; sourceTree = "<group>"; };
+		C7DA2DC62B1FCB9200510677 /* CheckmarkComponente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkComponente.swift; sourceTree = "<group>"; };
+		C7DA2DC82B1FE5B200510677 /* IntervallComponente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervallComponente.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +231,8 @@
 			children = (
 				C7D1C0102B19475800D18399 /* AdressItem.swift */,
 				C7595DD62B1A0365003392A2 /* ObjektDataItem.swift */,
+				C7DA2DC62B1FCB9200510677 /* CheckmarkComponente.swift */,
+				C7DA2DC82B1FE5B200510677 /* IntervallComponente.swift */,
 			);
 			path = ObjektComponents;
 			sourceTree = "<group>";
@@ -402,6 +412,8 @@
 			children = (
 				C7B24F8C2B13E710002A4642 /* FormItemStyle.swift */,
 				C7B24F902B140AA6002A4642 /* TitleStyle.swift */,
+				C7595DD82B1A1D5E003392A2 /* ItemSubTitleModi.swift */,
+				C7595DDA2B1A256D003392A2 /* ItemTitleModi.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -582,6 +594,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7B24F912B140AA6002A4642 /* TitleStyle.swift in Sources */,
+				C7DA2DC72B1FCB9200510677 /* CheckmarkComponente.swift in Sources */,
 				C7B24F932B140F00002A4642 /* LogoutButton.swift in Sources */,
 				C77322CA2B0B996E00BE2866 /* TabBarView.swift in Sources */,
 				C7B24F8D2B13E710002A4642 /* FormItemStyle.swift in Sources */,
@@ -597,15 +610,18 @@
 				C77322CE2B0B99F300BE2866 /* CalculatorView.swift in Sources */,
 				C70BAAED2B0E79A60064660F /* SettingsListItem.swift in Sources */,
 				C7B24F8F2B13FF32002A4642 /* StandardButton.swift in Sources */,
+				C7DA2DC92B1FE5B200510677 /* IntervallComponente.swift in Sources */,
 				C7B24F812B13C68A002A4642 /* CustomHeader.swift in Sources */,
 				C77322BF2B0B66E100BE2866 /* FirebaseManager.swift in Sources */,
 				C773227C2B06649200BE2866 /* QS_APPApp.swift in Sources */,
 				C77322C42B0B8C4700BE2866 /* HomeView.swift in Sources */,
 				C7B24F832B13CF6A002A4642 /* AppBackground.swift in Sources */,
+				C7595DD92B1A1D5E003392A2 /* ItemSubTitleModi.swift in Sources */,
 				C77322B62B0B643D00BE2866 /* AuthenticationView.swift in Sources */,
 				C7595DD72B1A0365003392A2 /* ObjektDataItem.swift in Sources */,
 				C77322BC2B0B663100BE2866 /* FireUserViewModel.swift in Sources */,
 				C77322C72B0B980500BE2866 /* TabItem.swift in Sources */,
+				C7595DDB2B1A256D003392A2 /* ItemTitleModi.swift in Sources */,
 				C7D1C0112B19475800D18399 /* AdressItem.swift in Sources */,
 				C7965C772B1764E300E8A0FB /* ObjektViewModel.swift in Sources */,
 				C70BAADD2B0D3C6A0064660F /* FontStrings.swift in Sources */,

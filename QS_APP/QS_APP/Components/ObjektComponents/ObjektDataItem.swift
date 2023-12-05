@@ -7,28 +7,18 @@
 
 import SwiftUI
 
-struct ObjektDataItem: View {
+struct ObjektDataItem<Content: View>: View {
     
     //MARK: VARIABLES
     let title: String
-    let content: String
+//    let content: String
     
     var body: some View {
         HStack(spacing: 0){
             VStack(spacing: 0){
                 Text(title)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.top, Values.middlePadding)
-                    .foregroundStyle(Color.appBackground)
-                    .font(.custom(FontStrings.appFontBold, size: Values.appSubtitle))
-                    .bold()
-                
-                Text(content)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.bottom, Values.middlePadding)
-                    .foregroundStyle(Color.appBackground)
-                    .font(.footnote)
-                    .bold()
+                    .itemTitleModi()
+                content()
             }
             .padding(.leading, Values.middlePadding)
         }
@@ -36,8 +26,10 @@ struct ObjektDataItem: View {
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .shadow(radius: Values.minorShadow)
     }
+    
+    @ViewBuilder var content: () -> Content
 }
 
 #Preview {
-    ObjektDataItem(title: "Mail", content: "info@mustermann.de")
+    ObjektDataItem(title: "Mail") {}
 }

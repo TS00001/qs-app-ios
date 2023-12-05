@@ -27,7 +27,6 @@ struct ObjektAndQsListItem: View {
             
             VStack {
                 HStack {
-                    
                         Text(title)
                             .foregroundStyle(Color.appBackground)
                             .font(.custom(FontStrings.appFontBold, size: Values.appSubtitle))

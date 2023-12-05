@@ -34,7 +34,7 @@ struct AddObjektSheet: View {
                 TextField("Objektname", text: $name)
                     .formItemStyle(with: .appBlue)
                 
-                TextField("Straße", text: $street)
+                TextField("Straße/Nummer", text: $street)
                     .formItemStyle(with: .appBlue)
                 
                 TextField("Postleitzahl", text: $postalCode)
@@ -42,10 +42,10 @@ struct AddObjektSheet: View {
                     .textContentType(.oneTimeCode)
                     .keyboardType(.numberPad)
                 
-                TextField("Mail", text: $mail)
+                TextField("Stadt", text: $city)
                     .formItemStyle(with: .appBlue)
                 
-                TextField("Stadt", text: $city)
+                TextField("Mail", text: $mail)
                     .formItemStyle(with: .appBlue)
                 
                 TextField("Ansprechpartner", text: $contactPerson)

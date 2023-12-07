@@ -23,6 +23,8 @@ class ObjektViewModel: ObservableObject {
      @param objekt: Erwartet eine instanz des Models Objekt
      */
     func createObjekt(objekt: Objekt){
+        //TODO: Englische benennung in der App/Datenbank/Code (Objekt Mehrzahl)
+        //TODO: Strings für die Collections als Enum anlegen
         
         do{
             try FirebaseManager.shared.database.collection("objekt").addDocument(from: objekt)

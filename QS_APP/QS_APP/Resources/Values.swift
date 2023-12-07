@@ -35,16 +35,17 @@ struct Values {
     
     //MARK: ICON STRINGS
     
-    static let calendar: String = "calendar"
-    static let qsIcon: String = "text.badge.star"
-    static let arrowRight: String = "chevron.right"
-    static let plus: String = "plus.app"
+    static let calendar = "calendar"
+    static let qsIcon = "text.badge.star"
+    static let arrowRight = "chevron.right"
+    static let plus = "plus.app"
     
     //TabBar Icons
-    static let homeIcon: String = "house"
-    static let objektIcon: String = "building.2"
-    static let calculatorIcon: String = "square.grid.3x3.bottommiddle.filled"
-    static let settingsIcon: String = "gearshape"
+    static let homeIcon = "house"
+    static let objektIcon = "building.2"
+    static let calculatorIcon = "square.grid.3x3.bottommiddle.filled"
+    static let settingsIcon = "gearshape"
+    static let editIcon = "square.and.pencil"
     
     //MARK: SADOW
     static let minorShadow: CGFloat = 2

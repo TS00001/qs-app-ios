@@ -8,6 +8,8 @@
 import Foundation
 
 struct Objekt: Codable{
+    
+    //TODO: schauen wie ich DucumentId verwenden kann
     var id = UUID().uuidString
     
     var name: String

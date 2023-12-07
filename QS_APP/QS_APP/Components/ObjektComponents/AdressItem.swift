@@ -26,6 +26,7 @@ struct AdressItem: View {
             }
             .padding(.leading, Values.middlePadding)
         }
+        .frame(height: 70)
         .background(Color.appBlue )
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .shadow(radius: Values.minorShadow)

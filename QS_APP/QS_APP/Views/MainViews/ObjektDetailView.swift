@@ -10,14 +10,13 @@ import MapKit
 
 struct ObjektDetailView: View {
     
+    @State var showUpdateCleaningdaysSheet = false
+    
     
     let adress = CLLocationCoordinate2D(latitude: 48.51959861846929, longitude: 9.057984167586223)
     
     var body: some View {
         
-        ZStack{
-            AppBackground(color: .appBackground)
-            
             VStack(spacing: 0){
                 CustomHeader(title: "OBJEKTNAME"){
                     
@@ -64,13 +63,45 @@ struct ObjektDetailView: View {
                                 .itemSubtitleModi()
                         }
                         
-                        
-                        //TODO: Componente mit Button zum bearbeiten der reinigungstage (in einem sheet)
-                        Text("REINIGUNGSTAGE")
+                        Text("LEISTUNGSBERZEICHNIS")
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .font(.custom(FontStrings.appFontBlack, size: 30))
                             .foregroundColor(.appBlue)
                             .padding(.top, 20)
+                        
+                        
+                        HStack{
+                            Text("Leiszungsverzeichnis")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding()
+                                .foregroundStyle(Color.appBackground)
+                                .font(.custom(FontStrings.appFontRegular, size: 18))
+                                .bold()
+                            
+                            Image(systemName: Values.arrowRight)
+                                .font(.title)
+                                .bold()
+                                .foregroundColor(.appBackground)
+                                .padding(.trailing, Values.middlePadding)
+                        }
+                        .frame(height: 70)
+                        .background(Color.appBlue )
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .shadow(radius: Values.minorShadow)
+                        
+                        
+                        //TODO: Sheet soll nur zur hälfte aufgelkappt werden
+                        TitleComponent(title: "REINIGUNGSTAGE"){
+                            Button(action: {
+                                showUpdateCleaningdaysSheet = true
+                            }, label: {
+                                IconComponente(icon: Values.editIcon)
+                            })
+                        }
+                        .sheet(isPresented: $showUpdateCleaningdaysSheet){
+                            UpdateCleaningDaysSheet(showUpdateCleaningdaysSheet: $showUpdateCleaningdaysSheet)
+                                
+                        }
                         
                         CheckmarkComponente()
                         
@@ -92,7 +123,7 @@ struct ObjektDetailView: View {
                 .scrollIndicators(.hidden)
                 .padding(.horizontal, Values.middlePadding)
             }
-        }
+            .background(Color.appBackground)
     }
 }
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C700B5B52B21CD5300A58D81 /* TitleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C700B5B42B21CD5300A58D81 /* TitleComponent.swift */; };
+		C700B5B72B21DD2D00A58D81 /* IconComponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = C700B5B62B21DD2D00A58D81 /* IconComponente.swift */; };
+		C700B5B92B21DEE600A58D81 /* UpdateCleaningDaysSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C700B5B82B21DEE600A58D81 /* UpdateCleaningDaysSheet.swift */; };
 		C70BAAD22B0CF9B50064660F /* ObjektAndQsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAD12B0CF9B50064660F /* ObjektAndQsListItem.swift */; };
 		C70BAAD62B0D378A0064660F /* BarlowSemiCondensed-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAD32B0D378A0064660F /* BarlowSemiCondensed-Black.ttf */; };
 		C70BAAD72B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAD42B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf */; };
@@ -15,7 +18,6 @@
 		C70BAAE12B0D58D10064660F /* BarlowSemiCondensed-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAADE2B0D58D00064660F /* BarlowSemiCondensed-Medium.ttf */; };
 		C70BAAE22B0D58D10064660F /* BarlowSemiCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAADF2B0D58D00064660F /* BarlowSemiCondensed-Regular.ttf */; };
 		C70BAAE32B0D58D10064660F /* BarlowSemiCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAE02B0D58D10064660F /* BarlowSemiCondensed-Light.ttf */; };
-		C70BAAE62B0E07510064660F /* ButtonSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAE52B0E07510064660F /* ButtonSquare.swift */; };
 		C70BAAEB2B0E447D0064660F /* SettingsUserProfilCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAEA2B0E447D0064660F /* SettingsUserProfilCard.swift */; };
 		C70BAAED2B0E79A60064660F /* SettingsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAEC2B0E79A60064660F /* SettingsListItem.swift */; };
 		C7595DD72B1A0365003392A2 /* ObjektDataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7595DD62B1A0365003392A2 /* ObjektDataItem.swift */; };
@@ -88,6 +90,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C700B5B42B21CD5300A58D81 /* TitleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleComponent.swift; sourceTree = "<group>"; };
+		C700B5B62B21DD2D00A58D81 /* IconComponente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconComponente.swift; sourceTree = "<group>"; };
+		C700B5B82B21DEE600A58D81 /* UpdateCleaningDaysSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCleaningDaysSheet.swift; sourceTree = "<group>"; };
 		C70BAAD12B0CF9B50064660F /* ObjektAndQsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjektAndQsListItem.swift; sourceTree = "<group>"; };
 		C70BAAD32B0D378A0064660F /* BarlowSemiCondensed-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Black.ttf"; sourceTree = "<group>"; };
 		C70BAAD42B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Bold.ttf"; sourceTree = "<group>"; };
@@ -97,7 +102,6 @@
 		C70BAADE2B0D58D00064660F /* BarlowSemiCondensed-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Medium.ttf"; sourceTree = "<group>"; };
 		C70BAADF2B0D58D00064660F /* BarlowSemiCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		C70BAAE02B0D58D10064660F /* BarlowSemiCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Light.ttf"; sourceTree = "<group>"; };
-		C70BAAE52B0E07510064660F /* ButtonSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSquare.swift; sourceTree = "<group>"; };
 		C70BAAEA2B0E447D0064660F /* SettingsUserProfilCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUserProfilCard.swift; sourceTree = "<group>"; };
 		C70BAAEC2B0E79A60064660F /* SettingsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListItem.swift; sourceTree = "<group>"; };
 		C7595DD62B1A0365003392A2 /* ObjektDataItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjektDataItem.swift; sourceTree = "<group>"; };
@@ -209,10 +213,14 @@
 				C7595DD42B1A0175003392A2 /* Header */,
 				C7595DD32B1A0141003392A2 /* ObjektComponents */,
 				C7595DD22B19FEB0003392A2 /* SettingComponents */,
+				C7DA2DC62B1FCB9200510677 /* CheckmarkComponente.swift */,
+				C7DA2DC82B1FE5B200510677 /* IntervallComponente.swift */,
 				C70BAAD12B0CF9B50064660F /* ObjektAndQsListItem.swift */,
 				C7B24F822B13CF6A002A4642 /* AppBackground.swift */,
 				C7B24F952B14BE6F002A4642 /* QsOverviewItem.swift */,
 				C7B24F972B14D221002A4642 /* RatingView.swift */,
+				C700B5B42B21CD5300A58D81 /* TitleComponent.swift */,
+				C700B5B62B21DD2D00A58D81 /* IconComponente.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -231,8 +239,6 @@
 			children = (
 				C7D1C0102B19475800D18399 /* AdressItem.swift */,
 				C7595DD62B1A0365003392A2 /* ObjektDataItem.swift */,
-				C7DA2DC62B1FCB9200510677 /* CheckmarkComponente.swift */,
-				C7DA2DC82B1FE5B200510677 /* IntervallComponente.swift */,
 			);
 			path = ObjektComponents;
 			sourceTree = "<group>";
@@ -249,7 +255,6 @@
 		C7595DD52B1A0192003392A2 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				C70BAAE52B0E07510064660F /* ButtonSquare.swift */,
 				C7B24F8E2B13FF32002A4642 /* StandardButton.swift */,
 				C7B24F922B140F00002A4642 /* LogoutButton.swift */,
 			);
@@ -397,11 +402,11 @@
 			isa = PBXGroup;
 			children = (
 				C77322B52B0B643D00BE2866 /* AuthenticationView.swift */,
+				C77322D22B0BB24700BE2866 /* MainView.swift */,
 				C77322C32B0B8C4700BE2866 /* HomeView.swift */,
 				C77322CB2B0B99B000BE2866 /* ObjektView.swift */,
 				C77322CD2B0B99F300BE2866 /* CalculatorView.swift */,
 				C77322CF2B0B9A0600BE2866 /* SettingsView.swift */,
-				C77322D22B0BB24700BE2866 /* MainView.swift */,
 				C7B24F8A2B13E5B7002A4642 /* ObjektDetailView.swift */,
 			);
 			path = MainViews;
@@ -442,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				C7B24F882B13E3FD002A4642 /* AddObjektSheet.swift */,
+				C700B5B82B21DEE600A58D81 /* UpdateCleaningDaysSheet.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -593,12 +599,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C700B5B92B21DEE600A58D81 /* UpdateCleaningDaysSheet.swift in Sources */,
 				C7B24F912B140AA6002A4642 /* TitleStyle.swift in Sources */,
 				C7DA2DC72B1FCB9200510677 /* CheckmarkComponente.swift in Sources */,
 				C7B24F932B140F00002A4642 /* LogoutButton.swift in Sources */,
 				C77322CA2B0B996E00BE2866 /* TabBarView.swift in Sources */,
 				C7B24F8D2B13E710002A4642 /* FormItemStyle.swift in Sources */,
-				C70BAAE62B0E07510064660F /* ButtonSquare.swift in Sources */,
 				C77322D32B0BB24700BE2866 /* MainView.swift in Sources */,
 				C77322B82B0B647E00BE2866 /* AuthenticationViewModel.swift in Sources */,
 				C77322BA2B0B651900BE2866 /* FireUser.swift in Sources */,
@@ -618,6 +624,7 @@
 				C7B24F832B13CF6A002A4642 /* AppBackground.swift in Sources */,
 				C7595DD92B1A1D5E003392A2 /* ItemSubTitleModi.swift in Sources */,
 				C77322B62B0B643D00BE2866 /* AuthenticationView.swift in Sources */,
+				C700B5B52B21CD5300A58D81 /* TitleComponent.swift in Sources */,
 				C7595DD72B1A0365003392A2 /* ObjektDataItem.swift in Sources */,
 				C77322BC2B0B663100BE2866 /* FireUserViewModel.swift in Sources */,
 				C77322C72B0B980500BE2866 /* TabItem.swift in Sources */,
@@ -628,6 +635,7 @@
 				C7B24F8B2B13E5B7002A4642 /* ObjektDetailView.swift in Sources */,
 				C77322D02B0B9A0600BE2866 /* SettingsView.swift in Sources */,
 				C7965C792B177DD900E8A0FB /* Interval.swift in Sources */,
+				C700B5B72B21DD2D00A58D81 /* IconComponente.swift in Sources */,
 				C7965C752B1763D000E8A0FB /* QualityAssurance.swift in Sources */,
 				C70BAAEB2B0E447D0064660F /* SettingsUserProfilCard.swift in Sources */,
 				C7965C6F2B174BEA00E8A0FB /* Area.swift in Sources */,

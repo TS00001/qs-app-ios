@@ -11,7 +11,6 @@ struct ObjektDataItem<Content: View>: View {
     
     //MARK: VARIABLES
     let title: String
-//    let content: String
     
     var body: some View {
         HStack(spacing: 0){
@@ -22,6 +21,7 @@ struct ObjektDataItem<Content: View>: View {
             }
             .padding(.leading, Values.middlePadding)
         }
+        .frame(height: 70)
         .background(Color.appBlue )
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .shadow(radius: Values.minorShadow)

@@ -16,6 +16,7 @@ struct CheckmarkComponente: View {
     
     var body: some View {
         HStack(spacing: 20) {
+            
             VStack {
                 Text("MO")
                     .font(.custom(FontStrings.appFontBlack, size: 30))

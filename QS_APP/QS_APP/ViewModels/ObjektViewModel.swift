@@ -50,4 +50,14 @@ class ObjektViewModel: ObservableObject {
             }
     }
     
+    func deleteObjekt(with id: String){
+        FirebaseManager.shared.database.collection("objekt").document(id).delete() { error in
+            if let error {
+                print("Objekt konnte nicht gelöscht werden", error.localizedDescription)
+                return
+            }
+            print("Objekt wurde gelöscht")
+        }
+    }
+    
 }

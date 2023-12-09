@@ -36,7 +36,7 @@ struct Values {
     //MARK: ICON STRINGS
     
     static let calendar = "calendar"
-    static let qsIcon = "text.badge.star"
+    static let qsIcon = "star.square"
     static let arrowRight = "chevron.right"
     static let plus = "plus.app"
     
@@ -45,7 +45,7 @@ struct Values {
     static let objektIcon = "building.2"
     static let calculatorIcon = "square.grid.3x3.bottommiddle.filled"
     static let settingsIcon = "gearshape"
-    static let editIcon = "square.and.pencil"
+    static let editIcon = "pencil"
     
     //MARK: SADOW
     static let minorShadow: CGFloat = 2

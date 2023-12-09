@@ -10,6 +10,9 @@
 		C700B5B52B21CD5300A58D81 /* TitleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C700B5B42B21CD5300A58D81 /* TitleComponent.swift */; };
 		C700B5B72B21DD2D00A58D81 /* IconComponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = C700B5B62B21DD2D00A58D81 /* IconComponente.swift */; };
 		C700B5B92B21DEE600A58D81 /* UpdateCleaningDaysSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C700B5B82B21DEE600A58D81 /* UpdateCleaningDaysSheet.swift */; };
+		C703E23E2B24B5BD00816CD4 /* SheetTitleModi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703E23D2B24B5BD00816CD4 /* SheetTitleModi.swift */; };
+		C703E2402B24B8D400816CD4 /* VstackModi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703E23F2B24B8D400816CD4 /* VstackModi.swift */; };
+		C703E2432B24BD9800816CD4 /* MapModi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703E2422B24BD9800816CD4 /* MapModi.swift */; };
 		C70BAAD22B0CF9B50064660F /* ObjektAndQsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAD12B0CF9B50064660F /* ObjektAndQsListItem.swift */; };
 		C70BAAD62B0D378A0064660F /* BarlowSemiCondensed-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAD32B0D378A0064660F /* BarlowSemiCondensed-Black.ttf */; };
 		C70BAAD72B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAD42B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf */; };
@@ -93,6 +96,9 @@
 		C700B5B42B21CD5300A58D81 /* TitleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleComponent.swift; sourceTree = "<group>"; };
 		C700B5B62B21DD2D00A58D81 /* IconComponente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconComponente.swift; sourceTree = "<group>"; };
 		C700B5B82B21DEE600A58D81 /* UpdateCleaningDaysSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCleaningDaysSheet.swift; sourceTree = "<group>"; };
+		C703E23D2B24B5BD00816CD4 /* SheetTitleModi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetTitleModi.swift; sourceTree = "<group>"; };
+		C703E23F2B24B8D400816CD4 /* VstackModi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VstackModi.swift; sourceTree = "<group>"; };
+		C703E2422B24BD9800816CD4 /* MapModi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModi.swift; sourceTree = "<group>"; };
 		C70BAAD12B0CF9B50064660F /* ObjektAndQsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjektAndQsListItem.swift; sourceTree = "<group>"; };
 		C70BAAD32B0D378A0064660F /* BarlowSemiCondensed-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Black.ttf"; sourceTree = "<group>"; };
 		C70BAAD42B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Bold.ttf"; sourceTree = "<group>"; };
@@ -301,7 +307,7 @@
 				C77322C52B0B97F200BE2866 /* Enums */,
 				C77322BD2B0B66B800BE2866 /* Managers */,
 				C70BAAE42B0E06AB0064660F /* Components */,
-				C7965C692B165E0C00E8A0FB /* Styles */,
+				C7965C692B165E0C00E8A0FB /* Modifier */,
 				C76C1E332B10C96F00A27BE5 /* Resources */,
 				C77322812B06649300BE2866 /* Preview Content */,
 				C77322A82B0B627600BE2866 /* GoogleService-Info.plist */,
@@ -412,15 +418,18 @@
 			path = MainViews;
 			sourceTree = "<group>";
 		};
-		C7965C692B165E0C00E8A0FB /* Styles */ = {
+		C7965C692B165E0C00E8A0FB /* Modifier */ = {
 			isa = PBXGroup;
 			children = (
 				C7B24F8C2B13E710002A4642 /* FormItemStyle.swift */,
 				C7B24F902B140AA6002A4642 /* TitleStyle.swift */,
 				C7595DD82B1A1D5E003392A2 /* ItemSubTitleModi.swift */,
 				C7595DDA2B1A256D003392A2 /* ItemTitleModi.swift */,
+				C703E23D2B24B5BD00816CD4 /* SheetTitleModi.swift */,
+				C703E23F2B24B8D400816CD4 /* VstackModi.swift */,
+				C703E2422B24BD9800816CD4 /* MapModi.swift */,
 			);
-			path = Styles;
+			path = Modifier;
 			sourceTree = "<group>";
 		};
 		C7965C722B174C3700E8A0FB /* User */ = {
@@ -615,11 +624,13 @@
 				C70BAAD22B0CF9B50064660F /* ObjektAndQsListItem.swift in Sources */,
 				C77322CE2B0B99F300BE2866 /* CalculatorView.swift in Sources */,
 				C70BAAED2B0E79A60064660F /* SettingsListItem.swift in Sources */,
+				C703E2402B24B8D400816CD4 /* VstackModi.swift in Sources */,
 				C7B24F8F2B13FF32002A4642 /* StandardButton.swift in Sources */,
 				C7DA2DC92B1FE5B200510677 /* IntervallComponente.swift in Sources */,
 				C7B24F812B13C68A002A4642 /* CustomHeader.swift in Sources */,
 				C77322BF2B0B66E100BE2866 /* FirebaseManager.swift in Sources */,
 				C773227C2B06649200BE2866 /* QS_APPApp.swift in Sources */,
+				C703E2432B24BD9800816CD4 /* MapModi.swift in Sources */,
 				C77322C42B0B8C4700BE2866 /* HomeView.swift in Sources */,
 				C7B24F832B13CF6A002A4642 /* AppBackground.swift in Sources */,
 				C7595DD92B1A1D5E003392A2 /* ItemSubTitleModi.swift in Sources */,
@@ -639,6 +650,7 @@
 				C7965C752B1763D000E8A0FB /* QualityAssurance.swift in Sources */,
 				C70BAAEB2B0E447D0064660F /* SettingsUserProfilCard.swift in Sources */,
 				C7965C6F2B174BEA00E8A0FB /* Area.swift in Sources */,
+				C703E23E2B24B5BD00816CD4 /* SheetTitleModi.swift in Sources */,
 				C7B24F872B13DBD6002A4642 /* CustomHeaderIcon.swift in Sources */,
 				C7965C712B174C0A00E8A0FB /* Space.swift in Sources */,
 				C7965C6B2B17425E00E8A0FB /* Objekt.swift in Sources */,

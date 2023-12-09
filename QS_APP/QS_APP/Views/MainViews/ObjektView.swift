@@ -36,6 +36,15 @@ struct ObjektView: View {
                             NavigationLink(destination: ObjektDetailView()){
                                 ObjektAndQsListItem(icon: Values.objektIcon, title: objekt.name, street: objekt.adress.street, postalCode: objekt.adress.postalCode, city: objekt.adress.city)
                             }
+                            .swipeActions{
+                                Button(role: .destructive){
+                                    withAnimation {
+                                        objektVM.deleteObjekt(with: objekt.id)
+                                    }
+                                }label: {
+                                    Label("LÖSCHEN", systemImage: "trash")
+                                }
+                            }
                         }
                         .padding(.horizontal, Values.middlePadding)
                     }

@@ -27,20 +27,21 @@ struct ObjektAndQsListItem: View {
             
             VStack {
                 HStack {
-                        Text(title)
-                            .foregroundStyle(Color.appBackground)
-                            .font(.custom(FontStrings.appFontBold, size: Values.appSubtitle))
-                            .bold()
+                    Text(title)
+                        .foregroundStyle(Color.appBackground)
+                        .font(.custom(FontStrings.appFontBold, size: Values.appSubtitle))
+                        .bold()
                     Spacer()
                 }
                 HStack{
                     Text("\(street), \(postalCode) \(city)")
-                                .foregroundStyle(Color.appBackground)
-                                .font(.footnote)
-                                .bold()
-
+                        .foregroundStyle(Color.appBackground)
+                        .font(.footnote)
+                        .bold()
+                    
                     Spacer()
-                } }
+                }
+            }
             Image(systemName: Values.arrowRight)
                 .font(.title)
                 .bold()

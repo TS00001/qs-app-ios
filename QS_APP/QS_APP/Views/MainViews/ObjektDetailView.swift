@@ -23,7 +23,7 @@ struct ObjektDetailView: View {
                     Button(action: {
                         
                     }, label: {
-                        CustomHeaderIcon(icon: Values.qsIcon)
+                        CustomHeaderIcon(icon: Values.editIcon)
                     })
                 }
                 ScrollView{
@@ -33,15 +33,9 @@ struct ObjektDetailView: View {
                             .tint(.appBlue)
                         
                     }
+                    .mapModi()
                     
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 200)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 150)
-                    .padding(.bottom, 30)
-                    .padding(.top, 40)
-                    .shadow(radius: Values.minorShadow)
+                    
                     
                     VStack(spacing:20){
                         
@@ -58,12 +52,13 @@ struct ObjektDetailView: View {
                                 .itemSubtitleModi()
                         }
                         
+                        
                         ObjektDataItem(title: "Reinigungskraft"){
                             Text("Martin Müller")
                                 .itemSubtitleModi()
                         }
                         
-                        Text("LEISTUNGSBERZEICHNIS")
+                        Text("LEISTUNGSVERZEICHNIS")
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .font(.custom(FontStrings.appFontBlack, size: 30))
                             .foregroundColor(.appBlue)
@@ -90,7 +85,7 @@ struct ObjektDetailView: View {
                         .shadow(radius: Values.minorShadow)
                         
                         
-                        //TODO: Sheet soll nur zur hälfte aufgelkappt werden
+                        
                         TitleComponent(title: "REINIGUNGSTAGE"){
                             Button(action: {
                                 showUpdateCleaningdaysSheet = true
@@ -100,16 +95,25 @@ struct ObjektDetailView: View {
                         }
                         .sheet(isPresented: $showUpdateCleaningdaysSheet){
                             UpdateCleaningDaysSheet(showUpdateCleaningdaysSheet: $showUpdateCleaningdaysSheet)
-                                
+                                .presentationDetents([.medium])
+                                .presentationDragIndicator(.hidden)
                         }
                         
                         CheckmarkComponente()
                         
-                        Text("QS INTERVALL")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .font(.custom(FontStrings.appFontBlack, size: 30))
-                            .foregroundColor(.appBlue)
-                            .padding(.top, 20)
+                        TitleComponent(title: "QS INTERVALL"){
+                            Button(action: {
+                                showUpdateCleaningdaysSheet = true
+                            }, label: {
+                                IconComponente(icon: Values.editIcon)
+                            })
+                        }
+                        .sheet(isPresented: $showUpdateCleaningdaysSheet){
+                            UpdateCleaningDaysSheet(showUpdateCleaningdaysSheet: $showUpdateCleaningdaysSheet)
+                                .presentationDetents([.medium])
+                                .presentationDragIndicator(.hidden)
+                        }
+                        
                         IntervallComponente()
                         
                         Text("QUALITÄTSSICHERUNG")

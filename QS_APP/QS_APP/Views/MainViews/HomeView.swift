@@ -17,22 +17,17 @@ struct HomeView: View {
             VStack {
                 CustomHeader(title: "HOME"){
                     Button(action: {
-                        
-                    }, label: {
-                        CustomHeaderIcon(icon: Values.qsIcon)
-                    })
-                   
-                    Button(action: {
-                        
+                        planQs()
                     }, label: {
                         CustomHeaderIcon(icon: Values.calendar)
                     })
                 }
         
                 ScrollView{
-                    QsOverviewItem()
+                    QsOverviewItem(rating: .constant(3))
                     Text("FÄLLIGE QS")
                         .titleStyle()
+                    
                     ForEach(1...5, id: \.self){ item in
                         
                         ObjektAndQsListItem(icon: Values.qsIcon, title: "Bäckerei Gauker", street: "Eugenstraße 10", postalCode: "72072", city: "Tübingen")
@@ -40,11 +35,12 @@ struct HomeView: View {
                 }
                 .padding(.horizontal, Values.middlePadding)
             }
+            .background(.appBackground)
         }
     }
     
     func planQs(){
-        //Funktion zum planen einer QS (ein Sheet soll sich beim klick öffnen)
+        //TODO: Sheet um eine QS zu planen die dann in fällige QS aufgelistet werden soll
     }
 }
 

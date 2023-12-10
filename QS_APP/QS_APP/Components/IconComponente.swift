@@ -16,7 +16,7 @@ struct IconComponente: View {
         
         Image(systemName: icon)
             .resizable()
-            .frame(width: 32, height: 32)
+            .frame(width: Values.appSubtitle, height: Values.appSubtitle)
             .bold()
             .foregroundColor(.appBlue)
     }

@@ -16,7 +16,7 @@ struct CustomHeaderIcon: View {
         
         Image(systemName: icon)
             .resizable()
-            .frame(width: 30, height: 30)
+            .frame(width: 22, height: 22)
             .padding(.trailing, Values.middlePadding)
             .bold()
             .foregroundColor(.appBlue)

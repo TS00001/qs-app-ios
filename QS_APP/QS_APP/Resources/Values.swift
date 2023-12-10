@@ -36,16 +36,20 @@ struct Values {
     //MARK: ICON STRINGS
     
     static let calendar = "calendar"
-    static let qsIcon = "star.square"
+    static let qsIcon = "checkmark.seal"
     static let arrowRight = "chevron.right"
     static let plus = "plus.app"
+    
+    static let osIcon = "qsAppIcon"
     
     //TabBar Icons
     static let homeIcon = "house"
     static let objektIcon = "building.2"
     static let calculatorIcon = "square.grid.3x3.bottommiddle.filled"
     static let settingsIcon = "gearshape"
-    static let editIcon = "pencil"
+    static let editIcon = "slider.horizontal.2.square"
+    static let startQSIcon = "play.square"
+    static let backIcon = "chevron.backward.square"
     
     //MARK: SADOW
     static let minorShadow: CGFloat = 2

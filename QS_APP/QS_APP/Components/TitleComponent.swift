@@ -11,7 +11,7 @@ struct TitleComponent<Content: View>: View {
     var body: some View {
         HStack(spacing: 0){
             Text(title)
-                .font(.custom(FontStrings.appFontBlack, size: 30))
+                .font(.custom(FontStrings.appFontBlack, size: Values.appSubtitle))
                 .bold()
                 .foregroundStyle(Color.appBlue)
                 .frame(maxWidth: .infinity, alignment: .leading)

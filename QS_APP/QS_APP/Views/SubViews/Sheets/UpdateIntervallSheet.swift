@@ -1,30 +1,27 @@
 //
-//  UpdateCleaningDaysSheet.swift
+//  UpdateIntervallSheet.swift
 //  QS_APP
 //
-//  Created by Tom Salih on 07.12.23.
+//  Created by Tom Salih on 09.12.23.
 //
 
 import SwiftUI
 
-struct UpdateCleaningDaysSheet: View {
+struct UpdateIntervallSheet: View {
     
     //MARK: VARIABLES
     
-    @Binding var showUpdateCleaningdaysSheet: Bool
+    @Binding var showUpdateQsIntervallSheet: Bool
     
     var body: some View {
-        
         VStack(spacing: 30){
             
-            HStack(spacing:0){
-                
-                Text("WÄHLE DIE REINIGUNGSTAGE AUS")
+            HStack{
+                Text("WÄHLE DEN QS INTERVALL")
                     .sheetTitleModi()
                 
-                
                 Button(action: {
-                    showUpdateCleaningdaysSheet = false
+                    showUpdateQsIntervallSheet = false
                 }, label: {
                     Image(systemName: "x.square.fill")
                         .resizable()
@@ -33,11 +30,10 @@ struct UpdateCleaningDaysSheet: View {
                         .foregroundStyle(Color.appRed)
                 })
             }
-
-            CheckmarkComponente()
+            IntervallComponente()
             
-            StandardButton(label: "SPEICHERN", color: .appBlue, fontColor: .appBackground){
-                showUpdateCleaningdaysSheet = false
+            StandardButton(label: "Speichern", color: .appBlue, fontColor: .appBackground){
+                showUpdateQsIntervallSheet = false
             }
         }
         .vstackModi()
@@ -45,5 +41,5 @@ struct UpdateCleaningDaysSheet: View {
 }
 
 #Preview {
-    UpdateCleaningDaysSheet(showUpdateCleaningdaysSheet: .constant(false))
+    UpdateIntervallSheet(showUpdateQsIntervallSheet: .constant(false))
 }

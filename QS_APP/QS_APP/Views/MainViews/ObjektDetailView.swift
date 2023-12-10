@@ -11,31 +11,28 @@ import MapKit
 struct ObjektDetailView: View {
     
     @State var showUpdateCleaningdaysSheet = false
+    @State var showUpdateQsIntervallSheet = false
     
-    
-    let adress = CLLocationCoordinate2D(latitude: 48.51959861846929, longitude: 9.057984167586223)
+    func backButton(){
+        
+    }
     
     var body: some View {
-        
+        NavigationStack{
             VStack(spacing: 0){
-                CustomHeader(title: "OBJEKTNAME"){
+                CustomHeaderBack(title: "OBJEKTNAME"){
                     
                     Button(action: {
                         
                     }, label: {
                         CustomHeaderIcon(icon: Values.editIcon)
                     })
+                
                 }
                 ScrollView{
                     
-                    Map() {
-                        Marker("OBJEKT", systemImage: Values.objektIcon, coordinate: adress)
-                            .tint(.appBlue)
-                        
-                    }
+                    MapView()
                     .mapModi()
-                    
-                    
                     
                     VStack(spacing:20){
                         
@@ -57,14 +54,15 @@ struct ObjektDetailView: View {
                             Text("Martin Müller")
                                 .itemSubtitleModi()
                         }
+                        TitleComponent(title: "LEISTUNGSVERZEICHNIS"){
+                            Button(action: {
+                                
+                            }, label: {
+                                IconComponente(icon: Values.plus)
+                            })
+                        }
                         
-                        Text("LEISTUNGSVERZEICHNIS")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .font(.custom(FontStrings.appFontBlack, size: 30))
-                            .foregroundColor(.appBlue)
-                            .padding(.top, 20)
-                        
-                        
+                        //TODO: Zu Components auslagern
                         HStack{
                             Text("Leiszungsverzeichnis")
                                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -103,31 +101,44 @@ struct ObjektDetailView: View {
                         
                         TitleComponent(title: "QS INTERVALL"){
                             Button(action: {
-                                showUpdateCleaningdaysSheet = true
+                                showUpdateQsIntervallSheet = true
                             }, label: {
                                 IconComponente(icon: Values.editIcon)
                             })
                         }
-                        .sheet(isPresented: $showUpdateCleaningdaysSheet){
-                            UpdateCleaningDaysSheet(showUpdateCleaningdaysSheet: $showUpdateCleaningdaysSheet)
+                        
+                        .sheet(isPresented: $showUpdateQsIntervallSheet){
+                            UpdateIntervallSheet(showUpdateQsIntervallSheet: $showUpdateQsIntervallSheet)
                                 .presentationDetents([.medium])
                                 .presentationDragIndicator(.hidden)
                         }
-                        
                         IntervallComponente()
                         
-                        Text("QUALITÄTSSICHERUNG")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .font(.custom(FontStrings.appFontBlack, size: 30))
-                            .foregroundColor(.appBlue)
-                            .padding(.top, 20)
-                        QsOverviewItem()
+                        TitleComponent(title: "QUALITÄTSSICHERUNG"){
+                            
+                            NavigationLink(destination: QsView()){
+                                IconComponente(icon: Values.startQSIcon)
+                            }
+                            .navigationBarBackButtonHidden(true)
+                        }
+                        
+                        
+                        
+                        NavigationLink(destination: QsHistoryView(rating: .constant(3))){
+                            QsOverviewItem(rating: .constant(3))
+                                .padding(.bottom, 30)
+                        }
+                        .navigationBarBackButtonHidden(true)
+                        
                     }
                 }
+                
                 .scrollIndicators(.hidden)
                 .padding(.horizontal, Values.middlePadding)
             }
             .background(Color.appBackground)
+        }
+            
     }
 }
 

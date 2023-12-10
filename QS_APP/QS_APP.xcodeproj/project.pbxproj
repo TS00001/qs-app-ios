@@ -13,6 +13,13 @@
 		C703E23E2B24B5BD00816CD4 /* SheetTitleModi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703E23D2B24B5BD00816CD4 /* SheetTitleModi.swift */; };
 		C703E2402B24B8D400816CD4 /* VstackModi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703E23F2B24B8D400816CD4 /* VstackModi.swift */; };
 		C703E2432B24BD9800816CD4 /* MapModi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703E2422B24BD9800816CD4 /* MapModi.swift */; };
+		C703E2452B250B3B00816CD4 /* UpdateIntervallSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703E2442B250B3B00816CD4 /* UpdateIntervallSheet.swift */; };
+		C703E2472B2517A500816CD4 /* QsHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703E2462B2517A500816CD4 /* QsHistoryView.swift */; };
+		C703E2492B2538BF00816CD4 /* QsAverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703E2482B2538BF00816CD4 /* QsAverage.swift */; };
+		C703E24C2B25F21C00816CD4 /* SmallRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703E24B2B25F21C00816CD4 /* SmallRatingView.swift */; };
+		C703E24E2B25FCE200816CD4 /* CustomHeaderBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703E24D2B25FCE200816CD4 /* CustomHeaderBack.swift */; };
+		C703E2522B261DDC00816CD4 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703E2512B261DDC00816CD4 /* MapView.swift */; };
+		C703E2542B26297400816CD4 /* QsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C703E2532B26297400816CD4 /* QsView.swift */; };
 		C70BAAD22B0CF9B50064660F /* ObjektAndQsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAD12B0CF9B50064660F /* ObjektAndQsListItem.swift */; };
 		C70BAAD62B0D378A0064660F /* BarlowSemiCondensed-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAD32B0D378A0064660F /* BarlowSemiCondensed-Black.ttf */; };
 		C70BAAD72B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAD42B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf */; };
@@ -99,6 +106,13 @@
 		C703E23D2B24B5BD00816CD4 /* SheetTitleModi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetTitleModi.swift; sourceTree = "<group>"; };
 		C703E23F2B24B8D400816CD4 /* VstackModi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VstackModi.swift; sourceTree = "<group>"; };
 		C703E2422B24BD9800816CD4 /* MapModi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModi.swift; sourceTree = "<group>"; };
+		C703E2442B250B3B00816CD4 /* UpdateIntervallSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateIntervallSheet.swift; sourceTree = "<group>"; };
+		C703E2462B2517A500816CD4 /* QsHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QsHistoryView.swift; sourceTree = "<group>"; };
+		C703E2482B2538BF00816CD4 /* QsAverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QsAverage.swift; sourceTree = "<group>"; };
+		C703E24B2B25F21C00816CD4 /* SmallRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallRatingView.swift; sourceTree = "<group>"; };
+		C703E24D2B25FCE200816CD4 /* CustomHeaderBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderBack.swift; sourceTree = "<group>"; };
+		C703E2512B261DDC00816CD4 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		C703E2532B26297400816CD4 /* QsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QsView.swift; sourceTree = "<group>"; };
 		C70BAAD12B0CF9B50064660F /* ObjektAndQsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjektAndQsListItem.swift; sourceTree = "<group>"; };
 		C70BAAD32B0D378A0064660F /* BarlowSemiCondensed-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Black.ttf"; sourceTree = "<group>"; };
 		C70BAAD42B0D378A0064660F /* BarlowSemiCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Bold.ttf"; sourceTree = "<group>"; };
@@ -190,6 +204,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C703E24A2B253D4000816CD4 /* Qs */ = {
+			isa = PBXGroup;
+			children = (
+				C703E2482B2538BF00816CD4 /* QsAverage.swift */,
+				C7B24F972B14D221002A4642 /* RatingView.swift */,
+				C7B24F952B14BE6F002A4642 /* QsOverviewItem.swift */,
+				C7DA2DC82B1FE5B200510677 /* IntervallComponente.swift */,
+				C703E24B2B25F21C00816CD4 /* SmallRatingView.swift */,
+			);
+			path = Qs;
+			sourceTree = "<group>";
+		};
 		C70BAADA2B0D3C220064660F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,18 +241,17 @@
 		C70BAAE42B0E06AB0064660F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C703E24A2B253D4000816CD4 /* Qs */,
 				C7595DD52B1A0192003392A2 /* Buttons */,
 				C7595DD42B1A0175003392A2 /* Header */,
 				C7595DD32B1A0141003392A2 /* ObjektComponents */,
 				C7595DD22B19FEB0003392A2 /* SettingComponents */,
 				C7DA2DC62B1FCB9200510677 /* CheckmarkComponente.swift */,
-				C7DA2DC82B1FE5B200510677 /* IntervallComponente.swift */,
 				C70BAAD12B0CF9B50064660F /* ObjektAndQsListItem.swift */,
 				C7B24F822B13CF6A002A4642 /* AppBackground.swift */,
-				C7B24F952B14BE6F002A4642 /* QsOverviewItem.swift */,
-				C7B24F972B14D221002A4642 /* RatingView.swift */,
 				C700B5B42B21CD5300A58D81 /* TitleComponent.swift */,
 				C700B5B62B21DD2D00A58D81 /* IconComponente.swift */,
+				C703E2512B261DDC00816CD4 /* MapView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -254,6 +279,7 @@
 			children = (
 				C7B24F802B13C68A002A4642 /* CustomHeader.swift */,
 				C7B24F862B13DBD6002A4642 /* CustomHeaderIcon.swift */,
+				C703E24D2B25FCE200816CD4 /* CustomHeaderBack.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -414,6 +440,8 @@
 				C77322CD2B0B99F300BE2866 /* CalculatorView.swift */,
 				C77322CF2B0B9A0600BE2866 /* SettingsView.swift */,
 				C7B24F8A2B13E5B7002A4642 /* ObjektDetailView.swift */,
+				C703E2462B2517A500816CD4 /* QsHistoryView.swift */,
+				C703E2532B26297400816CD4 /* QsView.swift */,
 			);
 			path = MainViews;
 			sourceTree = "<group>";
@@ -457,6 +485,7 @@
 			children = (
 				C7B24F882B13E3FD002A4642 /* AddObjektSheet.swift */,
 				C700B5B82B21DEE600A58D81 /* UpdateCleaningDaysSheet.swift */,
+				C703E2442B250B3B00816CD4 /* UpdateIntervallSheet.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -621,9 +650,11 @@
 				C77322C22B0B8B3000BE2866 /* HomeViewModel.swift in Sources */,
 				C76C1E352B10C9D300A27BE5 /* Values.swift in Sources */,
 				C7B24F982B14D221002A4642 /* RatingView.swift in Sources */,
+				C703E2492B2538BF00816CD4 /* QsAverage.swift in Sources */,
 				C70BAAD22B0CF9B50064660F /* ObjektAndQsListItem.swift in Sources */,
 				C77322CE2B0B99F300BE2866 /* CalculatorView.swift in Sources */,
 				C70BAAED2B0E79A60064660F /* SettingsListItem.swift in Sources */,
+				C703E2472B2517A500816CD4 /* QsHistoryView.swift in Sources */,
 				C703E2402B24B8D400816CD4 /* VstackModi.swift in Sources */,
 				C7B24F8F2B13FF32002A4642 /* StandardButton.swift in Sources */,
 				C7DA2DC92B1FE5B200510677 /* IntervallComponente.swift in Sources */,
@@ -632,8 +663,10 @@
 				C773227C2B06649200BE2866 /* QS_APPApp.swift in Sources */,
 				C703E2432B24BD9800816CD4 /* MapModi.swift in Sources */,
 				C77322C42B0B8C4700BE2866 /* HomeView.swift in Sources */,
+				C703E24E2B25FCE200816CD4 /* CustomHeaderBack.swift in Sources */,
 				C7B24F832B13CF6A002A4642 /* AppBackground.swift in Sources */,
 				C7595DD92B1A1D5E003392A2 /* ItemSubTitleModi.swift in Sources */,
+				C703E2452B250B3B00816CD4 /* UpdateIntervallSheet.swift in Sources */,
 				C77322B62B0B643D00BE2866 /* AuthenticationView.swift in Sources */,
 				C700B5B52B21CD5300A58D81 /* TitleComponent.swift in Sources */,
 				C7595DD72B1A0365003392A2 /* ObjektDataItem.swift in Sources */,
@@ -651,11 +684,14 @@
 				C70BAAEB2B0E447D0064660F /* SettingsUserProfilCard.swift in Sources */,
 				C7965C6F2B174BEA00E8A0FB /* Area.swift in Sources */,
 				C703E23E2B24B5BD00816CD4 /* SheetTitleModi.swift in Sources */,
+				C703E2522B261DDC00816CD4 /* MapView.swift in Sources */,
 				C7B24F872B13DBD6002A4642 /* CustomHeaderIcon.swift in Sources */,
 				C7965C712B174C0A00E8A0FB /* Space.swift in Sources */,
 				C7965C6B2B17425E00E8A0FB /* Objekt.swift in Sources */,
+				C703E24C2B25F21C00816CD4 /* SmallRatingView.swift in Sources */,
 				C7B24F962B14BE6F002A4642 /* QsOverviewItem.swift in Sources */,
 				C7B24F892B13E3FD002A4642 /* AddObjektSheet.swift in Sources */,
+				C703E2542B26297400816CD4 /* QsView.swift in Sources */,
 				C77322CC2B0B99B000BE2866 /* ObjektView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

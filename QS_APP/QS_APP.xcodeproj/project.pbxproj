@@ -80,6 +80,12 @@
 		C7D1C0112B19475800D18399 /* AdressItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D1C0102B19475800D18399 /* AdressItem.swift */; };
 		C7DA2DC72B1FCB9200510677 /* CheckmarkComponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA2DC62B1FCB9200510677 /* CheckmarkComponente.swift */; };
 		C7DA2DC92B1FE5B200510677 /* IntervallComponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA2DC82B1FE5B200510677 /* IntervallComponente.swift */; };
+		C7F8E96E2B2662C0008642BD /* LvItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F8E96D2B2662C0008642BD /* LvItem.swift */; };
+		C7F8E9702B2666CA008642BD /* AddLvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F8E96F2B2666CA008642BD /* AddLvView.swift */; };
+		C7F8E9732B271413008642BD /* AddressAPIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F8E9722B271413008642BD /* AddressAPIViewModel.swift */; };
+		C7F8E9752B27160E008642BD /* ApiAdress.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F8E9742B27160E008642BD /* ApiAdress.swift */; };
+		C7F8E9772B271DD2008642BD /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F8E9762B271DD2008642BD /* ApiResult.swift */; };
+		C7F8E97A2B2724F0008642BD /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F8E9792B2724F0008642BD /* ApiRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +178,12 @@
 		C7D1C0102B19475800D18399 /* AdressItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdressItem.swift; sourceTree = "<group>"; };
 		C7DA2DC62B1FCB9200510677 /* CheckmarkComponente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkComponente.swift; sourceTree = "<group>"; };
 		C7DA2DC82B1FE5B200510677 /* IntervallComponente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervallComponente.swift; sourceTree = "<group>"; };
+		C7F8E96D2B2662C0008642BD /* LvItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LvItem.swift; sourceTree = "<group>"; };
+		C7F8E96F2B2666CA008642BD /* AddLvView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLvView.swift; sourceTree = "<group>"; };
+		C7F8E9722B271413008642BD /* AddressAPIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAPIViewModel.swift; sourceTree = "<group>"; };
+		C7F8E9742B27160E008642BD /* ApiAdress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAdress.swift; sourceTree = "<group>"; };
+		C7F8E9762B271DD2008642BD /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
+		C7F8E9792B2724F0008642BD /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +264,7 @@
 				C700B5B42B21CD5300A58D81 /* TitleComponent.swift */,
 				C700B5B62B21DD2D00A58D81 /* IconComponente.swift */,
 				C703E2512B261DDC00816CD4 /* MapView.swift */,
+				C7F8E96D2B2662C0008642BD /* LvItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -334,6 +347,7 @@
 				C77322BD2B0B66B800BE2866 /* Managers */,
 				C70BAAE42B0E06AB0064660F /* Components */,
 				C7965C692B165E0C00E8A0FB /* Modifier */,
+				C7F8E9782B2724D7008642BD /* Repositorys */,
 				C76C1E332B10C96F00A27BE5 /* Resources */,
 				C77322812B06649300BE2866 /* Preview Content */,
 				C77322A82B0B627600BE2866 /* GoogleService-Info.plist */,
@@ -370,6 +384,7 @@
 		C77322A52B0B4E2800BE2866 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C7F8E9712B270F7F008642BD /* API */,
 				C7965C732B174C4600E8A0FB /* Objekt */,
 				C7965C722B174C3700E8A0FB /* User */,
 			);
@@ -382,6 +397,7 @@
 				C77322C02B0B6A8B00BE2866 /* UserViewModels */,
 				C77322C12B0B8B3000BE2866 /* HomeViewModel.swift */,
 				C7965C762B1764E300E8A0FB /* ObjektViewModel.swift */,
+				C7F8E9722B271413008642BD /* AddressAPIViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -437,11 +453,12 @@
 				C77322D22B0BB24700BE2866 /* MainView.swift */,
 				C77322C32B0B8C4700BE2866 /* HomeView.swift */,
 				C77322CB2B0B99B000BE2866 /* ObjektView.swift */,
-				C77322CD2B0B99F300BE2866 /* CalculatorView.swift */,
-				C77322CF2B0B9A0600BE2866 /* SettingsView.swift */,
 				C7B24F8A2B13E5B7002A4642 /* ObjektDetailView.swift */,
+				C7F8E96F2B2666CA008642BD /* AddLvView.swift */,
 				C703E2462B2517A500816CD4 /* QsHistoryView.swift */,
 				C703E2532B26297400816CD4 /* QsView.swift */,
+				C77322CD2B0B99F300BE2866 /* CalculatorView.swift */,
+				C77322CF2B0B9A0600BE2866 /* SettingsView.swift */,
 			);
 			path = MainViews;
 			sourceTree = "<group>";
@@ -488,6 +505,23 @@
 				C703E2442B250B3B00816CD4 /* UpdateIntervallSheet.swift */,
 			);
 			path = Sheets;
+			sourceTree = "<group>";
+		};
+		C7F8E9712B270F7F008642BD /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C7F8E9742B27160E008642BD /* ApiAdress.swift */,
+				C7F8E9762B271DD2008642BD /* ApiResult.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		C7F8E9782B2724D7008642BD /* Repositorys */ = {
+			isa = PBXGroup;
+			children = (
+				C7F8E9792B2724F0008642BD /* ApiRepository.swift */,
+			);
+			path = Repositorys;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -640,9 +674,11 @@
 				C700B5B92B21DEE600A58D81 /* UpdateCleaningDaysSheet.swift in Sources */,
 				C7B24F912B140AA6002A4642 /* TitleStyle.swift in Sources */,
 				C7DA2DC72B1FCB9200510677 /* CheckmarkComponente.swift in Sources */,
+				C7F8E9772B271DD2008642BD /* ApiResult.swift in Sources */,
 				C7B24F932B140F00002A4642 /* LogoutButton.swift in Sources */,
 				C77322CA2B0B996E00BE2866 /* TabBarView.swift in Sources */,
 				C7B24F8D2B13E710002A4642 /* FormItemStyle.swift in Sources */,
+				C7F8E9752B27160E008642BD /* ApiAdress.swift in Sources */,
 				C77322D32B0BB24700BE2866 /* MainView.swift in Sources */,
 				C77322B82B0B647E00BE2866 /* AuthenticationViewModel.swift in Sources */,
 				C77322BA2B0B651900BE2866 /* FireUser.swift in Sources */,
@@ -669,6 +705,7 @@
 				C703E2452B250B3B00816CD4 /* UpdateIntervallSheet.swift in Sources */,
 				C77322B62B0B643D00BE2866 /* AuthenticationView.swift in Sources */,
 				C700B5B52B21CD5300A58D81 /* TitleComponent.swift in Sources */,
+				C7F8E97A2B2724F0008642BD /* ApiRepository.swift in Sources */,
 				C7595DD72B1A0365003392A2 /* ObjektDataItem.swift in Sources */,
 				C77322BC2B0B663100BE2866 /* FireUserViewModel.swift in Sources */,
 				C77322C72B0B980500BE2866 /* TabItem.swift in Sources */,
@@ -680,10 +717,13 @@
 				C77322D02B0B9A0600BE2866 /* SettingsView.swift in Sources */,
 				C7965C792B177DD900E8A0FB /* Interval.swift in Sources */,
 				C700B5B72B21DD2D00A58D81 /* IconComponente.swift in Sources */,
+				C7F8E96E2B2662C0008642BD /* LvItem.swift in Sources */,
 				C7965C752B1763D000E8A0FB /* QualityAssurance.swift in Sources */,
 				C70BAAEB2B0E447D0064660F /* SettingsUserProfilCard.swift in Sources */,
+				C7F8E9702B2666CA008642BD /* AddLvView.swift in Sources */,
 				C7965C6F2B174BEA00E8A0FB /* Area.swift in Sources */,
 				C703E23E2B24B5BD00816CD4 /* SheetTitleModi.swift in Sources */,
+				C7F8E9732B271413008642BD /* AddressAPIViewModel.swift in Sources */,
 				C703E2522B261DDC00816CD4 /* MapView.swift in Sources */,
 				C7B24F872B13DBD6002A4642 /* CustomHeaderIcon.swift in Sources */,
 				C7965C712B174C0A00E8A0FB /* Space.swift in Sources */,

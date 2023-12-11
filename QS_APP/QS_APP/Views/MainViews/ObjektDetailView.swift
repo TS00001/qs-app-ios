@@ -27,12 +27,11 @@ struct ObjektDetailView: View {
                     }, label: {
                         CustomHeaderIcon(icon: Values.editIcon)
                     })
-                
                 }
                 ScrollView{
                     
                     MapView()
-                    .mapModi()
+                        .mapModi()
                     
                     VStack(spacing:20){
                         
@@ -49,40 +48,20 @@ struct ObjektDetailView: View {
                                 .itemSubtitleModi()
                         }
                         
-                        
                         ObjektDataItem(title: "Reinigungskraft"){
                             Text("Martin Müller")
                                 .itemSubtitleModi()
                         }
+                        
                         TitleComponent(title: "LEISTUNGSVERZEICHNIS"){
-                            Button(action: {
-                                
-                            }, label: {
+                            NavigationLink(destination: AddLvView()){
                                 IconComponente(icon: Values.plus)
-                            })
-                        }
-                        
-                        //TODO: Zu Components auslagern
-                        HStack{
-                            Text("Leiszungsverzeichnis")
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding()
-                                .foregroundStyle(Color.appBackground)
-                                .font(.custom(FontStrings.appFontRegular, size: 18))
-                                .bold()
+                            }
+                            .navigationBarBackButtonHidden(true)
                             
-                            Image(systemName: Values.arrowRight)
-                                .font(.title)
-                                .bold()
-                                .foregroundColor(.appBackground)
-                                .padding(.trailing, Values.middlePadding)
                         }
-                        .frame(height: 70)
-                        .background(Color.appBlue )
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                        .shadow(radius: Values.minorShadow)
-                        
-                        
+                        LvItem(title: "Leistungsverzeichnis BLOCK A")
+                        LvItem(title: "Leistungsverzeichnis BLOCK B")
                         
                         TitleComponent(title: "REINIGUNGSTAGE"){
                             Button(action: {
@@ -96,7 +75,6 @@ struct ObjektDetailView: View {
                                 .presentationDetents([.medium])
                                 .presentationDragIndicator(.hidden)
                         }
-                        
                         CheckmarkComponente()
                         
                         TitleComponent(title: "QS INTERVALL"){
@@ -106,7 +84,6 @@ struct ObjektDetailView: View {
                                 IconComponente(icon: Values.editIcon)
                             })
                         }
-                        
                         .sheet(isPresented: $showUpdateQsIntervallSheet){
                             UpdateIntervallSheet(showUpdateQsIntervallSheet: $showUpdateQsIntervallSheet)
                                 .presentationDetents([.medium])
@@ -115,30 +92,24 @@ struct ObjektDetailView: View {
                         IntervallComponente()
                         
                         TitleComponent(title: "QUALITÄTSSICHERUNG"){
-                            
                             NavigationLink(destination: QsView()){
                                 IconComponente(icon: Values.startQSIcon)
                             }
                             .navigationBarBackButtonHidden(true)
                         }
-                        
-                        
-                        
                         NavigationLink(destination: QsHistoryView(rating: .constant(3))){
                             QsOverviewItem(rating: .constant(3))
                                 .padding(.bottom, 30)
                         }
                         .navigationBarBackButtonHidden(true)
-                        
                     }
                 }
-                
                 .scrollIndicators(.hidden)
                 .padding(.horizontal, Values.middlePadding)
             }
             .background(Color.appBackground)
         }
-            
+        
     }
 }
 

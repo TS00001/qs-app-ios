@@ -81,11 +81,14 @@
 		C7DA2DC72B1FCB9200510677 /* CheckmarkComponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA2DC62B1FCB9200510677 /* CheckmarkComponente.swift */; };
 		C7DA2DC92B1FE5B200510677 /* IntervallComponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DA2DC82B1FE5B200510677 /* IntervallComponente.swift */; };
 		C7F8E96E2B2662C0008642BD /* LvItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F8E96D2B2662C0008642BD /* LvItem.swift */; };
-		C7F8E9702B2666CA008642BD /* AddLvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F8E96F2B2666CA008642BD /* AddLvView.swift */; };
+		C7F8E9702B2666CA008642BD /* AddAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F8E96F2B2666CA008642BD /* AddAreaView.swift */; };
 		C7F8E9732B271413008642BD /* AddressAPIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F8E9722B271413008642BD /* AddressAPIViewModel.swift */; };
 		C7F8E9752B27160E008642BD /* ApiAdress.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F8E9742B27160E008642BD /* ApiAdress.swift */; };
 		C7F8E9772B271DD2008642BD /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F8E9762B271DD2008642BD /* ApiResult.swift */; };
 		C7F8E97A2B2724F0008642BD /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F8E9792B2724F0008642BD /* ApiRepository.swift */; };
+		C7F8E97C2B27B49F008642BD /* AddSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F8E97B2B27B49F008642BD /* AddSpaceView.swift */; };
+		C7F8E9802B27C0DB008642BD /* ListOfServicesAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F8E97F2B27C0DB008642BD /* ListOfServicesAreaView.swift */; };
+		C7F8E9822B27D007008642BD /* ListOfServicesSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F8E9812B27D007008642BD /* ListOfServicesSpaceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,11 +182,14 @@
 		C7DA2DC62B1FCB9200510677 /* CheckmarkComponente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkComponente.swift; sourceTree = "<group>"; };
 		C7DA2DC82B1FE5B200510677 /* IntervallComponente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervallComponente.swift; sourceTree = "<group>"; };
 		C7F8E96D2B2662C0008642BD /* LvItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LvItem.swift; sourceTree = "<group>"; };
-		C7F8E96F2B2666CA008642BD /* AddLvView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLvView.swift; sourceTree = "<group>"; };
+		C7F8E96F2B2666CA008642BD /* AddAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAreaView.swift; sourceTree = "<group>"; };
 		C7F8E9722B271413008642BD /* AddressAPIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAPIViewModel.swift; sourceTree = "<group>"; };
 		C7F8E9742B27160E008642BD /* ApiAdress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAdress.swift; sourceTree = "<group>"; };
 		C7F8E9762B271DD2008642BD /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
 		C7F8E9792B2724F0008642BD /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
+		C7F8E97B2B27B49F008642BD /* AddSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpaceView.swift; sourceTree = "<group>"; };
+		C7F8E97F2B27C0DB008642BD /* ListOfServicesAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfServicesAreaView.swift; sourceTree = "<group>"; };
+		C7F8E9812B27D007008642BD /* ListOfServicesSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfServicesSpaceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -454,9 +460,8 @@
 				C77322C32B0B8C4700BE2866 /* HomeView.swift */,
 				C77322CB2B0B99B000BE2866 /* ObjektView.swift */,
 				C7B24F8A2B13E5B7002A4642 /* ObjektDetailView.swift */,
-				C7F8E96F2B2666CA008642BD /* AddLvView.swift */,
-				C703E2462B2517A500816CD4 /* QsHistoryView.swift */,
-				C703E2532B26297400816CD4 /* QsView.swift */,
+				C7F8E97D2B27BB17008642BD /* LV */,
+				C7F8E97E2B27BB77008642BD /* QS */,
 				C77322CD2B0B99F300BE2866 /* CalculatorView.swift */,
 				C77322CF2B0B9A0600BE2866 /* SettingsView.swift */,
 			);
@@ -522,6 +527,26 @@
 				C7F8E9792B2724F0008642BD /* ApiRepository.swift */,
 			);
 			path = Repositorys;
+			sourceTree = "<group>";
+		};
+		C7F8E97D2B27BB17008642BD /* LV */ = {
+			isa = PBXGroup;
+			children = (
+				C7F8E96F2B2666CA008642BD /* AddAreaView.swift */,
+				C7F8E97B2B27B49F008642BD /* AddSpaceView.swift */,
+				C7F8E97F2B27C0DB008642BD /* ListOfServicesAreaView.swift */,
+				C7F8E9812B27D007008642BD /* ListOfServicesSpaceView.swift */,
+			);
+			path = LV;
+			sourceTree = "<group>";
+		};
+		C7F8E97E2B27BB77008642BD /* QS */ = {
+			isa = PBXGroup;
+			children = (
+				C703E2462B2517A500816CD4 /* QsHistoryView.swift */,
+				C703E2532B26297400816CD4 /* QsView.swift */,
+			);
+			path = QS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -684,6 +709,7 @@
 				C77322BA2B0B651900BE2866 /* FireUser.swift in Sources */,
 				C7965C6D2B17479800E8A0FB /* Adress.swift in Sources */,
 				C77322C22B0B8B3000BE2866 /* HomeViewModel.swift in Sources */,
+				C7F8E97C2B27B49F008642BD /* AddSpaceView.swift in Sources */,
 				C76C1E352B10C9D300A27BE5 /* Values.swift in Sources */,
 				C7B24F982B14D221002A4642 /* RatingView.swift in Sources */,
 				C703E2492B2538BF00816CD4 /* QsAverage.swift in Sources */,
@@ -705,8 +731,10 @@
 				C703E2452B250B3B00816CD4 /* UpdateIntervallSheet.swift in Sources */,
 				C77322B62B0B643D00BE2866 /* AuthenticationView.swift in Sources */,
 				C700B5B52B21CD5300A58D81 /* TitleComponent.swift in Sources */,
+				C7F8E9802B27C0DB008642BD /* ListOfServicesAreaView.swift in Sources */,
 				C7F8E97A2B2724F0008642BD /* ApiRepository.swift in Sources */,
 				C7595DD72B1A0365003392A2 /* ObjektDataItem.swift in Sources */,
+				C7F8E9822B27D007008642BD /* ListOfServicesSpaceView.swift in Sources */,
 				C77322BC2B0B663100BE2866 /* FireUserViewModel.swift in Sources */,
 				C77322C72B0B980500BE2866 /* TabItem.swift in Sources */,
 				C7595DDB2B1A256D003392A2 /* ItemTitleModi.swift in Sources */,
@@ -720,7 +748,7 @@
 				C7F8E96E2B2662C0008642BD /* LvItem.swift in Sources */,
 				C7965C752B1763D000E8A0FB /* QualityAssurance.swift in Sources */,
 				C70BAAEB2B0E447D0064660F /* SettingsUserProfilCard.swift in Sources */,
-				C7F8E9702B2666CA008642BD /* AddLvView.swift in Sources */,
+				C7F8E9702B2666CA008642BD /* AddAreaView.swift in Sources */,
 				C7965C6F2B174BEA00E8A0FB /* Area.swift in Sources */,
 				C703E23E2B24B5BD00816CD4 /* SheetTitleModi.swift in Sources */,
 				C7F8E9732B271413008642BD /* AddressAPIViewModel.swift in Sources */,

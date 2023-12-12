@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct CheckmarkComponente: View {
-    @State private var isMOkActivated = false
-    @State private var isDIkActivated = false
-    @State private var isMIkActivated = false
-    @State private var isDOkActivated = false
-    @State private var isFRkActivated = false
+    @State private var isMOActivated = false
+    @State private var isDIActivated = false
+    @State private var isMIActivated = false
+    @State private var isDOActivated = false
+    @State private var isFRkctivated = false
     
     var body: some View {
         HStack(spacing: 20) {
@@ -23,15 +23,15 @@ struct CheckmarkComponente: View {
                     .padding(.top, 20)
                     .foregroundColor(.appBackground)
                 
-                Image(systemName: isMOkActivated ? "checkmark.square.fill" : "square")
+                Image(systemName: isMOActivated ? "checkmark.square.fill" : "square")
                     .resizable()
                     .frame(width: 40, height: 40)
                     .bold()
-                    .padding(.vertical, 20)
+                    .padding(.vertical, 10)
+                    .padding(.bottom, 20)
                     .foregroundColor(.appBackground)
                     .onTapGesture {
-                        
-                        isMOkActivated.toggle()
+                        isMOActivated.toggle()
                     }
             }
             
@@ -41,15 +41,16 @@ struct CheckmarkComponente: View {
                     .padding(.top, 20)
                     .foregroundColor(.appBackground)
                 
-                Image(systemName: isDIkActivated ? "checkmark.square.fill" : "square")
+                Image(systemName: isDIActivated ? "checkmark.square.fill" : "square")
                     .resizable()
                     .frame(width: 40, height: 40)
                     .bold()
-                    .padding(.vertical, 20)
+                    .padding(.vertical, 10)
+                    .padding(.bottom, 20)
                     .foregroundColor(.appBackground)
                     .onTapGesture {
                         
-                        isDIkActivated.toggle()
+                        isDIActivated.toggle()
                     }
             }
             
@@ -59,15 +60,16 @@ struct CheckmarkComponente: View {
                     .padding(.top, 20)
                     .foregroundColor(.appBackground)
                 
-                Image(systemName: isMIkActivated ? "checkmark.square.fill" : "square")
+                Image(systemName: isMIActivated ? "checkmark.square.fill" : "square")
                     .resizable()
                     .frame(width: 40, height: 40)
                     .bold()
-                    .padding(.vertical, 20)
+                    .padding(.vertical, 10)
+                    .padding(.bottom, 20)
                     .foregroundColor(.appBackground)
                     .onTapGesture {
                         
-                        isMIkActivated.toggle()
+                        isMIActivated.toggle()
                     }
             }
             
@@ -77,15 +79,16 @@ struct CheckmarkComponente: View {
                     .padding(.top, 20)
                     .foregroundColor(.appBackground)
                 
-                Image(systemName: isDOkActivated ? "checkmark.square.fill" : "square")
+                Image(systemName: isDOActivated ? "checkmark.square.fill" : "square")
                     .resizable()
                     .frame(width: 40, height: 40)
                     .bold()
-                    .padding(.vertical, 20)
+                    .padding(.vertical, 10)
+                    .padding(.bottom, 20)
                     .foregroundColor(.appBackground)
                     .onTapGesture {
                         
-                        isDOkActivated.toggle()
+                        isDOActivated.toggle()
                     }
             }
             
@@ -95,15 +98,16 @@ struct CheckmarkComponente: View {
                     .padding(.top, 20)
                     .foregroundColor(.appBackground)
                 
-                Image(systemName: isFRkActivated ? "checkmark.square.fill" : "square")
+                Image(systemName: isFRkctivated ? "checkmark.square.fill" : "square")
                     .resizable()
                     .frame(width: 40, height: 40)
                     .bold()
-                    .padding(.vertical, 20)
+                    .padding(.vertical, 10)
+                    .padding(.bottom, 20)
                     .foregroundColor(.appBackground)
                     .onTapGesture {
                         
-                        isFRkActivated.toggle()
+                        isFRkctivated.toggle()
                     }
             }
         }

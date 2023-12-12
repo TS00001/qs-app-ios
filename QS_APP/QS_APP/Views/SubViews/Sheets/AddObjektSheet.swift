@@ -38,8 +38,9 @@ struct AddObjektSheet: View {
                 if searchText.count > 2 {
                     apiVM.getAddress(enteredAddress: searchText)
                     for result in apiVM.address.results{
-                        print(result.formatted ?? "")
-                        print(result.country ?? "")
+                        print(result.address_line1 ?? "")
+                        print(result.address_line2 ?? "")
+//                        print(result.country ?? "")
                     }
 //                    print(searchText)
 //                    print("Result: \(apiVM.address.results.first?.country ?? "")")
@@ -52,8 +53,6 @@ struct AddObjektSheet: View {
     
             
             ScrollView{
-                
-                
                 
 //                TextField("Objektname", text: $name)
 //                    .formItemStyle(with: .appBlue)

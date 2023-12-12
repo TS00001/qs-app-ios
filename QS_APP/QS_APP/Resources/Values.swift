@@ -47,7 +47,7 @@ struct Values {
     static let objektIcon = "building.2"
     static let calculatorIcon = "square.grid.3x3.bottommiddle.filled"
     static let settingsIcon = "gearshape"
-    static let editIcon = "slider.horizontal.2.square"
+    static let editIcon = "square.and.pencil"
     static let startQSIcon = "play.square"
     static let backIcon = "chevron.backward.square"
     

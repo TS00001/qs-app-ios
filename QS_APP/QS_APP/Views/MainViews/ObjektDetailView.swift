@@ -20,7 +20,7 @@ struct ObjektDetailView: View {
     var body: some View {
         NavigationStack{
             VStack(spacing: 0){
-                CustomHeaderBack(title: "OBJEKTNAME"){
+                CustomHeaderBack(title: "BÄCKEREI GAUKER"){
                     
                     Button(action: {
                         
@@ -54,13 +54,15 @@ struct ObjektDetailView: View {
                         }
                         
                         TitleComponent(title: "LEISTUNGSVERZEICHNIS"){
-                            NavigationLink(destination: AddLvView()){
+                            NavigationLink(destination: AddAreaView()){
                                 IconComponente(icon: Values.plus)
                             }
                             .navigationBarBackButtonHidden(true)
                             
                         }
-                        LvItem(title: "Leistungsverzeichnis BLOCK A")
+                        NavigationLink(destination: ListOfServicesAreaView()){
+                            LvItem(title: "Leistungsverzeichnis BLOCK A")
+                        }
                         LvItem(title: "Leistungsverzeichnis BLOCK B")
                         
                         TitleComponent(title: "REINIGUNGSTAGE"){

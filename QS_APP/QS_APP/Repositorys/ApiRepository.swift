@@ -11,7 +11,7 @@ class ApiRepository{
     
     static func getAddress(enteredAddress: String) async throws -> ApiAdress {
         var baseURL = "https://api.geoapify.com/v1/geocode/autocomplete?text="
-        let endURl = "lang=de&limit=3&format=json&apiKey=306311af969742299eb01be4f9fa4f28"
+        let endURl = "&lang=de&limit=3&format=json&apiKey=306311af969742299eb01be4f9fa4f28"
         
         baseURL.append(enteredAddress)
         baseURL.append(endURl)

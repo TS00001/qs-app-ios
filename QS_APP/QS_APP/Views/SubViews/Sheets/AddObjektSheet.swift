@@ -13,6 +13,8 @@ struct AddObjektSheet: View {
     
     @EnvironmentObject var addObjektVM: ObjektViewModel
     
+    
+    
     @Binding var showAddObjektSheet: Bool
     
     //MARK: VARIABLES
@@ -30,6 +32,7 @@ struct AddObjektSheet: View {
     
     
     @State var searchText = ""
+    @State private var isEditing = false
     
     let listOfServices = [Area]()
     let qualityAssurance = [QualityAssurance]()
@@ -39,58 +42,63 @@ struct AddObjektSheet: View {
         
         VStack{
             ScrollView{
-                
-                TextField("Objektname", text: $name)
-                    .formItemStyle(with: .appBlue)
-                    .font(.custom(FontStrings.appFontMedium, size: 16))
-                    .padding(.horizontal, Values.middlePadding)
-                
-                if street == "" {
-                    TextField("Addresse", text: $searchText)
+                //SEARCHBAR
+                HStack{
+                    TextField("Suche eine Adresse", text: $searchText)
+                        .padding(.leading, 20)
+                        .onTapGesture {
+                            self.isEditing = true
+                        }
                         .onChange(of: searchText){
                             if searchText.count > 2 {
                                 apiVM.getAddress(enteredAddress: searchText)
                             }
                         }
-                        .formItemStyle(with: .appBlue)
-                        .padding(.horizontal, Values.middlePadding)
-                } else {
-                    HStack{
-                        Image(systemName: Values.objektIcon)
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .foregroundStyle(Color.appBlue)
-                        VStack{
-                            Text("\(street) \(housenumber)")
-                                .font(.custom(FontStrings.appFontMedium, size: 16))
-                                .foregroundStyle(Color.appBlue)
-                            
-                            Text("\(postalCode) \(city)")
-                                .font(.custom(FontStrings.appFontMedium, size: 16))
-                                .foregroundStyle(Color.appBlue)
-                        }
-                    }
-                    .formItemStyle(with: .appBlue)
-                    .padding(.horizontal, Values.middlePadding)
-                    
+                        .formItemStyle(with: Color.appBlue)
+                        .padding(Values.middlePadding)
+                        .overlay(
+                            HStack {
+                                Image(systemName: "magnifyingglass")
+                                    .bold()
+                                    .foregroundColor(.appBlue)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.leading, 25)
+                                
+                                if isEditing {
+                                    Button(action: {
+                                        self.searchText = ""
+                                    }) {
+                                        Image(systemName: "multiply.circle.fill")
+                                            .bold()
+                                            .foregroundColor(.appBlue)
+                                            .padding(.trailing, 25)
+                                    }
+                                }
+                            }
+                        )
                 }
-                
                 
                 ZStack{
                     
                     VStack{
+                        TextField("Objektname", text: $name)
+                            .formItemStyle(with: .appBlue)
+                            .font(.custom(FontStrings.appFontMedium, size: 16))
+                            .padding(.horizontal, Values.middlePadding)
                         
-                        TextField("Mail", text: $mail)
+                        TextField("Straße Hausnummer", text: $street)
                             .formItemStyle(with: .appBlue)
+                            .font(.custom(FontStrings.appFontMedium, size: 16))
                             .padding(.horizontal, Values.middlePadding)
-                        TextField("Ansprechpartner", text: $contactPerson)
+                        
+                        TextField("Postleitzahl", text: $postalCode)
                             .formItemStyle(with: .appBlue)
+                            .font(.custom(FontStrings.appFontMedium, size: 16))
                             .padding(.horizontal, Values.middlePadding)
-                        TextField("Objektleiter", text: $objectManager)
+                        
+                        TextField("Stadt", text: $city)
                             .formItemStyle(with: .appBlue)
-                            .padding(.horizontal, Values.middlePadding)
-                        TextField("Reinigungskraft", text: $cleaningPerson)
-                            .formItemStyle(with: .appBlue)
+                            .font(.custom(FontStrings.appFontMedium, size: 16))
                             .padding(.horizontal, Values.middlePadding)
                         
                         HStack(spacing: 40){
@@ -101,36 +109,38 @@ struct AddObjektSheet: View {
                         .padding(.top, Values.middlePadding)
                         .padding(Values.middlePadding)
                     }
-                    
-                    if searchText.count > 2 {
-                        List{
-                            ForEach(apiVM.address.results, id: \.place_id) { result in
-                                HStack{
-                                    Image(systemName: Values.objektIcon)
-                                        .resizable()
-                                        .frame(width: 30, height: 30)
-                                        .foregroundStyle(Color.appBlue)
-                                    
-                                    Text(result.formatted ?? "")
-                                        .font(.custom(FontStrings.appFontBold, size: 18))
-                                        .foregroundStyle(Color.appBlue)
-                                        .onTapGesture {
-                                            searchText = ""
-                                            self.street = result.street ?? ""
-                                            self.housenumber = result.housenumber ?? ""
-                                            self.postalCode = result.postcode ?? ""
-                                            self.city = result.city ?? ""
-                                            self.lon = result.lon ?? 0.0
-                                            self.lat = result.lat ?? 0.0
-                                        }
+                    .overlay(VStack{
+                        if searchText.count > 2 {
+                            List{
+                                ForEach(apiVM.address.results, id: \.place_id) { result in
+                                    HStack{
+                                        Image(systemName: Values.objektIcon)
+                                            .resizable()
+                                            .frame(width: 30, height: 30)
+                                            .foregroundStyle(Color.appBlue)
+                                        
+                                        Text(result.formatted ?? "")
+                                            .font(.custom(FontStrings.appFontBold, size: 18))
+                                            .foregroundStyle(Color.appBlue)
+                                            .onTapGesture {
+                                                searchText = ""
+                                                self.street = result.street ?? ""
+                                                self.housenumber = result.housenumber ?? ""
+                                                self.postalCode = result.postcode ?? ""
+                                                self.city = result.city ?? ""
+                                                self.lon = result.lon ?? 0.0
+                                                self.lat = result.lat ?? 0.0
+                                            }
+                                    }
                                 }
+                                .listRowBackground(Color.appBackground)
                             }
-                            .listRowBackground(Color.appBackground)
+                            .padding(.top, -35)
+                            .padding(.horizontal, -6)
+                            .background(.opacity(0.0))
+                            .scrollContentBackground(.hidden)
                         }
-                        .padding(.top, -35)
-                        .background(.opacity(0.0))
-                        .scrollContentBackground(.hidden)
-                    }
+                    })
                 }
                 .backgroundStyle(Color.green)
             }

@@ -14,6 +14,7 @@ struct ObjektView: View {
     //MARK: VRIABLES
     @State var showAddObjektSheet = false
     
+    
     var body: some View {
         
         NavigationStack{

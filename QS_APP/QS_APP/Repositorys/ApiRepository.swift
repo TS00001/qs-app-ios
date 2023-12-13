@@ -16,7 +16,7 @@ class ApiRepository{
         baseURL.append(enteredAddress)
         baseURL.append(endURl)
         
-        guard let baseUrl = URL(string: baseURL) else { return ApiAdress(results: [ApiResult(country: "", state: "", city: "", postcode: "", lon: 0.0, lat: 0.0, housenumber: "", formatted: "", address_line1: "", address_line2: "")])
+        guard let baseUrl = URL(string: baseURL) else { return ApiAdress(results: [ApiResult(country: "", state: "", city: "", housenumber: "", postcode: "", lon: 0.0, lat: 0.0, formatted: "", address_line1: "", address_line2: "")])
         }
         
         let (data, _) = try await URLSession.shared.data(from: baseUrl)

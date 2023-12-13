@@ -12,6 +12,7 @@ struct ObjektAndQsListItem: View {
     let icon: String
     let title: String
     let street: String
+    var housenumber: String
     let postalCode: String
     let city: String
     
@@ -58,5 +59,5 @@ struct ObjektAndQsListItem: View {
 }
 
 #Preview {
-    ObjektAndQsListItem(icon: Values.qsIcon, title: "Bäckerei Gauker", street: "Eugenstraße 10", postalCode: "72072", city: "Tübingen")
+    ObjektAndQsListItem(icon: Values.qsIcon, title: "Bäckerei Gauker", street: "Eugenstraße 10", housenumber: "10", postalCode: "72072", city: "Tübingen")
 }

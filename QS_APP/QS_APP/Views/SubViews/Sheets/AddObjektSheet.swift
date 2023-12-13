@@ -18,12 +18,16 @@ struct AddObjektSheet: View {
     //MARK: VARIABLES
     @State var name = ""
     @State var street = ""
+    @State var housenumber = ""
     @State var postalCode = ""
     @State var city = ""
+    @State var lon = 0.0
+    @State var lat = 0.0
     @State var mail = ""
     @State var contactPerson = ""
     @State var objectManager = ""
     @State var cleaningPerson = ""
+    
     
     @State var searchText = ""
     
@@ -33,71 +37,111 @@ struct AddObjektSheet: View {
     
     var body: some View {
         
-        TextField("Adresse", text: $searchText)
-            .onChange(of: searchText){
-                if searchText.count > 2 {
-                    apiVM.getAddress(enteredAddress: searchText)
-                    for result in apiVM.address.results{
-                        print(result.address_line1 ?? "")
-                        print(result.address_line2 ?? "")
-//                        print(result.country ?? "")
-                    }
-//                    print(searchText)
-//                    print("Result: \(apiVM.address.results.first?.country ?? "")")
-                }
-            }
-            .padding(20)
-            .background(.appRed)
-        ZStack{
-            AppBackground(color: .appBlue)
-    
-            
+        VStack{
             ScrollView{
                 
-//                TextField("Objektname", text: $name)
-//                    .formItemStyle(with: .appBlue)
-//                
-//                TextField("Straße/Nummer", text: $street)
-//                    .formItemStyle(with: .appBlue)
-//                
-//                TextField("Postleitzahl", text: $postalCode)
-//                    .formItemStyle(with: .appBlue)
-//                    .textContentType(.oneTimeCode)
-//                    .keyboardType(.numberPad)
-//                
-//                TextField("Stadt", text: $city)
-//                    .formItemStyle(with: .appBlue)
-//                
-//                TextField("Mail", text: $mail)
-//                    .formItemStyle(with: .appBlue)
-//                
-//                TextField("Ansprechpartner", text: $contactPerson)
-//                    .formItemStyle(with: .appBlue)
-//                
-//                TextField("Objektleiter", text: $objectManager)
-//                    .formItemStyle(with: .appBlue)
-//                
-//                TextField("Reinigungskraft", text: $cleaningPerson)
-//                    .formItemStyle(with: .appBlue)
-//                
-//                HStack(spacing: 40){
-//                    StandardButton(label: "Abbrechen", color: .appRed, fontColor: .appBackground, action: saveObjekt)
-//                    
-//                    StandardButton(label: "Speichern", color: .appBackground, fontColor: .appBlue, action: saveObjekt)
-//                }
-//                .padding(.top, Values.middlePadding)
+                TextField("Objektname", text: $name)
+                    .formItemStyle(with: .appBlue)
+                    .font(.custom(FontStrings.appFontMedium, size: 16))
+                    .padding(.horizontal, Values.middlePadding)
                 
+                if street == "" {
+                    TextField("Addresse", text: $searchText)
+                        .onChange(of: searchText){
+                            if searchText.count > 2 {
+                                apiVM.getAddress(enteredAddress: searchText)
+                            }
+                        }
+                        .formItemStyle(with: .appBlue)
+                        .padding(.horizontal, Values.middlePadding)
+                } else {
+                    HStack{
+                        Image(systemName: Values.objektIcon)
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundStyle(Color.appBlue)
+                        VStack{
+                            Text("\(street) \(housenumber)")
+                                .font(.custom(FontStrings.appFontMedium, size: 16))
+                                .foregroundStyle(Color.appBlue)
+                            
+                            Text("\(postalCode) \(city)")
+                                .font(.custom(FontStrings.appFontMedium, size: 16))
+                                .foregroundStyle(Color.appBlue)
+                        }
+                    }
+                    .formItemStyle(with: .appBlue)
+                    .padding(.horizontal, Values.middlePadding)
+                    
+                }
+                
+                
+                ZStack{
+                    
+                    VStack{
+                        
+                        TextField("Mail", text: $mail)
+                            .formItemStyle(with: .appBlue)
+                            .padding(.horizontal, Values.middlePadding)
+                        TextField("Ansprechpartner", text: $contactPerson)
+                            .formItemStyle(with: .appBlue)
+                            .padding(.horizontal, Values.middlePadding)
+                        TextField("Objektleiter", text: $objectManager)
+                            .formItemStyle(with: .appBlue)
+                            .padding(.horizontal, Values.middlePadding)
+                        TextField("Reinigungskraft", text: $cleaningPerson)
+                            .formItemStyle(with: .appBlue)
+                            .padding(.horizontal, Values.middlePadding)
+                        
+                        HStack(spacing: 40){
+                            StandardButton(label: "Abbrechen", color: .appRed, fontColor: .appBackground, action: saveObjekt)
+                            
+                            StandardButton(label: "Speichern", color: .appBackground, fontColor: .appBlue, action: saveObjekt)
+                        }
+                        .padding(.top, Values.middlePadding)
+                        .padding(Values.middlePadding)
+                    }
+                    
+                    if searchText.count > 2 {
+                        List{
+                            ForEach(apiVM.address.results, id: \.place_id) { result in
+                                HStack{
+                                    Image(systemName: Values.objektIcon)
+                                        .resizable()
+                                        .frame(width: 30, height: 30)
+                                        .foregroundStyle(Color.appBlue)
+                                    
+                                    Text(result.formatted ?? "")
+                                        .font(.custom(FontStrings.appFontBold, size: 18))
+                                        .foregroundStyle(Color.appBlue)
+                                        .onTapGesture {
+                                            searchText = ""
+                                            self.street = result.street ?? ""
+                                            self.housenumber = result.housenumber ?? ""
+                                            self.postalCode = result.postcode ?? ""
+                                            self.city = result.city ?? ""
+                                            self.lon = result.lon ?? 0.0
+                                            self.lat = result.lat ?? 0.0
+                                        }
+                                }
+                            }
+                            .listRowBackground(Color.appBackground)
+                        }
+                        .padding(.top, -35)
+                        .background(.opacity(0.0))
+                        .scrollContentBackground(.hidden)
+                    }
+                }
+                .backgroundStyle(Color.green)
             }
-            .padding(.top, Values.majorPadding)
-            .padding(Values.middlePadding)
-            
         }
+        .padding(.top, Values.middlePadding)
+        .background(Color.appBlue)
     }
-    
     
     func saveObjekt(){
         
-        let adress = Adress(street: self.street, postalCode: self.postalCode, city: self.city)
+        let adress = Adress(street: self.street, housenumber: "", postalCode: self.postalCode, city: self.city, lon: self.lon, lat: self.lat)
         
         let objekt = Objekt(name: self.name, adress: adress, mail: self.mail, contactPerson: self.contactPerson, cleaningPerson: self.cleaningPerson, objectManager: self.objectManager, interval: Interval.one.intervalString, listOfServices: self.listOfServices, qualityAssurance: self.qualityAssurance)
         

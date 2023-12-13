@@ -12,11 +12,12 @@ struct ApiResult: Codable{
     var country: String?
     var state: String?
     var city: String?
+    var street: String?
+    var housenumber: String?
     var postcode: String?
     var postcodes: [String]?
     var lon: Double?
     var lat: Double?
-    var housenumber: String?
     var formatted: String?
     var address_line1: String?
     var address_line2: String?

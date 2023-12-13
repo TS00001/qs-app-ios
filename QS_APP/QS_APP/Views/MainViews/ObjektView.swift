@@ -28,31 +28,24 @@ struct ObjektView: View {
                 .sheet(isPresented: $showAddObjektSheet) {
                     AddObjektSheet(showAddObjektSheet: $showAddObjektSheet)
                         .environmentObject(objektVM)
+                        .presentationDetents([.height(550)])
                 }
                 
                 VStack{
                     ScrollView{
                         ForEach(objektVM.objektList, id: \.id){ objekt in
                             NavigationLink(destination: ObjektDetailView()){
-                                ObjektAndQsListItem(icon: Values.objektIcon, title: objekt.name, street: objekt.adress.street, postalCode: objekt.adress.postalCode, city: objekt.adress.city)
+                                ObjektAndQsListItem(icon: Values.objektIcon, title: objekt.name, street: objekt.adress.street, housenumber: objekt.adress.housenumber, postalCode: objekt.adress.postalCode, city: objekt.adress.city)
                             }
                             .navigationBarBackButtonHidden(true)
-                            
-//                            .swipeActions{
-//                                Button(role: .destructive){
-//                                    withAnimation {
-//                                        objektVM.deleteObjekt(with: objekt.id)
-//                                    }
-//                                }label: {
-//                                    Label("LÖSCHEN", systemImage: "trash")
-//                                }
-//                            }
                         }
                         .padding(.horizontal, Values.middlePadding)
                     }
                 }
             }
+            .background(Color.appBackground)
         }
+        
     }
 }
 

@@ -13,7 +13,7 @@ import Foundation
 @MainActor
 class AddressAPIViewModel: ObservableObject {
     
-    @Published var address = ApiAdress(results: [ApiResult(country: "", state: "", city: "", postcode: "", lon: 0.0, lat: 0.0, housenumber: "", formatted: "", address_line1: "", address_line2: "")])
+    @Published var address = ApiAdress(results: [ApiResult(country: "", state: "", city: "", housenumber: "", postcode: "", lon: 0.0, lat: 0.0, formatted: "", address_line1: "", address_line2: "")])
     
     func getAddress(enteredAddress: String) {
         Task{

@@ -21,5 +21,10 @@ struct Objekt: Codable{
     var interval: String?
     var listOfServices: [Area]?
     var qualityAssurance: [QualityAssurance]?
+    var cleaningDayMon: Bool?
+    var cleaningDayTue: Bool?
+    var cleaningDayWed: Bool?
+    var cleaningDayThu: Bool?
+    var cleaningDayFri: Bool?
 }
 

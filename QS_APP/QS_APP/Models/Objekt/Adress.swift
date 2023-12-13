@@ -11,6 +11,9 @@ struct Adress: Codable{
     var id = UUID().uuidString
     
     var street: String
+    var housenumber: String
     var postalCode: String
     var city: String
+    var lon: Double
+    var lat: Double
 }

@@ -30,7 +30,7 @@ struct HomeView: View {
                     
                     ForEach(1...5, id: \.self){ item in
                         
-                        ObjektAndQsListItem(icon: Values.qsIcon, title: "Bäckerei Gauker", street: "Eugenstraße 10", postalCode: "72072", city: "Tübingen")
+                        ObjektAndQsListItem(icon: Values.qsIcon, title: "Bäckerei Gauker", street: "Eugenstraße", housenumber: "10,", postalCode: "72072", city: "Tübingen")
                     }
                 }
                 .padding(.horizontal, Values.middlePadding)

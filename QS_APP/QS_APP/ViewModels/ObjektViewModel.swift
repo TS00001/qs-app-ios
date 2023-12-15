@@ -60,4 +60,53 @@ class ObjektViewModel: ObservableObject {
         }
     }
     
+    /**
+     Mit dieser Funktion werden die maininformationen im Objekt aktualisiert
+     @param id: ist die ID des Objekteszur identifizierung
+     @param data: sind die Daten die aktualisiert werden, diese beinhalten folgende Daten
+     name: String
+     adress: String
+     mail: String
+     contactPerson: String
+     cleaningPerson: String
+     objectManager: String
+     */
+    //    func updateObjektInformations(with id: String, data: [String : Any]) {
+    ////        print("ID: \(id)")
+    //        FirebaseManager.shared.database.collection("objekt").document(id).setData(data, merge: true) { error in
+    //            if let error {
+    //                print("Objekt wurde nicht aktualisiert", error.localizedDescription)
+    //                return
+    //            }
+    //
+    //            print("Objekt aktualisiert!")
+    //        }
+    //    }
+    
+    func updateObjektInformations(with id: String, data: Objekt) {
+        
+        let db = FirebaseManager.shared.database.collection("objekt").document(id)
+        do{
+            try db.setData(from: data)
+            print("Objekt aktualisiert!")
+        }catch{
+            print("Fehler beim updaten des Objektes")
+        }
+    }
+    
+    func updateCleaningDays(with id: String, data: [String : Any]){
+        
+        FirebaseManager.shared.database.collection("objekt").document(id).setData(data, merge: true) { error in
+            if let error {
+                print("Reinigungstage konnten nicht aktualisiert werden", error.localizedDescription)
+                return
+            }
+            
+            print("Reinigungstage aktualisiert!")
+        }
+        
+    }
+    
+    
+    
 }

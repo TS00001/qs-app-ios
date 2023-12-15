@@ -14,6 +14,6 @@ struct Adress: Codable{
     var housenumber: String
     var postalCode: String
     var city: String
-    var lon: Double
-    var lat: Double
+    var lon: Double?
+    var lat: Double?
 }

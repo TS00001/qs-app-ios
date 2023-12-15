@@ -11,6 +11,8 @@ struct FormItemStyle: ViewModifier {
     
     func body(content: Content) -> some View {
         content
+            .foregroundStyle(Color.appBlue)
+            .font(.custom(FontStrings.appFontBlack, size: 22))
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading, Values.middlePadding)
             .frame(height: 30)

@@ -30,6 +30,7 @@
 		C70BAAE32B0D58D10064660F /* BarlowSemiCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C70BAAE02B0D58D10064660F /* BarlowSemiCondensed-Light.ttf */; };
 		C70BAAEB2B0E447D0064660F /* SettingsUserProfilCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAEA2B0E447D0064660F /* SettingsUserProfilCard.swift */; };
 		C70BAAED2B0E79A60064660F /* SettingsListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70BAAEC2B0E79A60064660F /* SettingsListItem.swift */; };
+		C71EAB582B2AFC6B00FFEF27 /* UpdateObjektInfoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71EAB572B2AFC6B00FFEF27 /* UpdateObjektInfoSheet.swift */; };
 		C7595DD72B1A0365003392A2 /* ObjektDataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7595DD62B1A0365003392A2 /* ObjektDataItem.swift */; };
 		C7595DD92B1A1D5E003392A2 /* ItemSubTitleModi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7595DD82B1A1D5E003392A2 /* ItemSubTitleModi.swift */; };
 		C7595DDB2B1A256D003392A2 /* ItemTitleModi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7595DDA2B1A256D003392A2 /* ItemTitleModi.swift */; };
@@ -135,6 +136,7 @@
 		C70BAAE02B0D58D10064660F /* BarlowSemiCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Light.ttf"; sourceTree = "<group>"; };
 		C70BAAEA2B0E447D0064660F /* SettingsUserProfilCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUserProfilCard.swift; sourceTree = "<group>"; };
 		C70BAAEC2B0E79A60064660F /* SettingsListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListItem.swift; sourceTree = "<group>"; };
+		C71EAB572B2AFC6B00FFEF27 /* UpdateObjektInfoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateObjektInfoSheet.swift; sourceTree = "<group>"; };
 		C7595DD62B1A0365003392A2 /* ObjektDataItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjektDataItem.swift; sourceTree = "<group>"; };
 		C7595DD82B1A1D5E003392A2 /* ItemSubTitleModi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSubTitleModi.swift; sourceTree = "<group>"; };
 		C7595DDA2B1A256D003392A2 /* ItemTitleModi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTitleModi.swift; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 				C7B24F882B13E3FD002A4642 /* AddObjektSheet.swift */,
 				C700B5B82B21DEE600A58D81 /* UpdateCleaningDaysSheet.swift */,
 				C703E2442B250B3B00816CD4 /* UpdateIntervallSheet.swift */,
+				C71EAB572B2AFC6B00FFEF27 /* UpdateObjektInfoSheet.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -727,6 +730,7 @@
 				C703E2402B24B8D400816CD4 /* VstackModi.swift in Sources */,
 				C7B24F8F2B13FF32002A4642 /* StandardButton.swift in Sources */,
 				C7DA2DC92B1FE5B200510677 /* IntervallComponente.swift in Sources */,
+				C71EAB582B2AFC6B00FFEF27 /* UpdateObjektInfoSheet.swift in Sources */,
 				C7B24F812B13C68A002A4642 /* CustomHeader.swift in Sources */,
 				C77322BF2B0B66E100BE2866 /* FirebaseManager.swift in Sources */,
 				C773227C2B06649200BE2866 /* QS_APPApp.swift in Sources */,

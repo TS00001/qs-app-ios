@@ -35,7 +35,7 @@ struct ObjektAndQsListItem: View {
                     Spacer()
                 }
                 HStack{
-                    Text("\(street), \(postalCode) \(city)")
+                    Text("\(street) \(housenumber), \(postalCode) \(city)")
                         .foregroundStyle(Color.appBackground)
                         .font(.footnote)
                         .bold()

@@ -6,11 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-struct Objekt: Codable{
-    
-    //TODO: schauen wie ich DucumentId verwenden kann
-    var id = UUID().uuidString
+struct Objekt: Codable, Identifiable{
+    @DocumentID var id: String?
     
     var name: String
     var adress: Adress
@@ -21,10 +20,10 @@ struct Objekt: Codable{
     var interval: String?
     var listOfServices: [Area]?
     var qualityAssurance: [QualityAssurance]?
-    var cleaningDayMon: Bool?
-    var cleaningDayTue: Bool?
-    var cleaningDayWed: Bool?
-    var cleaningDayThu: Bool?
-    var cleaningDayFri: Bool?
+    var cleaningDayMon = false
+    var cleaningDayTue = false
+    var cleaningDayWed = false
+    var cleaningDayThu = false
+    var cleaningDayFri = false
 }
 

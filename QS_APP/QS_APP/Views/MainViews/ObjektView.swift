@@ -35,7 +35,7 @@ struct ObjektView: View {
                 VStack{
                     ScrollView{
                         ForEach(objektVM.objektList, id: \.id){ objekt in
-                            NavigationLink(destination: ObjektDetailView()){
+                            NavigationLink(destination: ObjektDetailView(objekt: objekt).environmentObject(objektVM)){
                                 ObjektAndQsListItem(icon: Values.objektIcon, title: objekt.name, street: objekt.adress.street, housenumber: objekt.adress.housenumber, postalCode: objekt.adress.postalCode, city: objekt.adress.city)
                             }
                             .navigationBarBackButtonHidden(true)
@@ -48,6 +48,8 @@ struct ObjektView: View {
         }
         
     }
+    
+    
 }
 
 #Preview {

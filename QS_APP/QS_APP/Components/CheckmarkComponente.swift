@@ -8,116 +8,54 @@
 import SwiftUI
 
 struct CheckmarkComponente: View {
-    @State private var isMOActivated = false
-    @State private var isDIActivated = false
-    @State private var isMIActivated = false
-    @State private var isDOActivated = false
-    @State private var isFRkctivated = false
+    @Binding var cleaningDayMon: Bool
+    @Binding var cleaningDayTue: Bool
+    @Binding var cleaningDayWed: Bool
+    @Binding var cleaningDayThu: Bool
+    @Binding var cleaningDayFri: Bool
     
     var body: some View {
-        HStack(spacing: 20) {
-            
-            VStack {
-                Text("MO")
-                    .font(.custom(FontStrings.appFontBlack, size: 30))
-                    .padding(.top, 20)
-                    .foregroundColor(.appBackground)
-                
-                Image(systemName: isMOActivated ? "checkmark.square.fill" : "square")
-                    .resizable()
-                    .frame(width: 40, height: 40)
-                    .bold()
-                    .padding(.vertical, 10)
-                    .padding(.bottom, 20)
-                    .foregroundColor(.appBackground)
-                    .onTapGesture {
-                        isMOActivated.toggle()
-                    }
+            HStack(spacing: 20) {
+                DayCheckbox(day: "MO", isChecked: $cleaningDayMon)
+                DayCheckbox(day: "DI", isChecked: $cleaningDayTue)
+                DayCheckbox(day: "MI", isChecked: $cleaningDayWed)
+                DayCheckbox(day: "DO", isChecked: $cleaningDayThu)
+                DayCheckbox(day: "FR", isChecked: $cleaningDayFri)
             }
-            
+            .frame(maxWidth: .infinity)
+            .background(Color.appBlue)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .shadow(radius: 2)
+        }
+    }
+
+    struct DayCheckbox: View {
+        var day: String
+        @Binding var isChecked: Bool
+
+        var body: some View {
             VStack {
-                Text("DI")
+                Text(day)
                     .font(.custom(FontStrings.appFontBlack, size: 30))
                     .padding(.top, 20)
-                    .foregroundColor(.appBackground)
+                    .foregroundColor(.white)
+
+                Image(systemName: isChecked ? "checkmark.square.fill" : "square")
                 
-                Image(systemName: isDIActivated ? "checkmark.square.fill" : "square")
                     .resizable()
-                    .frame(width: 40, height: 40)
-                    .bold()
+                    .frame(width: 30, height: 30)
                     .padding(.vertical, 10)
                     .padding(.bottom, 20)
                     .foregroundColor(.appBackground)
-                    .onTapGesture {
-                        
-                        isDIActivated.toggle()
-                    }
-            }
-            
-            VStack {
-                Text("MI")
-                    .font(.custom(FontStrings.appFontBlack, size: 30))
-                    .padding(.top, 20)
-                    .foregroundColor(.appBackground)
-                
-                Image(systemName: isMIActivated ? "checkmark.square.fill" : "square")
-                    .resizable()
-                    .frame(width: 40, height: 40)
                     .bold()
-                    .padding(.vertical, 10)
-                    .padding(.bottom, 20)
-                    .foregroundColor(.appBackground)
                     .onTapGesture {
-                        
-                        isMIActivated.toggle()
-                    }
-            }
-            
-            VStack {
-                Text("DO")
-                    .font(.custom(FontStrings.appFontBlack, size: 30))
-                    .padding(.top, 20)
-                    .foregroundColor(.appBackground)
-                
-                Image(systemName: isDOActivated ? "checkmark.square.fill" : "square")
-                    .resizable()
-                    .frame(width: 40, height: 40)
-                    .bold()
-                    .padding(.vertical, 10)
-                    .padding(.bottom, 20)
-                    .foregroundColor(.appBackground)
-                    .onTapGesture {
-                        
-                        isDOActivated.toggle()
-                    }
-            }
-            
-            VStack {
-                Text("FR")
-                    .font(.custom(FontStrings.appFontBlack, size: 30))
-                    .padding(.top, 20)
-                    .foregroundColor(.appBackground)
-                
-                Image(systemName: isFRkctivated ? "checkmark.square.fill" : "square")
-                    .resizable()
-                    .frame(width: 40, height: 40)
-                    .bold()
-                    .padding(.vertical, 10)
-                    .padding(.bottom, 20)
-                    .foregroundColor(.appBackground)
-                    .onTapGesture {
-                        
-                        isFRkctivated.toggle()
+                        isChecked.toggle()
                     }
             }
         }
-        .frame(maxWidth: .infinity)
-        .background(Color.appBlue)
-        .clipShape(RoundedRectangle(cornerRadius: 10))
-        .shadow(radius: Values.minorShadow)
     }
-}
+    
 
 #Preview {
-    CheckmarkComponente()
+    CheckmarkComponente(cleaningDayMon: .constant(false), cleaningDayTue: .constant(false), cleaningDayWed: .constant(false), cleaningDayThu: .constant(false), cleaningDayFri: .constant(false))
 }

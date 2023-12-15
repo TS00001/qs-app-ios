@@ -8,10 +8,21 @@
 import SwiftUI
 
 struct UpdateCleaningDaysSheet: View {
+    @Binding var objektId: String
+    
+    @EnvironmentObject var objektVM: ObjektViewModel
     
     //MARK: VARIABLES
     
     @Binding var showUpdateCleaningdaysSheet: Bool
+    
+    @State var cleaningDayMon = false
+    @State var cleaningDayTue = false
+    @State var cleaningDayWed = false
+    @State var cleaningDayThu = false
+    @State var cleaningDayFri = false
+    
+    
     
     var body: some View {
         
@@ -33,17 +44,31 @@ struct UpdateCleaningDaysSheet: View {
                         .foregroundStyle(Color.appRed)
                 })
             }
-
-            CheckmarkComponente()
+            
+            CheckmarkComponente(
+                cleaningDayMon: $cleaningDayMon,
+                cleaningDayTue: $cleaningDayTue,
+                cleaningDayWed: $cleaningDayWed,
+                cleaningDayThu: $cleaningDayThu,
+                cleaningDayFri: $cleaningDayFri
+            )
             
             StandardButton(label: "SPEICHERN", color: .appBlue, fontColor: .appBackground){
+                updateCleaningDays()
                 showUpdateCleaningdaysSheet = false
             }
         }
         .vstackModi()
     }
+    
+    func updateCleaningDays(){
+        
+        let data = ["cleaningDayMon": cleaningDayMon, "cleaningDayTue": cleaningDayTue, "cleaningDayWed": cleaningDayWed, "cleaningDayThu": cleaningDayThu, "cleaningDayFri": cleaningDayFri]
+        
+        objektVM.updateCleaningDays(with: objektId, data: data)
+    }
 }
 
 #Preview {
-    UpdateCleaningDaysSheet(showUpdateCleaningdaysSheet: .constant(false))
+    UpdateCleaningDaysSheet(objektId: .constant(""), showUpdateCleaningdaysSheet: .constant(false))
 }

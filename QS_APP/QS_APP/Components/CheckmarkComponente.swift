@@ -13,14 +13,17 @@ struct CheckmarkComponente: View {
     @Binding var cleaningDayWed: Bool
     @Binding var cleaningDayThu: Bool
     @Binding var cleaningDayFri: Bool
+    @State var isEditable: Bool
+    
+    
     
     var body: some View {
             HStack(spacing: 20) {
-                DayCheckbox(day: "MO", isChecked: $cleaningDayMon)
-                DayCheckbox(day: "DI", isChecked: $cleaningDayTue)
-                DayCheckbox(day: "MI", isChecked: $cleaningDayWed)
-                DayCheckbox(day: "DO", isChecked: $cleaningDayThu)
-                DayCheckbox(day: "FR", isChecked: $cleaningDayFri)
+                DayCheckbox(day: "MO", isEditable: $isEditable, isChecked: $cleaningDayMon)
+                DayCheckbox(day: "DI", isEditable: $isEditable, isChecked: $cleaningDayTue)
+                DayCheckbox(day: "MI", isEditable: $isEditable, isChecked: $cleaningDayWed)
+                DayCheckbox(day: "DO", isEditable: $isEditable, isChecked: $cleaningDayThu)
+                DayCheckbox(day: "FR", isEditable: $isEditable, isChecked: $cleaningDayFri)
             }
             .frame(maxWidth: .infinity)
             .background(Color.appBlue)
@@ -31,6 +34,7 @@ struct CheckmarkComponente: View {
 
     struct DayCheckbox: View {
         var day: String
+        @Binding var isEditable: Bool
         @Binding var isChecked: Bool
 
         var body: some View {
@@ -49,7 +53,9 @@ struct CheckmarkComponente: View {
                     .foregroundColor(.appBackground)
                     .bold()
                     .onTapGesture {
-                        isChecked.toggle()
+                        if isEditable {
+                            isChecked.toggle()
+                        }
                     }
             }
         }
@@ -57,5 +63,5 @@ struct CheckmarkComponente: View {
     
 
 #Preview {
-    CheckmarkComponente(cleaningDayMon: .constant(false), cleaningDayTue: .constant(false), cleaningDayWed: .constant(false), cleaningDayThu: .constant(false), cleaningDayFri: .constant(false))
+    CheckmarkComponente(cleaningDayMon: .constant(false), cleaningDayTue: .constant(false), cleaningDayWed: .constant(false), cleaningDayThu: .constant(false), cleaningDayFri: .constant(false), isEditable: false)
 }

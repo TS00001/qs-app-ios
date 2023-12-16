@@ -8,31 +8,27 @@
 import SwiftUI
 
 struct UpdateCleaningDaysSheet: View {
-    @Binding var objektId: String
+    
+    //MARK: VIEWMODELS
     
     @EnvironmentObject var objektVM: ObjektViewModel
     
     //MARK: VARIABLES
     
+    @Binding var objektId: String
     @Binding var showUpdateCleaningdaysSheet: Bool
-    
-    @State var cleaningDayMon = false
-    @State var cleaningDayTue = false
-    @State var cleaningDayWed = false
-    @State var cleaningDayThu = false
-    @State var cleaningDayFri = false
-    
-    
+    @State var cleaningDayMon: Bool = false
+    @State var cleaningDayTue: Bool = false
+    @State var cleaningDayWed: Bool = false
+    @State var cleaningDayThu: Bool = false
+    @State var cleaningDayFri: Bool = false
     
     var body: some View {
         
         VStack(spacing: 30){
-            
             HStack(spacing:0){
-                
                 Text("WÄHLE DIE REINIGUNGSTAGE AUS")
                     .sheetTitleModi()
-                
                 
                 Button(action: {
                     showUpdateCleaningdaysSheet = false
@@ -50,7 +46,7 @@ struct UpdateCleaningDaysSheet: View {
                 cleaningDayTue: $cleaningDayTue,
                 cleaningDayWed: $cleaningDayWed,
                 cleaningDayThu: $cleaningDayThu,
-                cleaningDayFri: $cleaningDayFri
+                cleaningDayFri: $cleaningDayFri, isEditable: true
             )
             
             StandardButton(label: "SPEICHERN", color: .appBlue, fontColor: .appBackground){
@@ -62,7 +58,6 @@ struct UpdateCleaningDaysSheet: View {
     }
     
     func updateCleaningDays(){
-        
         let data = ["cleaningDayMon": cleaningDayMon, "cleaningDayTue": cleaningDayTue, "cleaningDayWed": cleaningDayWed, "cleaningDayThu": cleaningDayThu, "cleaningDayFri": cleaningDayFri]
         
         objektVM.updateCleaningDays(with: objektId, data: data)

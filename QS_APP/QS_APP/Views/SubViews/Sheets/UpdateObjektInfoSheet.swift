@@ -23,7 +23,7 @@ struct UpdateObjektInfoSheet: View {
     @State var objektId = ""
     
     var body: some View {
-        VStack{
+        ScrollView{
             TextField("Objektname", text: self.$name)
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
@@ -71,7 +71,7 @@ struct UpdateObjektInfoSheet: View {
             .padding(Values.middlePadding)
         }
         .background(Color.appBlue)
-        .padding(.top, Values.middlePadding)
+//        .padding(.top, Values.middlePadding)
     }
     
     

@@ -45,14 +45,8 @@ struct ObjektDetailView: View {
         self.cleaningDayWed = objekt.cleaningDayWed
         self.cleaningDayThu = objekt.cleaningDayThu
         self.cleaningDayFri = objekt.cleaningDayFri
-        
-        
     }
-    
-    func backButton(){
         
-    }
-    
     var body: some View {
         NavigationStack{
             VStack(spacing: 0){
@@ -121,7 +115,7 @@ struct ObjektDetailView: View {
                                 .environmentObject(objektVM)
                         }
                         
-                        CheckmarkComponente(cleaningDayMon: $cleaningDayMon, cleaningDayTue: $cleaningDayTue, cleaningDayWed: $cleaningDayWed, cleaningDayThu: $cleaningDayThu, cleaningDayFri: $cleaningDayFri
+                        CheckmarkComponente(cleaningDayMon: $cleaningDayMon, cleaningDayTue: $cleaningDayTue, cleaningDayWed: $cleaningDayWed, cleaningDayThu: $cleaningDayThu, cleaningDayFri: $cleaningDayFri, isEditable: false
                         )
                         
                         TitleComponent(title: "QS INTERVALL"){
@@ -157,9 +151,9 @@ struct ObjektDetailView: View {
             }
             .background(Color.appBackground)
         }
-        
     }
 }
+
 //
 //#Preview {
 //    ObjektDetailView(adress: Adress(street: "", housenumber: "", postalCode: "", city: "", lon: 0.0, lat: 0.0), contactPerson: "", objectManager: "", cleaningPerson: "", objekt: Objekt(name: "", adress: Adress(street: "", housenumber: "", postalCode: "", city: "", lon: 0.0, lat: 0.0), mail: ""))

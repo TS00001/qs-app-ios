@@ -10,14 +10,13 @@ import SwiftUI
 struct AddObjektSheet: View {
     
     @StateObject private var apiVM = AddressAPIViewModel()
-    
     @EnvironmentObject var addObjektVM: ObjektViewModel
     
     
     
-    @Binding var showAddObjektSheet: Bool
     
     //MARK: VARIABLES
+    @Binding var showAddObjektSheet: Bool
     @State var name = ""
     @State var street = ""
     @State var housenumber = ""
@@ -29,15 +28,12 @@ struct AddObjektSheet: View {
     @State var contactPerson = ""
     @State var objectManager = ""
     @State var cleaningPerson = ""
-    
     @State var adressLine1 = ""
-    
     @State var searchText = ""
     @State private var isEditing = false
     
     let listOfServices = [Area]()
     let qualityAssurance = [QualityAssurance]()
-    
     
     var body: some View {
         
@@ -83,9 +79,12 @@ struct AddObjektSheet: View {
                     TextField("Objektname", text: $name)
                         .formItemStyle(with: .appBlue)
                         .padding(.horizontal, Values.middlePadding)
-//                        .padding(.bottom, 20)
                     
-                    TextField("Straße Hausnummer", text: $adressLine1)
+                    TextField("Straße", text: $adressLine1)
+                        .formItemStyle(with: .appBlue)
+                        .padding(.horizontal, Values.middlePadding)
+                    
+                    TextField("Hausnummer", text: $housenumber)
                         .formItemStyle(with: .appBlue)
                         .padding(.horizontal, Values.middlePadding)
                     
@@ -147,7 +146,7 @@ struct AddObjektSheet: View {
     
     func saveObjekt(){
         
-        let adress = Adress(street: self.street, housenumber: "", postalCode: self.postalCode, city: self.city, lon: self.lon, lat: self.lat)
+        let adress = Adress(street: self.street, housenumber: self.housenumber, postalCode: self.postalCode, city: self.city, lon: self.lon, lat: self.lat)
         
         let objekt = Objekt(name: self.name, adress: adress, mail: self.mail, contactPerson: self.contactPerson, cleaningPerson: self.cleaningPerson, objectManager: self.objectManager, interval: Interval.one.intervalString, listOfServices: self.listOfServices, qualityAssurance: self.qualityAssurance)
         

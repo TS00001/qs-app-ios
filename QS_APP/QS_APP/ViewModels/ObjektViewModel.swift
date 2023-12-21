@@ -16,7 +16,9 @@ class ObjektViewModel: ObservableObject {
     private var listener: ListenerRegistration?
     
     init(){
+        
         fetchObjekt()
+        print("OBJEKTLIST INIT:", self.objektList.count)
     }
     /**
      Funktion um ein Objekt in Firestore zu erstellen
@@ -47,6 +49,8 @@ class ObjektViewModel: ObservableObject {
                 self.objektList = documents.compactMap{ queryDocument -> Objekt? in
                     return try? queryDocument.data(as: Objekt.self)
                 }
+                print("OBJEKTLIST:", self.objektList.count)
+                print("OBJEKTLIST:", self.objektList.first?.cleaningDayMon)
             }
     }
     
@@ -59,29 +63,6 @@ class ObjektViewModel: ObservableObject {
             print("Objekt wurde gelöscht")
         }
     }
-    
-    /**
-     Mit dieser Funktion werden die maininformationen im Objekt aktualisiert
-     @param id: ist die ID des Objekteszur identifizierung
-     @param data: sind die Daten die aktualisiert werden, diese beinhalten folgende Daten
-     name: String
-     adress: String
-     mail: String
-     contactPerson: String
-     cleaningPerson: String
-     objectManager: String
-     */
-    //    func updateObjektInformations(with id: String, data: [String : Any]) {
-    ////        print("ID: \(id)")
-    //        FirebaseManager.shared.database.collection("objekt").document(id).setData(data, merge: true) { error in
-    //            if let error {
-    //                print("Objekt wurde nicht aktualisiert", error.localizedDescription)
-    //                return
-    //            }
-    //
-    //            print("Objekt aktualisiert!")
-    //        }
-    //    }
     
     func updateObjektInformations(with id: String, data: Objekt) {
         

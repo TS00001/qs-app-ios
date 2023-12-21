@@ -45,7 +45,6 @@ struct CheckmarkComponente: View {
                     .foregroundColor(.white)
 
                 Image(systemName: isChecked ? "checkmark.square.fill" : "square")
-                
                     .resizable()
                     .frame(width: 30, height: 30)
                     .padding(.vertical, 10)

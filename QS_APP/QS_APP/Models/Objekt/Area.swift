@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
 struct Area: Codable {
-    var id = UUID().uuidString
+    @DocumentID var id: String?
     
     var title: String
     var space: [Space]

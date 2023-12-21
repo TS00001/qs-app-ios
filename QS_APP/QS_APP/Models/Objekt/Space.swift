@@ -6,11 +6,17 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-struct Space: Codable{
-    var id = UUID().uuidString
+struct Space: Codable, Identifiable{
+    @DocumentID var id: String?
     
     var title: String
-    var comment: String?
     var rating: Int?
+    var comment: String?
+    var cleaningDayMon = false
+    var cleaningDayTue = false
+    var cleaningDayWed = false
+    var cleaningDayThu = false
+    var cleaningDayFri = false
 }

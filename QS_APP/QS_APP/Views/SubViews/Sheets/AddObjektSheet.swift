@@ -12,9 +12,6 @@ struct AddObjektSheet: View {
     @StateObject private var apiVM = AddressAPIViewModel()
     @EnvironmentObject var addObjektVM: ObjektViewModel
     
-    
-    
-    
     //MARK: VARIABLES
     @Binding var showAddObjektSheet: Bool
     @State var name = ""
@@ -158,9 +155,7 @@ struct AddObjektSheet: View {
     func cancelObjekt(){
         
     }
-    
 }
-
 
 #Preview {
     AddObjektSheet(showAddObjektSheet: .constant(false))

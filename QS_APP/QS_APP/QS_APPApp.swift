@@ -23,7 +23,6 @@ struct QS_APPApp: App {
     var body: some Scene {
         
         WindowGroup {
-            
             if authenticationVM.userIsLoggedIn{
                 MainView()
                     .environmentObject(authenticationVM)

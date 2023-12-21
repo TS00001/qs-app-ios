@@ -32,6 +32,9 @@ struct ObjektDetailView: View {
     @State var objektId = ""
     
     init(objekt: Objekt){
+        
+        print("OBJEKT:", objekt.cleaningDayFri)
+        
         self.objektId = objekt.id ?? ""
         self.name = objekt.name
         self.mail = objekt.mail
@@ -45,6 +48,9 @@ struct ObjektDetailView: View {
         self.cleaningDayWed = objekt.cleaningDayWed
         self.cleaningDayThu = objekt.cleaningDayThu
         self.cleaningDayFri = objekt.cleaningDayFri
+        
+        print("STATE:", cleaningDayFri)
+        print("-----------")
     }
         
     var body: some View {

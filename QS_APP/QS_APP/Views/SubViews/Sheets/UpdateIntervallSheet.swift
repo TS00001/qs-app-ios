@@ -21,6 +21,7 @@ struct UpdateIntervallSheet: View {
                     .sheetTitleModi()
                 
                 Button(action: {
+                    
                     showUpdateQsIntervallSheet = false
                 }, label: {
                     Image(systemName: "x.square.fill")

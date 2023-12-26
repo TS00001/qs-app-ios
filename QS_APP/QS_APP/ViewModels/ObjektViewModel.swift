@@ -16,9 +16,7 @@ class ObjektViewModel: ObservableObject {
     private var listener: ListenerRegistration?
     
     init(){
-        
         fetchObjekt()
-        print("OBJEKTLIST INIT:", self.objektList.count)
     }
     /**
      Funktion um ein Objekt in Firestore zu erstellen
@@ -49,8 +47,6 @@ class ObjektViewModel: ObservableObject {
                 self.objektList = documents.compactMap{ queryDocument -> Objekt? in
                     return try? queryDocument.data(as: Objekt.self)
                 }
-                print("OBJEKTLIST:", self.objektList.count)
-                print("OBJEKTLIST:", self.objektList.first?.cleaningDayMon)
             }
     }
     
@@ -84,6 +80,19 @@ class ObjektViewModel: ObservableObject {
             }
             
             print("Reinigungstage aktualisiert!")
+        }
+        
+    }
+    
+    func updateIntervall(with id: String, data: [String : Any]){
+        
+        FirebaseManager.shared.database.collection("objekt").document(id).setData(data, merge: true) { error in
+            if let error {
+                print("Intervall konnten nicht aktualisiert werden", error.localizedDescription)
+                return
+            }
+            
+            print("Intervall aktualisiert!")
         }
         
     }

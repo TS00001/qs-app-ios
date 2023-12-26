@@ -9,7 +9,13 @@ import SwiftUI
 
 struct UpdateIntervallSheet: View {
     
+    //MARK: VIEWMODELS
+    
+    @EnvironmentObject var objektVM: ObjektViewModel
+    
     //MARK: VARIABLES
+    
+    @Binding var objekt: Objekt
     
     @Binding var showUpdateQsIntervallSheet: Bool
     
@@ -21,7 +27,6 @@ struct UpdateIntervallSheet: View {
                     .sheetTitleModi()
                 
                 Button(action: {
-                    
                     showUpdateQsIntervallSheet = false
                 }, label: {
                     Image(systemName: "x.square.fill")
@@ -31,16 +36,22 @@ struct UpdateIntervallSheet: View {
                         .foregroundStyle(Color.appRed)
                 })
             }
-            IntervallComponente()
+            IntervallComponente(selectedOption: $objekt.interval, objekt: $objekt)
             
             StandardButton(label: "Speichern", color: .appBlue, fontColor: .appBackground){
+                updateIntervall()
                 showUpdateQsIntervallSheet = false
             }
         }
         .vstackModi()
     }
+    
+    func updateIntervall(){
+        let data = ["interval": objekt.interval]
+        objektVM.updateIntervall(with: objekt.id ?? "", data: data as [String : Any])
+    }
 }
 
 #Preview {
-    UpdateIntervallSheet(showUpdateQsIntervallSheet: .constant(false))
+    UpdateIntervallSheet(objekt: .constant (Objekt(name: "", adress: Adress(street: "", housenumber: "", postalCode: "", city: ""), mail: "")), showUpdateQsIntervallSheet: .constant(false))
 }

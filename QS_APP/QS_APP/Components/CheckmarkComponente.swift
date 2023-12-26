@@ -8,22 +8,32 @@
 import SwiftUI
 
 struct CheckmarkComponente: View {
-    @Binding var cleaningDayMon: Bool
-    @Binding var cleaningDayTue: Bool
-    @Binding var cleaningDayWed: Bool
-    @Binding var cleaningDayThu: Bool
-    @Binding var cleaningDayFri: Bool
+    @State var cleaningDayMon = false
+    @State var cleaningDayTue = false
+    @State var cleaningDayWed = false
+    @State var cleaningDayThu = false
+    @State var cleaningDayFri = false
+    
+    
+    @Binding var objekt: Objekt
     @State var isEditable: Bool
     
-    
+//    init(objekt: Objekt, isEditable: Bool){
+//        self._cleaningDayMon = State(wrappedValue: objekt.cleaningDayMon)
+//        self._cleaningDayTue = State(wrappedValue: objekt.cleaningDayTue)
+//        self._cleaningDayWed = State(wrappedValue: objekt.cleaningDayWed)
+//        self._cleaningDayThu = State(wrappedValue: objekt.cleaningDayThu)
+//        self._cleaningDayFri = State(wrappedValue: objekt.cleaningDayFri)
+//        self.isEditable = isEditable
+//    }
     
     var body: some View {
             HStack(spacing: 20) {
-                DayCheckbox(day: "MO", isEditable: $isEditable, isChecked: $cleaningDayMon)
-                DayCheckbox(day: "DI", isEditable: $isEditable, isChecked: $cleaningDayTue)
-                DayCheckbox(day: "MI", isEditable: $isEditable, isChecked: $cleaningDayWed)
-                DayCheckbox(day: "DO", isEditable: $isEditable, isChecked: $cleaningDayThu)
-                DayCheckbox(day: "FR", isEditable: $isEditable, isChecked: $cleaningDayFri)
+                DayCheckbox(day: "MO", isEditable: isEditable, isChecked: $objekt.cleaningDayMon)
+                DayCheckbox(day: "DI", isEditable: isEditable, isChecked: $objekt.cleaningDayTue)
+                DayCheckbox(day: "MI", isEditable: isEditable, isChecked: $objekt.cleaningDayWed)
+                DayCheckbox(day: "DO", isEditable: isEditable, isChecked: $objekt.cleaningDayThu)
+                DayCheckbox(day: "FR", isEditable: isEditable, isChecked: $objekt.cleaningDayFri)
             }
             .frame(maxWidth: .infinity)
             .background(Color.appBlue)
@@ -32,9 +42,10 @@ struct CheckmarkComponente: View {
         }
     }
 
+//TODO: EIGENE KOMPONENTE
     struct DayCheckbox: View {
         var day: String
-        @Binding var isEditable: Bool
+        let isEditable: Bool
         @Binding var isChecked: Bool
 
         var body: some View {
@@ -61,6 +72,6 @@ struct CheckmarkComponente: View {
     }
     
 
-#Preview {
-    CheckmarkComponente(cleaningDayMon: .constant(false), cleaningDayTue: .constant(false), cleaningDayWed: .constant(false), cleaningDayThu: .constant(false), cleaningDayFri: .constant(false), isEditable: false)
-}
+//#Preview {
+//    CheckmarkComponente(cleaningDayMon: .constant(false), cleaningDayTue: .constant(false), cleaningDayWed: .constant(false), cleaningDayThu: .constant(false), cleaningDayFri: .constant(false), isEditable: false)
+//}

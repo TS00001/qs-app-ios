@@ -15,48 +15,19 @@ struct ObjektDetailView: View {
     @State var showUpdateCleaningdaysSheet = false
     @State var showUpdateQsIntervallSheet = false
     @State var showUpdateObjektInformations = false
+    @State var selectedOption: Int?
     
-    @State var cleaningDayMon = false
-    @State var cleaningDayTue = false
-    @State var cleaningDayWed = false
-    @State var cleaningDayThu = false
-    @State var cleaningDayFri = false
     
-    let name: String
-    let mail: String
-    let id: String
-    let objektAdress: Adress
-    let contactPerson: String
-    let cleaningPerson: String
-    let objectManager: String
-    @State var objektId = ""
+    @State var objekt: Objekt
     
     init(objekt: Objekt){
-        
-        print("OBJEKT:", objekt.cleaningDayFri)
-        
-        self.objektId = objekt.id ?? ""
-        self.name = objekt.name
-        self.mail = objekt.mail
-        self.id = objekt.id ?? ""
-        self.objektAdress = objekt.adress
-        self.contactPerson = objekt.contactPerson ?? ""
-        self.objectManager = objekt.objectManager ?? ""
-        self.cleaningPerson = objekt.cleaningPerson ?? ""
-        self.cleaningDayMon = objekt.cleaningDayMon
-        self.cleaningDayTue = objekt.cleaningDayTue
-        self.cleaningDayWed = objekt.cleaningDayWed
-        self.cleaningDayThu = objekt.cleaningDayThu
-        self.cleaningDayFri = objekt.cleaningDayFri
-        
-        print("STATE:", cleaningDayFri)
-        print("-----------")
+        self.objekt = objekt
     }
         
     var body: some View {
         NavigationStack{
             VStack(spacing: 0){
-                CustomHeaderBack(title: self.name){
+                CustomHeaderBack(title: objekt.name){
                     
                     Button(action: {
                         showUpdateObjektInformations = true
@@ -65,35 +36,36 @@ struct ObjektDetailView: View {
                     })
                 }
                 .sheet(isPresented: $showUpdateObjektInformations){
-                    UpdateObjektInfoSheet(showUpdateObjektInformations: $showUpdateObjektInformations, name: self.name, adress: self.objektAdress, mail: self.mail, contactPerson: self.contactPerson, objectManager: self.objectManager, cleaningPerson: self.cleaningPerson, objektId: self.id).environmentObject(objektVM)
+//                    //TODO: Das ganze Objekt mitgeben
+                    UpdateObjektInfoSheet(showUpdateObjektInformations: $showUpdateObjektInformations, objekt: objekt).environmentObject(objektVM)
                 }
                 
                 ScrollView{
                     
-                    MapView(latitude: self.objektAdress.lat ?? 0.0, longitude: self.objektAdress.lon ?? 0.0)
+                    MapView(latitude: objekt.adress.lat ?? 0.0, longitude: objekt.adress.lon ?? 0.0)
                         .mapModi()
                     
                     VStack(spacing:20){
-                        AdressItem(title: "Adresse", street: "\(self.objektAdress.street) \(self.objektAdress.housenumber)", postalCode: self.objektAdress.postalCode, city: self.objektAdress.city)
+                        AdressItem(title: "Adresse", street: "\(objekt.adress.street) \(self.objekt.adress.housenumber)", postalCode: objekt.adress.postalCode, city: objekt.adress.city)
                             .padding(.top, Values.minorPadding)
                         
                         ObjektDataItem(title: "Ansprechpartner"){
-                            Text(self.mail)
+                            Text(objekt.mail)
                                 .itemSubtitleModi()
                         }
                         
                         ObjektDataItem(title: "Ansprechpartner"){
-                            Text(self.contactPerson)
+                            Text(objekt.contactPerson ?? "")
                                 .itemSubtitleModi()
                         }
                         
                         ObjektDataItem(title: "Objektleiter"){
-                            Text(self.objectManager )
+                            Text(objekt.objectManager ?? "")
                                 .itemSubtitleModi()
                         }
                         
                         ObjektDataItem(title: "Reinigungskraft"){
-                            Text(self.cleaningPerson )
+                            Text(objekt.cleaningPerson ?? "")
                                 .itemSubtitleModi()
                         }
                         
@@ -115,14 +87,13 @@ struct ObjektDetailView: View {
                             })
                         }
                         .sheet(isPresented: $showUpdateCleaningdaysSheet){
-                            UpdateCleaningDaysSheet(objektId: $objektId, showUpdateCleaningdaysSheet: $showUpdateCleaningdaysSheet)
+                            UpdateCleaningDaysSheet(objekt: $objekt, showUpdateCleaningdaysSheet: $showUpdateCleaningdaysSheet)
                                 .presentationDetents([.medium])
                                 .presentationDragIndicator(.hidden)
                                 .environmentObject(objektVM)
                         }
                         
-                        CheckmarkComponente(cleaningDayMon: $cleaningDayMon, cleaningDayTue: $cleaningDayTue, cleaningDayWed: $cleaningDayWed, cleaningDayThu: $cleaningDayThu, cleaningDayFri: $cleaningDayFri, isEditable: false
-                        )
+                        CheckmarkComponente(objekt: $objekt, isEditable: false)
                         
                         TitleComponent(title: "QS INTERVALL"){
                             Button(action: {
@@ -132,12 +103,12 @@ struct ObjektDetailView: View {
                             })
                         }
                         .sheet(isPresented: $showUpdateQsIntervallSheet){
-                            UpdateIntervallSheet(showUpdateQsIntervallSheet: $showUpdateQsIntervallSheet)
+                            UpdateIntervallSheet(objekt: $objekt, showUpdateQsIntervallSheet: $showUpdateQsIntervallSheet)
                                 .presentationDetents([.medium])
                                 .presentationDragIndicator(.hidden)
                         }
                         
-                        IntervallComponente()
+                        IntervallComponente(selectedOption: $objekt.interval, objekt: $objekt)
                         
                         TitleComponent(title: "QUALITÄTSSICHERUNG"){
                             NavigationLink(destination: QsView()){

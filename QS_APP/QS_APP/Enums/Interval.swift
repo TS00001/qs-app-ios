@@ -10,15 +10,15 @@ import Foundation
 enum Interval: CaseIterable{
     case one, two, four
     
-    var intervalString: String{
+    var intervalString: Int{
         
         switch self {
         case .one:
-            "1 Wochen"
+            1
         case .two:
-            "2 Wochen"
+            2
         case .four:
-            "4 Wochen"
+            3
         }
     }
 }

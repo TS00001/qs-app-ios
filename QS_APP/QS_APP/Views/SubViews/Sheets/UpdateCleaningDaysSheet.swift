@@ -15,7 +15,7 @@ struct UpdateCleaningDaysSheet: View {
     
     //MARK: VARIABLES
     
-    @Binding var objektId: String
+    @Binding var objekt: Objekt
     @Binding var showUpdateCleaningdaysSheet: Bool
     @State var cleaningDayMon: Bool = false
     @State var cleaningDayTue: Bool = false
@@ -42,11 +42,7 @@ struct UpdateCleaningDaysSheet: View {
             }
             
             CheckmarkComponente(
-                cleaningDayMon: $cleaningDayMon,
-                cleaningDayTue: $cleaningDayTue,
-                cleaningDayWed: $cleaningDayWed,
-                cleaningDayThu: $cleaningDayThu,
-                cleaningDayFri: $cleaningDayFri, isEditable: true
+                objekt: $objekt, isEditable: true
             )
             
             StandardButton(label: "SPEICHERN", color: .appBlue, fontColor: .appBackground){
@@ -58,12 +54,12 @@ struct UpdateCleaningDaysSheet: View {
     }
     
     func updateCleaningDays(){
-        let data = ["cleaningDayMon": cleaningDayMon, "cleaningDayTue": cleaningDayTue, "cleaningDayWed": cleaningDayWed, "cleaningDayThu": cleaningDayThu, "cleaningDayFri": cleaningDayFri]
+        let data = ["cleaningDayMon": objekt.cleaningDayMon, "cleaningDayTue": objekt.cleaningDayTue, "cleaningDayWed": objekt.cleaningDayWed, "cleaningDayThu": objekt.cleaningDayThu, "cleaningDayFri": objekt.cleaningDayFri]
         
-        objektVM.updateCleaningDays(with: objektId, data: data)
+        objektVM.updateCleaningDays(with: objekt.id ?? "", data: data)
     }
 }
 
 #Preview {
-    UpdateCleaningDaysSheet(objektId: .constant(""), showUpdateCleaningdaysSheet: .constant(false))
+    UpdateCleaningDaysSheet(objekt: .constant (Objekt(name: "", adress: Adress(street: "", housenumber: "", postalCode: "", city: ""), mail: "")), showUpdateCleaningdaysSheet: .constant(false)).environmentObject(ObjektViewModel())
 }

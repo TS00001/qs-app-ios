@@ -8,57 +8,64 @@
 import SwiftUI
 
 struct UpdateObjektInfoSheet: View {
-    
-    
     @EnvironmentObject var objektVM: ObjektViewModel
     
     @Binding var showUpdateObjektInformations: Bool
     
-    @State var name = ""
-    @State var adress = Adress(street: "", housenumber: "", postalCode: "", city: "")
-    @State var mail = ""
-    @State var contactPerson = ""
-    @State var objectManager = ""
-    @State var cleaningPerson = ""
-    @State var objektId = ""
+    @State var objekt = Objekt(name: "", adress: Adress(street: "", housenumber: "", postalCode: "", city: ""), mail: "")
     
     var body: some View {
         ScrollView{
-            TextField("Objektname", text: self.$name)
+            TextField("Objektname", text: $objekt.name)
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
                 .padding(.top, Values.middlePadding)
             
-            TextField("Straße", text: self.$adress.street)
+            TextField("Straße", text: $objekt.adress.street)
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
                 .padding(.top, Values.middlePadding)
             
-            TextField("Hausnummer", text: self.$adress.housenumber)
+            TextField("Hausnummer", text: $objekt.adress.housenumber)
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
             
-            TextField("Postleitzahl", text: self.$adress.postalCode)
+            TextField("Postleitzahl", text: $objekt.adress.postalCode)
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
             
-            TextField("Stadt", text: self.$adress.city)
+            TextField("Stadt", text: $objekt.adress.city)
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
             
-            TextField("Mail", text: self.$mail)
+            TextField("Mail", text: $objekt.mail)
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
             
-            TextField("Kontaktperson", text: self.$contactPerson)
+            TextField("Kontaktperson", text: Binding(
+                get: {self.objekt.contactPerson ?? ""},
+                set: {
+                    self.objekt.contactPerson = $0
+                }
+            ))
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
             
-            TextField("Objektleiter", text: self.$objectManager)
+            TextField("Objektleiter", text: Binding(
+                get: {self.objekt.objectManager ?? ""},
+                set: {
+                    self.objekt.objectManager = $0
+                }
+            ))
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
             
-            TextField("Reinigungskraft", text: self.$cleaningPerson)
+            TextField("Reinigungskraft", text: Binding(
+                get: {self.objekt.cleaningPerson ?? ""},
+                set: {
+                    self.objekt.cleaningPerson = $0
+                }
+            ))
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
             
@@ -77,9 +84,9 @@ struct UpdateObjektInfoSheet: View {
     
     func saveObjekt(){
         
-        let objekt = Objekt(name: self.name, adress: Adress(street: self.adress.street, housenumber: self.adress.housenumber, postalCode: self.adress.postalCode, city: self.adress.city), mail: self.mail, contactPerson: self.contactPerson, cleaningPerson: self.cleaningPerson, objectManager: self.objectManager)
+        let objekt = Objekt(name: objekt.name, adress: Adress(street: objekt.adress.street, housenumber: objekt.adress.housenumber, postalCode: objekt.adress.postalCode, city: objekt.adress.city), mail: objekt.mail, contactPerson: objekt.contactPerson, cleaningPerson: objekt.cleaningPerson, objectManager: objekt.objectManager)
         
-        objektVM.updateObjektInformations(with: objektId, data: objekt)
+        objektVM.updateObjektInformations(with: objekt.id ?? "", data: objekt)
         cancelObjekt()
     }
     

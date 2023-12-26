@@ -9,7 +9,11 @@ import SwiftUI
 
 struct IntervallComponente: View {
     
-    @State private var selectedOption: Int? = 1
+    //TODO: Hier muss das Binding Implementiert werden und in der ObjektDetailView das State
+    @Binding var selectedOption: Int?
+    @Binding var objekt: Objekt
+//    @State var isEditable: Bool
+
     
     var body: some View {
         
@@ -17,6 +21,7 @@ struct IntervallComponente: View {
             VStack {
                 Button(action: {
                     self.selectedOption = 1
+                    objekt.interval = self.selectedOption
                 }) {
                     VStack{
                         Image(systemName: "calendar")
@@ -35,6 +40,7 @@ struct IntervallComponente: View {
             VStack {
                 Button(action: {
                     self.selectedOption = 2
+                    objekt.interval = self.selectedOption
                 }) {
                     VStack{
                         Image(systemName: "calendar")
@@ -54,6 +60,7 @@ struct IntervallComponente: View {
             VStack {
                 Button(action: {
                     self.selectedOption = 3
+                    objekt.interval = self.selectedOption
                 }) {
                     VStack{
                         Image(systemName: "calendar")
@@ -65,7 +72,6 @@ struct IntervallComponente: View {
                             .font(.custom(FontStrings.appFontBlack, size: 25))
                             .foregroundColor(.appBackground)
                     }
-                    
                 }
                 .opacity(selectedOption == 3 ? 1 : 0.5)
             }
@@ -78,6 +84,6 @@ struct IntervallComponente: View {
     }
 }
 
-#Preview {
-    IntervallComponente()
-}
+//#Preview {
+//    IntervallComponente(selectedOption: .constant(1), objekt: Objekt(name: "", adress: Adress(street: "", housenumber: "", postalCode: "", city: ""), mail: ""), isEditable: false)
+//}

@@ -13,6 +13,7 @@ class ObjektViewModel: ObservableObject {
     
     @Published var objektList = [Objekt]()
     
+    
     private var listener: ListenerRegistration?
     
     init(){
@@ -97,6 +98,14 @@ class ObjektViewModel: ObservableObject {
         
     }
     
-    
-    
+    func createArea(with id: String, data: [String : Any]){
+        print("Bis hier OK ", id, data)
+        FirebaseManager.shared.database.collection("objekt").document(id).setData(data, merge: true) { error in
+            if let error {
+                print("Area konnte nicht erstellt werden!", error.localizedDescription)
+                return
+            }
+            print("Area erstellt.")
+        }
+    }
 }

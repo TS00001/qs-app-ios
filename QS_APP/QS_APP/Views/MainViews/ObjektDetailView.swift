@@ -17,13 +17,12 @@ struct ObjektDetailView: View {
     @State var showUpdateObjektInformations = false
     @State var selectedOption: Int?
     
-    
     @State var objekt: Objekt
     
     init(objekt: Objekt){
         self.objekt = objekt
     }
-        
+    
     var body: some View {
         NavigationStack{
             VStack(spacing: 0){
@@ -36,7 +35,8 @@ struct ObjektDetailView: View {
                     })
                 }
                 .sheet(isPresented: $showUpdateObjektInformations){
-//                    //TODO: Das ganze Objekt mitgeben
+                    
+                    //TODO: Das ganze Objekt mitgeben
                     UpdateObjektInfoSheet(showUpdateObjektInformations: $showUpdateObjektInformations, objekt: objekt).environmentObject(objektVM)
                 }
                 
@@ -70,10 +70,11 @@ struct ObjektDetailView: View {
                         }
                         
                         TitleComponent(title: "LEISTUNGSVERZEICHNIS"){
-                            NavigationLink(destination: AddAreaView()){
+                            NavigationLink(destination: AddAreaView(showAddAreaSheet: false, objektID: objekt.id ?? "").environmentObject(objektVM)){
                                 IconComponente(icon: Values.plus)
                             }
                             .navigationBarBackButtonHidden(true)
+                            
                         }
                         NavigationLink(destination: ListOfServicesAreaView()){
                             LvItem(title: "Leistungsverzeichnis BLOCK A")

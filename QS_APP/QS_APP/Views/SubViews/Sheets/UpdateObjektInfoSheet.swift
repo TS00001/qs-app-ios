@@ -14,6 +14,8 @@ struct UpdateObjektInfoSheet: View {
     
     @State var objekt = Objekt(name: "", adress: Adress(street: "", housenumber: "", postalCode: "", city: ""), mail: "")
     
+    
+    
     var body: some View {
         ScrollView{
             TextField("Objektname", text: $objekt.name)
@@ -86,7 +88,7 @@ struct UpdateObjektInfoSheet: View {
         
         let objekt = Objekt(name: objekt.name, adress: Adress(street: objekt.adress.street, housenumber: objekt.adress.housenumber, postalCode: objekt.adress.postalCode, city: objekt.adress.city), mail: objekt.mail, contactPerson: objekt.contactPerson, cleaningPerson: objekt.cleaningPerson, objectManager: objekt.objectManager)
         
-        objektVM.updateObjektInformations(with: objekt.id ?? "", data: objekt)
+        objektVM.updateObjektInformations(with: self.objekt.id ?? "", data: objekt)
         cancelObjekt()
     }
     

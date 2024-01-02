@@ -153,7 +153,7 @@ struct AddObjektSheet: View {
     }
     
     func cancelObjekt(){
-        
+        showAddObjektSheet = false
     }
 }
 

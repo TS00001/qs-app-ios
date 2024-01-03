@@ -145,7 +145,7 @@ struct AddObjektSheet: View {
         
         let adress = Adress(street: self.street, housenumber: self.housenumber, postalCode: self.postalCode, city: self.city, lon: self.lon, lat: self.lat)
         
-        let objekt = Objekt(name: self.name, adress: adress, mail: self.mail, contactPerson: self.contactPerson, cleaningPerson: self.cleaningPerson, objectManager: self.objectManager, interval: Interval.one.intervalString, listOfServices: self.listOfServices, qualityAssurance: self.qualityAssurance)
+        let objekt = Objekt(name: self.name, adress: adress, mail: self.mail, contactPerson: self.contactPerson, cleaningPerson: self.cleaningPerson, objectManager: self.objectManager, interval: Interval.one.intervalString, qualityAssurance: self.qualityAssurance)
         
         addObjektVM.createObjekt(objekt: objekt)
         

@@ -12,9 +12,12 @@ import FirebaseFirestoreSwift
 class ObjektViewModel: ObservableObject {
     
     @Published var objektList = [Objekt]()
+    @Published var areaList = [Area]()
     
     
     private var listener: ListenerRegistration?
+    
+    private var areaListener: ListenerRegistration?
     
     init(){
         fetchObjekt()
@@ -98,14 +101,32 @@ class ObjektViewModel: ObservableObject {
         
     }
     
-    func createArea(with id: String, data: [String : Any]){
-        print("Bis hier OK ", id, data)
-        FirebaseManager.shared.database.collection("objekt").document(id).setData(data, merge: true) { error in
-            if let error {
-                print("Area konnte nicht erstellt werden!", error.localizedDescription)
-                return
-            }
-            print("Area erstellt.")
+    func createArea(with id: String, area: Area){
+        do{
+            try FirebaseManager.shared.database.collection("area").addDocument(from: area)
+        }catch let error{
+            print("Fehler beim erstellen des Area", error.localizedDescription)
         }
+    }
+    
+    func fetchArea(objektID: String){
+        self.areaListener = FirebaseManager.shared.database.collection("area").whereField("objektID", isEqualTo: objektID)
+            .addSnapshotListener{ querySnapshot, error in
+                if let error {
+                    print("Fehler beim laden der Areas", error.localizedDescription)
+                    return
+                }
+                guard let documents = querySnapshot?.documents else {
+                    print("Fehler beim laden der Areas")
+                    return
+                }
+                self.areaList = documents.compactMap{ queryDocument -> Area? in
+                    return try? queryDocument.data(as: Area.self)
+                }
+            }
+    }
+    
+    func cancelAreaListener(){
+        self.areaListener?.remove()
     }
 }

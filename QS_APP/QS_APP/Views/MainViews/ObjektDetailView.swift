@@ -21,6 +21,7 @@ struct ObjektDetailView: View {
     
     init(objekt: Objekt){
         self.objekt = objekt
+        print("TEST_1")
     }
     
     var body: some View {
@@ -70,13 +71,13 @@ struct ObjektDetailView: View {
                         }
                         
                         TitleComponent(title: "LEISTUNGSVERZEICHNIS"){
-                            NavigationLink(destination: AddAreaView(showAddAreaSheet: false, objektID: objekt.id ?? "").environmentObject(objektVM)){
+                            NavigationLink(destination: AddAreaView(objektID: objekt.id ?? "").environmentObject(objektVM)){
                                 IconComponente(icon: Values.plus)
                             }
                             .navigationBarBackButtonHidden(true)
                             
                         }
-                        NavigationLink(destination: ListOfServicesAreaView()){
+                        NavigationLink(destination: ListOfServicesAreaView().environmentObject(objektVM)){
                             LvItem(title: "Leistungsverzeichnis BLOCK A")
                         }
                         

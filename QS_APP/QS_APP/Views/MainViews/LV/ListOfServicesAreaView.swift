@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ListOfServicesAreaView: View {
+    
+    @EnvironmentObject var objektVM: ObjektViewModel
+    
     var body: some View {
         
         NavigationStack{
@@ -20,9 +23,14 @@ struct ListOfServicesAreaView: View {
                 })
             }
             ScrollView{
-                NavigationLink(destination: ListOfServicesSpaceView()){
-                    LvItem(title: "Erdgeschoss")
+                NavigationLink(destination: ListOfServicesSpaceView().environmentObject(objektVM)){
+                    ForEach(objektVM.areaList, id: \.id){ area in
+                        LvItem(title: area.title)
+                            .padding(.horizontal, Values.middlePadding)
+                            .padding(.bottom, Values.middlePadding)
+                    }
                 }
+                .navigationBarBackButtonHidden(true)
                 
                 LvItem(title: "Treppenhaus")
                 LvItem(title: "1. Erdgeschoss")

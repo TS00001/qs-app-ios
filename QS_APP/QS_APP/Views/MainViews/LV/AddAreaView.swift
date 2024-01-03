@@ -13,7 +13,14 @@ struct AddAreaView: View {
     
     @State var showAddAreaSheet = false
     
-    @State var objektID = ""
+    var objektID = ""
+    
+    
+    
+    init(objektID: String){
+        self.objektID = objektID
+        print("TEST")
+    }
     
     var body: some View {
         
@@ -27,19 +34,24 @@ struct AddAreaView: View {
                         CustomHeaderIcon(icon: Values.plus)
                     })
                 }
+                ScrollView{
+                    ForEach(objektVM.areaList, id: \.id){ area in
+                        LvItem(title: area.title)
+                            .padding(.horizontal, Values.middlePadding)
+                            .padding(.bottom, Values.middlePadding)
+                    }
+                }
                 
                 Text("Füge einen neuen Bereich hinzu, indem du auf das + drückst.")
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .padding(.horizontal, 40)
-                    .padding(.top, 250)
                     .font(.custom(FontStrings.appFontBlack, size: 22))
                     .foregroundStyle(Color.appBlue)
                 
                 Spacer()
                 
                 VStack{
-                    
                     Button(action: {
                         showAddAreaSheet = true
                     }, label: {
@@ -55,21 +67,34 @@ struct AddAreaView: View {
                 .background(.appBlue)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding()
-                
             }
             .background(.appBackground)
             .sheet(isPresented: $showAddAreaSheet){
-                AddAreaSheet(shawAddAreaSheet: $showAddAreaSheet, objektID: objektID)
+                AddAreaSheet(showAddAreaSheet: $showAddAreaSheet, objektID: objektID)
                     .presentationDetents([.height(350)])
                     .environmentObject(objektVM)
             }
-            
             .background(.appBackground)
+            .onAppear{
+                objektVM.fetchArea(objektID: objektID)
+            }
+            .onDisappear{
+                objektVM.cancelAreaListener()
+            }
         }
         .navigationBarBackButtonHidden(true)
+        
     }
 }
 
-#Preview {
-    AddAreaView()
-}
+
+//struct AddAreaView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddAreaView(objektID: "", objektVM: ObjektViewModel())
+//    }
+//}
+
+
+//#Preview {
+//    AddAreaView(objektID: "", objektVM: ObjektViewModel())
+//}

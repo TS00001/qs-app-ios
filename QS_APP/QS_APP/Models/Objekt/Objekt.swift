@@ -18,7 +18,7 @@ struct Objekt: Codable, Identifiable{
     var cleaningPerson: String?
     var objectManager: String?
     var interval: Int?
-    var listOfServices: [Area]?
+//    var listOfServices: [Area]?
     var qualityAssurance: [QualityAssurance]?
     var cleaningDayMon = false
     var cleaningDayTue = false

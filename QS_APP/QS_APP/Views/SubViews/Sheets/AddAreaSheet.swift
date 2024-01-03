@@ -11,12 +11,17 @@ struct AddAreaSheet: View {
     
     @EnvironmentObject var objektVM: ObjektViewModel
     
-    @Binding var shawAddAreaSheet: Bool
+    @Binding var showAddAreaSheet: Bool
     
     var objektID = ""
     
     @State var title = ""
 //    @State var area = ""
+    
+//    init(objektID: String){
+//        self.objektID = objektID
+//        objektVM.fetchArea(objektID: objektID)
+//    }
     
     var body: some View {
         VStack(spacing: 0){
@@ -24,7 +29,7 @@ struct AddAreaSheet: View {
             VStack(spacing: 0){
                 
                 Button(action: {
-                    shawAddAreaSheet = false
+                    showAddAreaSheet = false
                 }, label: {
                     Image(systemName: "x.square.fill")
                         .resizable()
@@ -57,7 +62,7 @@ struct AddAreaSheet: View {
                 
                 StandardButton(label: "Speichern", color: .appBlue, fontColor: .appBackground){
                     createArea()
-                    shawAddAreaSheet = false
+                    showAddAreaSheet = false
             }
                 .padding(.horizontal, Values.middlePadding)
             
@@ -70,12 +75,11 @@ struct AddAreaSheet: View {
     }
     
     func createArea(){
-        let area = Area(title: self.title)
-        let areaDict = ["listOfServices" : [area]]
-        objektVM.createArea(with: objektID, data: areaDict)
+        let area = Area(objektID: self.objektID, title: self.title)
+        objektVM.createArea(with: objektID, area: area)
     }
 }
 
 #Preview {
-    AddAreaSheet(shawAddAreaSheet: .constant(false))
+    AddAreaSheet(showAddAreaSheet: .constant(false), objektID: "")
 }

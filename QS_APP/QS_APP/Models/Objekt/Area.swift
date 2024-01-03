@@ -9,8 +9,9 @@ import Foundation
 import FirebaseFirestoreSwift
 
 struct Area: Codable{
-//    @DocumentID var id: String?
+    @DocumentID var id: String?
     
+    var objektID: String
     var title: String
     var space: [Space]?
 }

@@ -11,6 +11,7 @@ import FirebaseFirestoreSwift
 struct Space: Codable, Identifiable{
     @DocumentID var id: String?
     
+    var areaID: String
     var title: String
     var rating: Int?
     var comment: String?

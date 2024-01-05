@@ -9,8 +9,12 @@ import SwiftUI
 
 struct AddSpaceSheet: View {
     
+    @EnvironmentObject var objektVM: ObjektViewModel
     
     @Binding var showAddSpaceSheet: Bool
+    
+    var areaID = ""
+    
     @Binding var objekt: Objekt
     
     @State var title = ""
@@ -29,7 +33,7 @@ struct AddSpaceSheet: View {
             VStack(spacing: 0){
                 
                 Button(action: {
-                    showAddSpaceSheet = false
+                    objektVM.showAddSpaceSheet = false
                 }, label: {
                     Image(systemName: "x.square.fill")
                         .resizable()
@@ -77,7 +81,7 @@ struct AddSpaceSheet: View {
                 Spacer()
                 
                 StandardButton(label: "Speichern", color: .appBlue, fontColor: .appBackground){
-                    showAddSpaceSheet = false
+                    objektVM.showAddSpaceSheet = false
                 }
                 .padding(.horizontal, Values.middlePadding)
             }

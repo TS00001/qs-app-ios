@@ -11,17 +11,8 @@ struct AddAreaSheet: View {
     
     @EnvironmentObject var objektVM: ObjektViewModel
     
-    @Binding var showAddAreaSheet: Bool
-    
-    var objektID = ""
-    
-    @State var title = ""
-//    @State var area = ""
-    
-//    init(objektID: String){
-//        self.objektID = objektID
-//        objektVM.fetchArea(objektID: objektID)
-//    }
+//    @Binding var showAddAreaSheet: Bool
+//    var objektID = ""
     
     var body: some View {
         VStack(spacing: 0){
@@ -29,7 +20,7 @@ struct AddAreaSheet: View {
             VStack(spacing: 0){
                 
                 Button(action: {
-                    showAddAreaSheet = false
+                    objektVM.showAddAreaSheet = false
                 }, label: {
                     Image(systemName: "x.square.fill")
                         .resizable()
@@ -52,7 +43,7 @@ struct AddAreaSheet: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, Values.middlePadding)
                 
-                TextField("Name des Bereiches", text: $title)
+                TextField("Name des Bereiches", text: $objektVM.areaTitle)
                     .formItemStyle(with: .appBlue)
                     .shadow(radius: Values.minorShadow)
                     .padding(.horizontal, Values.middlePadding)
@@ -62,7 +53,7 @@ struct AddAreaSheet: View {
                 
                 StandardButton(label: "Speichern", color: .appBlue, fontColor: .appBackground){
                     createArea()
-                    showAddAreaSheet = false
+                    objektVM.showAddAreaSheet = false
             }
                 .padding(.horizontal, Values.middlePadding)
             
@@ -75,11 +66,11 @@ struct AddAreaSheet: View {
     }
     
     func createArea(){
-        let area = Area(objektID: self.objektID, title: self.title)
-        objektVM.createArea(with: objektID, area: area)
+        let area = Area(objektID: self.objektVM.objektID, title: self.objektVM.areaTitle)
+        objektVM.createArea(with: objektVM.objektID, area: area)
     }
 }
 
 #Preview {
-    AddAreaSheet(showAddAreaSheet: .constant(false), objektID: "")
+    AddAreaSheet()
 }

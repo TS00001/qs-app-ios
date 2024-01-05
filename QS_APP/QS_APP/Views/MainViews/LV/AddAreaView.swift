@@ -11,22 +11,23 @@ struct AddAreaView: View {
     
     @EnvironmentObject var objektVM: ObjektViewModel
     
-    @State var showAddAreaSheet = false
-    
-    var objektID = ""
+//    @State var showAddAreaSheet = false
     
     
-    
-    init(objektID: String){
-        self.objektID = objektID
-        print("TEST")
-    }
+//    var objektID = ""
+//    
+//    
+//    
+//    init(objektID: String){
+//        self.objektID = objektID
+//        print("addAreaView")
+//    }
     
     var body: some View {
         
         NavigationStack{
             VStack(spacing: 0 ){
-                CustomHeaderBack(title: "LV BEREICH ERSTELLEN"){
+                CustomHeaderBack(title: "ZURÜCK"){
                     
                     Button(action: {
                         
@@ -34,26 +35,30 @@ struct AddAreaView: View {
                         CustomHeaderIcon(icon: Values.plus)
                     })
                 }
+                
                 ScrollView{
                     ForEach(objektVM.areaList, id: \.id){ area in
+                        
                         LvItem(title: area.title)
                             .padding(.horizontal, Values.middlePadding)
-                            .padding(.bottom, Values.middlePadding)
+                            .padding(.bottom, Values.minorPadding)
                     }
                 }
                 
-                Text("Füge einen neuen Bereich hinzu, indem du auf das + drückst.")
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.horizontal, 40)
-                    .font(.custom(FontStrings.appFontBlack, size: 22))
-                    .foregroundStyle(Color.appBlue)
+                if objektVM.areaList.isEmpty{
+                    Text("Füge einen neuen Bereich hinzu, indem du auf das + drückst.")
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding(.horizontal, 40)
+                        .font(.custom(FontStrings.appFontBlack, size: 22))
+                        .foregroundStyle(Color.appBlue)
+                }
                 
                 Spacer()
                 
                 VStack{
                     Button(action: {
-                        showAddAreaSheet = true
+                        objektVM.showAddAreaSheet = true
                     }, label: {
                         Image(systemName: "plus")
                             .resizable()
@@ -69,32 +74,24 @@ struct AddAreaView: View {
                 .padding()
             }
             .background(.appBackground)
-            .sheet(isPresented: $showAddAreaSheet){
-                AddAreaSheet(showAddAreaSheet: $showAddAreaSheet, objektID: objektID)
+            .sheet(isPresented: $objektVM.showAddAreaSheet){
+                AddAreaSheet()
                     .presentationDetents([.height(350)])
                     .environmentObject(objektVM)
             }
             .background(.appBackground)
             .onAppear{
-                objektVM.fetchArea(objektID: objektID)
+                objektVM.fetchArea(objektID: objektVM.objektID)
             }
             .onDisappear{
                 objektVM.cancelAreaListener()
             }
         }
         .navigationBarBackButtonHidden(true)
-        
     }
+    
 }
 
-
-//struct AddAreaView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AddAreaView(objektID: "", objektVM: ObjektViewModel())
-//    }
-//}
-
-
-//#Preview {
-//    AddAreaView(objektID: "", objektVM: ObjektViewModel())
-//}
+#Preview {
+    AddAreaView()
+}

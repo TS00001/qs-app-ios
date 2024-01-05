@@ -33,6 +33,10 @@
 		C71EAB582B2AFC6B00FFEF27 /* UpdateObjektInfoSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71EAB572B2AFC6B00FFEF27 /* UpdateObjektInfoSheet.swift */; };
 		C71EAB922B3B421600FFEF27 /* AddSpaceSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71EAB912B3B421600FFEF27 /* AddSpaceSheet.swift */; };
 		C71EAB942B3B45D500FFEF27 /* AddAreaSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71EAB932B3B45D500FFEF27 /* AddAreaSheet.swift */; };
+		C71EAB952B472A0800FFEF27 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77322CD2B0B99F300BE2866 /* CalculatorView.swift */; };
+		C71EAB962B472A8100FFEF27 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77322C92B0B996E00BE2866 /* TabBarView.swift */; };
+		C71EAB982B47418900FFEF27 /* CalculatorSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71EAB972B47418900FFEF27 /* CalculatorSheet.swift */; };
+		C71EAB9A2B4741DA00FFEF27 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71EAB992B4741DA00FFEF27 /* CalculatorViewModel.swift */; };
 		C7595DD72B1A0365003392A2 /* ObjektDataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7595DD62B1A0365003392A2 /* ObjektDataItem.swift */; };
 		C7595DD92B1A1D5E003392A2 /* ItemSubTitleModi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7595DD82B1A1D5E003392A2 /* ItemSubTitleModi.swift */; };
 		C7595DDB2B1A256D003392A2 /* ItemTitleModi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7595DDA2B1A256D003392A2 /* ItemTitleModi.swift */; };
@@ -57,9 +61,7 @@
 		C77322C22B0B8B3000BE2866 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77322C12B0B8B3000BE2866 /* HomeViewModel.swift */; };
 		C77322C42B0B8C4700BE2866 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77322C32B0B8C4700BE2866 /* HomeView.swift */; };
 		C77322C72B0B980500BE2866 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77322C62B0B980500BE2866 /* TabItem.swift */; };
-		C77322CA2B0B996E00BE2866 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77322C92B0B996E00BE2866 /* TabBarView.swift */; };
 		C77322CC2B0B99B000BE2866 /* ObjektView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77322CB2B0B99B000BE2866 /* ObjektView.swift */; };
-		C77322CE2B0B99F300BE2866 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77322CD2B0B99F300BE2866 /* CalculatorView.swift */; };
 		C77322D02B0B9A0600BE2866 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77322CF2B0B9A0600BE2866 /* SettingsView.swift */; };
 		C77322D32B0BB24700BE2866 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77322D22B0BB24700BE2866 /* MainView.swift */; };
 		C7965C6B2B17425E00E8A0FB /* Objekt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7965C6A2B17425E00E8A0FB /* Objekt.swift */; };
@@ -141,6 +143,8 @@
 		C71EAB572B2AFC6B00FFEF27 /* UpdateObjektInfoSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateObjektInfoSheet.swift; sourceTree = "<group>"; };
 		C71EAB912B3B421600FFEF27 /* AddSpaceSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSpaceSheet.swift; sourceTree = "<group>"; };
 		C71EAB932B3B45D500FFEF27 /* AddAreaSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAreaSheet.swift; sourceTree = "<group>"; };
+		C71EAB972B47418900FFEF27 /* CalculatorSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorSheet.swift; sourceTree = "<group>"; };
+		C71EAB992B4741DA00FFEF27 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		C7595DD62B1A0365003392A2 /* ObjektDataItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjektDataItem.swift; sourceTree = "<group>"; };
 		C7595DD82B1A1D5E003392A2 /* ItemSubTitleModi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSubTitleModi.swift; sourceTree = "<group>"; };
 		C7595DDA2B1A256D003392A2 /* ItemTitleModi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTitleModi.swift; sourceTree = "<group>"; };
@@ -415,6 +419,7 @@
 				C77322C12B0B8B3000BE2866 /* HomeViewModel.swift */,
 				C7965C762B1764E300E8A0FB /* ObjektViewModel.swift */,
 				C7F8E9722B271413008642BD /* AddressAPIViewModel.swift */,
+				C71EAB992B4741DA00FFEF27 /* CalculatorViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -523,6 +528,7 @@
 				C71EAB572B2AFC6B00FFEF27 /* UpdateObjektInfoSheet.swift */,
 				C71EAB912B3B421600FFEF27 /* AddSpaceSheet.swift */,
 				C71EAB932B3B45D500FFEF27 /* AddAreaSheet.swift */,
+				C71EAB972B47418900FFEF27 /* CalculatorSheet.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -716,12 +722,12 @@
 				C7DA2DC72B1FCB9200510677 /* CheckmarkComponente.swift in Sources */,
 				C7F8E9772B271DD2008642BD /* ApiResult.swift in Sources */,
 				C7B24F932B140F00002A4642 /* LogoutButton.swift in Sources */,
-				C77322CA2B0B996E00BE2866 /* TabBarView.swift in Sources */,
 				C7B24F8D2B13E710002A4642 /* FormItemStyle.swift in Sources */,
 				C7F8E9752B27160E008642BD /* ApiAdress.swift in Sources */,
 				C77322D32B0BB24700BE2866 /* MainView.swift in Sources */,
 				C77322B82B0B647E00BE2866 /* AuthenticationViewModel.swift in Sources */,
 				C77322BA2B0B651900BE2866 /* FireUser.swift in Sources */,
+				C71EAB9A2B4741DA00FFEF27 /* CalculatorViewModel.swift in Sources */,
 				C7965C6D2B17479800E8A0FB /* Adress.swift in Sources */,
 				C77322C22B0B8B3000BE2866 /* HomeViewModel.swift in Sources */,
 				C7F8E97C2B27B49F008642BD /* AddSpaceView.swift in Sources */,
@@ -731,7 +737,6 @@
 				C7F8E9842B2868EE008642BD /* SearchFieldDropdown.swift in Sources */,
 				C70BAAD22B0CF9B50064660F /* ObjektAndQsListItem.swift in Sources */,
 				C71EAB922B3B421600FFEF27 /* AddSpaceSheet.swift in Sources */,
-				C77322CE2B0B99F300BE2866 /* CalculatorView.swift in Sources */,
 				C70BAAED2B0E79A60064660F /* SettingsListItem.swift in Sources */,
 				C703E2472B2517A500816CD4 /* QsHistoryView.swift in Sources */,
 				C703E2402B24B8D400816CD4 /* VstackModi.swift in Sources */,
@@ -748,6 +753,7 @@
 				C7B24F832B13CF6A002A4642 /* AppBackground.swift in Sources */,
 				C7595DD92B1A1D5E003392A2 /* ItemSubTitleModi.swift in Sources */,
 				C703E2452B250B3B00816CD4 /* UpdateIntervallSheet.swift in Sources */,
+				C71EAB952B472A0800FFEF27 /* CalculatorView.swift in Sources */,
 				C77322B62B0B643D00BE2866 /* AuthenticationView.swift in Sources */,
 				C700B5B52B21CD5300A58D81 /* TitleComponent.swift in Sources */,
 				C7F8E9802B27C0DB008642BD /* ListOfServicesAreaView.swift in Sources */,
@@ -770,12 +776,14 @@
 				C70BAAEB2B0E447D0064660F /* SettingsUserProfilCard.swift in Sources */,
 				C7F8E9702B2666CA008642BD /* AddAreaView.swift in Sources */,
 				C7965C6F2B174BEA00E8A0FB /* Area.swift in Sources */,
+				C71EAB962B472A8100FFEF27 /* TabBarView.swift in Sources */,
 				C703E23E2B24B5BD00816CD4 /* SheetTitleModi.swift in Sources */,
 				C7F8E9732B271413008642BD /* AddressAPIViewModel.swift in Sources */,
 				C703E2522B261DDC00816CD4 /* MapView.swift in Sources */,
 				C7B24F872B13DBD6002A4642 /* CustomHeaderIcon.swift in Sources */,
 				C7965C712B174C0A00E8A0FB /* Space.swift in Sources */,
 				C7965C6B2B17425E00E8A0FB /* Objekt.swift in Sources */,
+				C71EAB982B47418900FFEF27 /* CalculatorSheet.swift in Sources */,
 				C703E24C2B25F21C00816CD4 /* SmallRatingView.swift in Sources */,
 				C7B24F962B14BE6F002A4642 /* QsOverviewItem.swift in Sources */,
 				C7B24F892B13E3FD002A4642 /* AddObjektSheet.swift in Sources */,

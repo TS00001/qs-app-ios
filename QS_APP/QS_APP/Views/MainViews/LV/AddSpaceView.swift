@@ -12,8 +12,9 @@ struct AddSpaceView: View {
     @EnvironmentObject var objektVM: ObjektViewModel
     
     @Binding var objekt: Objekt
+    var areaID = ""
     
-    @State var showAddSpaceSheet = false
+//    @State var showAddSpaceSheet = false
     
     var body: some View {
         NavigationStack{
@@ -44,7 +45,7 @@ struct AddSpaceView: View {
                         .foregroundColor(.appBackground)
                         .padding()
                         .onTapGesture {
-                            showAddSpaceSheet = true
+                            objektVM.showAddSpaceSheet = true
                         }
                 }
                 .frame(width: 60, height: 60)
@@ -54,9 +55,8 @@ struct AddSpaceView: View {
                
             }
             .background(.appBackground)
-            .sheet(isPresented: $showAddSpaceSheet){
-                AddSpaceSheet(showAddSpaceSheet: $showAddSpaceSheet, objekt: $objekt)
-//                    .environmentObject(objektVM)
+            .sheet(isPresented: $objektVM.showAddSpaceSheet){
+                AddSpaceSheet(showAddSpaceSheet: $objektVM.showAddSpaceSheet, objekt: $objekt).environmentObject(objektVM)
             }
         }
         .navigationBarBackButtonHidden(true)

@@ -22,6 +22,8 @@ struct ListOfServicesAreaView: View {
                     CustomHeaderIcon(icon: Values.editIcon)
                 })
             }
+            
+            
             ScrollView{
                 NavigationLink(destination: ListOfServicesSpaceView().environmentObject(objektVM)){
                     ForEach(objektVM.areaList, id: \.id){ area in
@@ -36,7 +38,6 @@ struct ListOfServicesAreaView: View {
                 LvItem(title: "1. Erdgeschoss")
             }
             .background(.appBackground)
-            
             .vstackModi()
         }
         .navigationBarBackButtonHidden(true)

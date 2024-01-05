@@ -13,14 +13,26 @@ class ObjektViewModel: ObservableObject {
     
     @Published var objektList = [Objekt]()
     @Published var areaList = [Area]()
+    @Published var spaceList = [Space]()
     
+    @Published var showAddObjektSheet = false
+    @Published var showUpdateCleaningdaysSheet = false
+    @Published var showUpdateQsIntervallSheet = false
+    @Published var showUpdateObjektInformations = false
+    
+    @Published var showAddAreaSheet = false
+    @Published var showAddSpaceSheet = false
+    @Published var objektID = ""
+    @Published var areaTitle = ""
+    
+    @Published var objekt = Objekt(name: "", adress: Adress(street: "", housenumber: "", postalCode: "", city: ""), mail: "")
     
     private var listener: ListenerRegistration?
     
     private var areaListener: ListenerRegistration?
     
     init(){
-        fetchObjekt()
+        self.fetchObjekt()
     }
     /**
      Funktion um ein Objekt in Firestore zu erstellen
@@ -128,5 +140,27 @@ class ObjektViewModel: ObservableObject {
     
     func cancelAreaListener(){
         self.areaListener?.remove()
+    }
+    
+    
+    func fetchSpace(areaID: String){
+        FirebaseManager.shared.database.collection("space").whereField("areaID", isEqualTo: areaID)
+            .addSnapshotListener{ querySnapshot, error in
+                if let error {
+                    print("Fehler beim laden der Areas", error.localizedDescription)
+                    return
+                }
+                guard let documents = querySnapshot?.documents else {
+                    print("Fehler beim laden der Areas")
+                    return
+                }
+                self.areaList = documents.compactMap{ queryDocument -> Area? in
+                    return try? queryDocument.data(as: Area.self)
+                }
+            }
+    }
+    
+    func cancelObjekt(){
+        showUpdateObjektInformations = false
     }
 }

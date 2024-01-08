@@ -11,13 +11,6 @@ struct ObjektView: View {
     
     @StateObject private var objektVM = ObjektViewModel()
     
-    //MARK: VRIABLES
-//    @State var showAddObjektSheet = false
-    
-//    init(){
-//        objektVM.fetchObjekt()
-//    }
-    
     var body: some View {
         
         NavigationStack{
@@ -34,27 +27,56 @@ struct ObjektView: View {
                         .environmentObject(objektVM)
                         .presentationDetents([.height(550)])
                 }
-                
-                VStack{
-                    ScrollView{
-                        ForEach(objektVM.objektList, id: \.id){ objekt in
-                        
-                            NavigationLink(destination: ObjektDetailView().environmentObject(objektVM)){
-                                ObjektAndQsListItem(icon: Values.objektIcon, title: objekt.name, street: objekt.adress.street, housenumber: objekt.adress.housenumber, postalCode: objekt.adress.postalCode, city: objekt.adress.city)
+                List(objektVM.objektList, id: \.id){ objekt in
+                    NavigationLink(destination: ObjektDetailView().environmentObject(objektVM)){
+                        HStack{
+                            VStack{
+                                Image(systemName: Values.objektIcon)
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundStyle(Color.appBlue)
                             }
-                            .simultaneousGesture(TapGesture().onEnded{
-                                objektVM.objekt = objekt
-                            })
-                            .navigationBarBackButtonHidden(true)
+                            VStack(alignment: .leading){
+                                Text(objekt.name)
+                                    .font(.custom(FontStrings.appFontBlack, size: 22))
+                                    .foregroundStyle(Color.appBlue)
+                                HStack{
+                                    Text(objekt.adress.street)
+                                        .font(.custom(FontStrings.appFontBold, size: 16))
+                                        .foregroundStyle(Color.appBlue)
+                                    Text(objekt.adress.housenumber)
+                                        .font(.custom(FontStrings.appFontBold, size: 16))
+                                        .foregroundStyle(Color.appBlue)
+                                }
+                            }
                         }
-                        .padding(.horizontal, Values.middlePadding)
                     }
+                    .swipeActions {
+                        Button(role: .destructive) {
+                            withAnimation {
+                                objektVM.deleteObjekt(with: objekt.id ?? "")
+                            }
+                        } label: {
+                            Label("Löschen", systemImage: "trash")
+                        }
+                    }
+                    .simultaneousGesture(TapGesture().onEnded{
+                        objektVM.objekt = objekt
+                    })
+                }
+                .background(Color.appBackground)
+                .scrollContentBackground(.hidden)
+                .onAppear{
+                    objektVM.fetchObjekt()
+                }
+                .onDisappear{
+                    objektVM.cancelListener()
                 }
             }
             .background(Color.appBackground)
         }
+        .navigationBarBackButtonHidden(true)
     }
-    
 }
 
 #Preview {

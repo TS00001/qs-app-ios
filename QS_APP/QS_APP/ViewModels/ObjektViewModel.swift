@@ -23,6 +23,7 @@ class ObjektViewModel: ObservableObject {
     @Published var showAddAreaSheet = false
     @Published var showAddSpaceSheet = false
     @Published var objektID = ""
+    @Published var spaceID = ""
     @Published var areaTitle = ""
     
     @Published var objekt = Objekt(name: "", adress: Adress(street: "", housenumber: "", postalCode: "", city: ""), mail: "")
@@ -30,6 +31,7 @@ class ObjektViewModel: ObservableObject {
     private var listener: ListenerRegistration?
     
     private var areaListener: ListenerRegistration?
+    private var spaceListener: ListenerRegistration?
     
     init(){
         self.fetchObjekt()
@@ -74,6 +76,28 @@ class ObjektViewModel: ObservableObject {
             }
             print("Objekt wurde gelöscht")
         }
+    }
+    
+    func deleteArea(with id: String){
+        FirebaseManager.shared.database.collection("area")
+            .document(id).delete(){ error in
+                if let error {
+                    print("Area konnte nicht gelöscht werden", error.localizedDescription)
+                    return
+                }
+                print("Area wurde gelöscht")
+            }
+    }
+    
+    func deleteSpace(with id: String){
+        FirebaseManager.shared.database.collection("space")
+            .document(id).delete(){ error in
+                if let error {
+                    print("Space konnte nicht gelöscht werden", error.localizedDescription)
+                    return
+                }
+                print("Space wurde gelöscht")
+            }
     }
     
     func updateObjektInformations(with id: String, data: Objekt) {
@@ -121,6 +145,14 @@ class ObjektViewModel: ObservableObject {
         }
     }
     
+    func createSpace(with id: String, space: Space){
+        do{
+            try FirebaseManager.shared.database.collection("space").addDocument(from: space)
+        }catch let error{
+            print("Fehler beim erstellen des Space", error.localizedDescription)
+        }
+    }
+    
     func fetchArea(objektID: String){
         self.areaListener = FirebaseManager.shared.database.collection("area").whereField("objektID", isEqualTo: objektID)
             .addSnapshotListener{ querySnapshot, error in
@@ -140,6 +172,14 @@ class ObjektViewModel: ObservableObject {
     
     func cancelAreaListener(){
         self.areaListener?.remove()
+    }
+    
+    func cancelSpaceListener(){
+        self.spaceListener?.remove()
+    }
+    
+    func cancelListener(){
+        self.listener?.remove()
     }
     
     
@@ -163,4 +203,6 @@ class ObjektViewModel: ObservableObject {
     func cancelObjekt(){
         showUpdateObjektInformations = false
     }
+    
+    
 }

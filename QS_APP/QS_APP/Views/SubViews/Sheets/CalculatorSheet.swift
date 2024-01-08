@@ -11,6 +11,7 @@ struct CalculatorSheet: View {
     
     @EnvironmentObject var calculatorVM: CalculatorViewModel
     
+    
     var body: some View {
         
         VStack{
@@ -81,6 +82,9 @@ struct CalculatorSheet: View {
             Spacer()
             
             StandardButton(label: "BERECHNEN", color: .appBlue, fontColor: .appBackground){
+                calculatorVM.calculateTotal()
+//                calculatorVM.addHours()
+//                calculatorVM.addQuadratmeter()
                 calculatorVM.calculateResult()
                 calculatorVM.roomDescription = ""
                 calculatorVM.quadratmeter = ""
@@ -90,6 +94,8 @@ struct CalculatorSheet: View {
         }
         
     }
+    
+    
 }
 
 #Preview {

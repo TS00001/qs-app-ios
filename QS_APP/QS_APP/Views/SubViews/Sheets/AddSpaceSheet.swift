@@ -11,11 +11,11 @@ struct AddSpaceSheet: View {
     
     @EnvironmentObject var objektVM: ObjektViewModel
     
-    @Binding var showAddSpaceSheet: Bool
+//    @Binding var showAddSpaceSheet: Bool
     
     var areaID = ""
     
-    @Binding var objekt: Objekt
+//    @Binding var objekt: Objekt
     
     @State var title = ""
     @State var space = ""
@@ -67,7 +67,7 @@ struct AddSpaceSheet: View {
                 }
                 .padding(.horizontal, Values.middlePadding)
                 
-                CheckmarkComponente(objekt: $objekt, isEditable: true)
+                CheckmarkComponente(objekt: $objektVM.objekt, isEditable: true)
                     .padding(.horizontal, Values.middlePadding)
                 
                 TextField("Bemerkung", text: $comment)
@@ -82,6 +82,7 @@ struct AddSpaceSheet: View {
                 
                 StandardButton(label: "Speichern", color: .appBlue, fontColor: .appBackground){
                     objektVM.showAddSpaceSheet = false
+                    createSpace()
                 }
                 .padding(.horizontal, Values.middlePadding)
             }
@@ -89,9 +90,14 @@ struct AddSpaceSheet: View {
             
         }
     }
+    
+    func createSpace(){
+        let space = Space(areaID: self.areaID, title: self.title)
+        objektVM.createSpace(with: objektVM.spaceID, space: space)
+    }
 }
 
 
 #Preview {
-    AddSpaceSheet(showAddSpaceSheet: .constant(false), objekt: .constant(Objekt(name: "", adress: Adress(street: "", housenumber: "", postalCode: "", city: ""), mail: "")))
+    AddSpaceSheet()
 }

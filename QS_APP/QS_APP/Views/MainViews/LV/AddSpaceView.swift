@@ -11,8 +11,8 @@ struct AddSpaceView: View {
     
     @EnvironmentObject var objektVM: ObjektViewModel
     
-    @Binding var objekt: Objekt
-    var areaID = ""
+//    @Binding var objekt: Objekt
+//    var areaID = ""
     
 //    @State var showAddSpaceSheet = false
     
@@ -25,6 +25,18 @@ struct AddSpaceView: View {
                     }, label: {
                         CustomHeaderIcon(icon: Values.plus)
                     })
+                }
+                .sheet(isPresented: $objektVM.showAddSpaceSheet){
+                    AddSpaceSheet()
+//                        .presentationDetents([.height(350)])
+                        .environmentObject(objektVM)
+                }
+                .background(.appBackground)
+                .onAppear{
+                    objektVM.fetchSpace(areaID: objektVM.spaceID)
+                }
+                .onDisappear{
+                    objektVM.cancelSpaceListener()
                 }
 
                 Text("Füge einen neuen Raum hinzu, indem du auf das + drückst.")
@@ -56,7 +68,7 @@ struct AddSpaceView: View {
             }
             .background(.appBackground)
             .sheet(isPresented: $objektVM.showAddSpaceSheet){
-                AddSpaceSheet(showAddSpaceSheet: $objektVM.showAddSpaceSheet, objekt: $objekt).environmentObject(objektVM)
+                AddSpaceSheet().environmentObject(objektVM)
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -64,5 +76,5 @@ struct AddSpaceView: View {
 }
 
 #Preview {
-    AddSpaceView(objekt: .constant(Objekt(name: "", adress: Adress(street: "", housenumber: "", postalCode: "", city: ""), mail: "")))
+    AddSpaceView()
 }

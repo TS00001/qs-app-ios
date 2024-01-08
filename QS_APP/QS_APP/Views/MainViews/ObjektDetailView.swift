@@ -24,17 +24,14 @@ struct ObjektDetailView: View {
                     })
                 }
                 .sheet(isPresented: $objektVM.showUpdateObjektInformations){
-                    
-                    //TODO: Das ganze Objekt mitgeben
                     UpdateObjektInfoSheet().environmentObject(objektVM)
                 }
-                
                 ScrollView{
-                    
                     MapView(latitude: objektVM.objekt.adress.lat ?? 0.0, longitude: objektVM.objekt.adress.lon ?? 0.0)
                         .mapModi()
                     
                     VStack(spacing:20){
+                        
                         AdressItem(title: "Adresse", street: "\(objektVM.objekt.adress.street) \(self.objektVM.objekt.adress.housenumber)", postalCode: objektVM.objekt.adress.postalCode, city: objektVM.objekt.adress.city)
                             .padding(.top, Values.minorPadding)
                         

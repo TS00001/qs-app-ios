@@ -11,80 +11,47 @@ struct AddAreaView: View {
     
     @EnvironmentObject var objektVM: ObjektViewModel
     
-//    @State var showAddAreaSheet = false
-    
-    
-//    var objektID = ""
-//    
-//    
-//    
-//    init(objektID: String){
-//        self.objektID = objektID
-//        print("addAreaView")
-//    }
-    
     var body: some View {
         
         NavigationStack{
             VStack(spacing: 0 ){
-                CustomHeaderBack(title: "ZURÜCK"){
+                CustomHeaderBack(title: "LV BEREICH ERSTELLEN"){
                     
                     Button(action: {
-                        
+                        objektVM.showAddAreaSheet = true
                     }, label: {
                         CustomHeaderIcon(icon: Values.plus)
                     })
                 }
+                .sheet(isPresented: $objektVM.showAddAreaSheet){
+                    AddAreaSheet()
+                        .presentationDetents([.height(350)])
+                        .environmentObject(objektVM)
+                }
+                .background(.appBackground)
+                .onAppear{
+                    objektVM.fetchArea(objektID: objektVM.objektID)
+                }
+                .onDisappear{
+                    objektVM.cancelAreaListener()
+                }
                 
-                ScrollView{
-                    ForEach(objektVM.areaList, id: \.id){ area in
-                        
-                        LvItem(title: area.title)
-                            .padding(.horizontal, Values.middlePadding)
-                            .padding(.bottom, Values.minorPadding)
+                List(objektVM.areaList, id: \.id){ area in
+                    NavigationLink(destination: AddSpaceView().environmentObject(objektVM)){
+                        VStack(alignment: .leading) {
+                            Text(area.title)
+                                .font(.custom(FontStrings.appFontBlack, size: 22))
+                                .foregroundStyle(Color.appBlue)
+                            
+                            Text("Anzahl der Räume (Spaces)")
+                                .font(.custom(FontStrings.appFontBold, size: 16))
+                                .foregroundStyle(Color.appBlue)
+                        }
                     }
+                    
                 }
-                
-                if objektVM.areaList.isEmpty{
-                    Text("Füge einen neuen Bereich hinzu, indem du auf das + drückst.")
-                        .multilineTextAlignment(.center)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .padding(.horizontal, 40)
-                        .font(.custom(FontStrings.appFontBlack, size: 22))
-                        .foregroundStyle(Color.appBlue)
-                }
-                
-                Spacer()
-                
-                VStack{
-                    Button(action: {
-                        objektVM.showAddAreaSheet = true
-                    }, label: {
-                        Image(systemName: "plus")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .bold()
-                            .foregroundColor(.appBackground)
-                            .padding()
-                    })
-                }
-                .frame(width: 60, height: 60)
-                .background(.appBlue)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .padding()
-            }
-            .background(.appBackground)
-            .sheet(isPresented: $objektVM.showAddAreaSheet){
-                AddAreaSheet()
-                    .presentationDetents([.height(350)])
-                    .environmentObject(objektVM)
-            }
-            .background(.appBackground)
-            .onAppear{
-                objektVM.fetchArea(objektID: objektVM.objektID)
-            }
-            .onDisappear{
-                objektVM.cancelAreaListener()
+                .background(Color.appBackground)
+                .scrollContentBackground(.hidden)
             }
         }
         .navigationBarBackButtonHidden(true)

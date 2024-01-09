@@ -11,70 +11,66 @@ struct AddSpaceView: View {
     
     @EnvironmentObject var objektVM: ObjektViewModel
     
-//    @Binding var objekt: Objekt
-//    var areaID = ""
-    
-//    @State var showAddSpaceSheet = false
+    var areaID: String
+    var objektName: String
     
     var body: some View {
+        
         NavigationStack{
             VStack(spacing: 0 ){
-                CustomHeaderBack(title: "LV RAUM ERSTELLEN"){
+                CustomHeaderBack(title: objektName){
+                    
                     Button(action: {
-                        
+                        objektVM.showAddSpaceSheet.toggle()
                     }, label: {
                         CustomHeaderIcon(icon: Values.plus)
                     })
                 }
                 .sheet(isPresented: $objektVM.showAddSpaceSheet){
-                    AddSpaceSheet()
-//                        .presentationDetents([.height(350)])
-                        .environmentObject(objektVM)
+                    AddSpaceSheet(areaID: areaID).environmentObject(objektVM)
                 }
                 .background(.appBackground)
                 .onAppear{
-                    objektVM.fetchSpace(areaID: objektVM.spaceID)
+                    objektVM.fetchSpace(areaID: areaID)
                 }
                 .onDisappear{
                     objektVM.cancelSpaceListener()
                 }
 
-                Text("Füge einen neuen Raum hinzu, indem du auf das + drückst.")
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.horizontal, 40)
-                    .padding(.top, 250)
-                    .font(.custom(FontStrings.appFontBlack, size: 22))
-                    .foregroundStyle(Color.appBlue)
+                List(objektVM.spaceList, id: \.id){ space in
                 
+                    VStack(alignment: .leading) {
+                        Text(space.title)
+                            .font(.custom(FontStrings.appFontBlack, size: 22))
+                            .foregroundStyle(Color.appBlue)
+                        
+                        Text("Anzahl der Räume (Spaces)")
+                            .font(.custom(FontStrings.appFontBold, size: 16))
+                            .foregroundStyle(Color.appBlue)
+                    }
+                    
+                }
+                .background(Color.appBackground)
+                .scrollContentBackground(.hidden)
+//                Text("Füge einen neuen Raum hinzu, indem du auf das + drückst.")
+//                    .multilineTextAlignment(.center)
+//                    .frame(maxWidth: .infinity, alignment: .center)
+//                    .padding(.horizontal, 40)
+//                    .padding(.top, 250)
+//                    .font(.custom(FontStrings.appFontBlack, size: 22))
+//                    .foregroundStyle(Color.appBlue)
+//                
                 Spacer()
                 
-                VStack{
-                    Image(systemName: "plus")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .bold()
-                        .foregroundColor(.appBackground)
-                        .padding()
-                        .onTapGesture {
-                            objektVM.showAddSpaceSheet = true
-                        }
-                }
-                .frame(width: 60, height: 60)
-                .background(.appBlue)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .padding()
                
             }
             .background(.appBackground)
-            .sheet(isPresented: $objektVM.showAddSpaceSheet){
-                AddSpaceSheet().environmentObject(objektVM)
-            }
+            
         }
         .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    AddSpaceView()
+    AddSpaceView(areaID: "", objektName: "")
 }

@@ -11,8 +11,7 @@ struct AddAreaSheet: View {
     
     @EnvironmentObject var objektVM: ObjektViewModel
     
-//    @Binding var showAddAreaSheet: Bool
-//    var objektID = ""
+    var objektID: String
     
     var body: some View {
         VStack(spacing: 0){
@@ -66,11 +65,11 @@ struct AddAreaSheet: View {
     }
     
     func createArea(){
-        let area = Area(objektID: self.objektVM.objektID, title: self.objektVM.areaTitle)
-        objektVM.createArea(with: objektVM.objektID, area: area)
+        let area = Area(objektID: self.objektID, title: self.objektVM.areaTitle)
+        objektVM.createArea(area: area)
     }
 }
 
 #Preview {
-    AddAreaSheet()
+    AddAreaSheet(objektID: "")
 }

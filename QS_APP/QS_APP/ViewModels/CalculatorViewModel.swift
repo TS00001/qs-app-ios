@@ -13,18 +13,19 @@ class CalculatorViewModel: ObservableObject {
     
     @Published var resultList: [Result] = []
     @Published var offerList: [Offer] = []
+    
     @Published var hours: Double = 0.0
     @Published var totalHours: Double = 0.0
+    
+    @Published var quadratmeter: String = ""
     @Published var totalQuadratmeter: Double = 0.0
     
-//    @Published var quadratmeterDouble: Double = 0.0
-    @Published var quadratmeter: String = ""
     @Published var roomDescription: String = ""
     @Published var selectedMultiplier: Double = 1.0
     
     @Published var showCalculatorSheet = false
     
-    let multipliers = [250.0, 200.0, 120.0, 350.0]
+    let multipliers = [220.0, 160.0, 80.0, 300.0]
     
     @Published var result = Result(roomDescription: "", quadratmeter: 0.0, hours: 0.0)
     @Published var offer = Offer(resultID: "", totalHours: 0.0, totalQuadratmeter: 0.0)
@@ -73,6 +74,7 @@ class CalculatorViewModel: ObservableObject {
         
         let resultValue = (quadratmeter / selectedMultiplier)
         let result = Result(roomDescription: roomDescription, quadratmeter: quadratmeter, hours: resultValue)
+        self.hours = resultValue
         resultList.append(result)
     }
     
@@ -80,13 +82,13 @@ class CalculatorViewModel: ObservableObject {
     func iconForMultiplier(_ multiplier: Double) -> String {
         
         switch multiplier {
-        case 250.0:
+        case 220.0:
             return "table.furniture"
-        case 200.0:
+        case 160.0:
             return "figure.stairs"
-        case 120.0:
+        case 80.0:
             return "shower.handheld"
-        case 350.0:
+        case 300.0:
             return "chair.lounge"
         default:
             return ""
@@ -117,11 +119,10 @@ class CalculatorViewModel: ObservableObject {
 //    }
     
     func calculateTotal() {
-           // Berechnung der Gesamtquadratmeter und Gesamtstunden
-        addHours()
+        
         addQuadratmeter()
+        addHours()
 
-           // Aktualisieren der Gesamtquadratmeter und Gesamtstunden in der ViewModel-Eigenschaft
 //        self.totalHours = 0.0
 //        self.totalQuadratmeter = 0.0
        }
@@ -133,5 +134,8 @@ class CalculatorViewModel: ObservableObject {
     func addQuadratmeter(){
         self.totalQuadratmeter += Double(quadratmeter) ?? 0.0
     }
+    
+    
+
 
 }

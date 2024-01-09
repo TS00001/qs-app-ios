@@ -11,11 +11,7 @@ struct AddSpaceSheet: View {
     
     @EnvironmentObject var objektVM: ObjektViewModel
     
-//    @Binding var showAddSpaceSheet: Bool
-    
-    var areaID = ""
-    
-//    @Binding var objekt: Objekt
+    var areaID: String
     
     @State var title = ""
     @State var space = ""
@@ -92,12 +88,14 @@ struct AddSpaceSheet: View {
     }
     
     func createSpace(){
-        let space = Space(areaID: self.areaID, title: self.title)
-        objektVM.createSpace(with: objektVM.spaceID, space: space)
+        let space = Space(areaID: self.areaID, title: self.title, comment: self.comment)
+        objektVM.createSpace(space: space)
+
+        print(space.areaID)
     }
 }
 
 
 #Preview {
-    AddSpaceSheet()
+    AddSpaceSheet(areaID: "")
 }

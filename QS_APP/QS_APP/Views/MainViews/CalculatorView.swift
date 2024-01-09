@@ -44,7 +44,7 @@ struct CalculatorView: View {
                             
                             Spacer()
                             
-                            Text(" \(calculatorVM.formattedResult(result.hours)) Stunden")
+                            Text(" \(calculatorVM.formattedResult(result.hours)) Std.")
                                 .font(.custom(FontStrings.appFontBold, size: 16))
                                 .foregroundStyle(Color.appBlue)
                         }
@@ -77,15 +77,12 @@ struct CalculatorView: View {
                                 
                                 Spacer()
                                 
-                                Text(" \(calculatorVM.formattedResult()) Stunden")
+                                Text(" \(String(format: "%.2f", calculatorVM.totalHours)) Std.")
                                     .font(.custom(FontStrings.appFontBold, size: 16))
                                     .foregroundStyle(Color.appBackground)
                                 
                                 
                                 
-//                                Text(" \(calculatorVM.formattedResult(22.2)) Stunden")
-//                                    .font(.custom(FontStrings.appFontBold, size: 16))
-//                                    .foregroundStyle(Color.appBlue)
                             }
                             
                         }

@@ -16,7 +16,7 @@ struct ListOfServicesAreaView: View {
         NavigationStack{
             VStack(spacing: 0){
                 
-                CustomHeaderBack(title: "LV BEREICHE"){
+                CustomHeaderBack(title: objektVM.objekt.name){
                     Button(action: {
                         
                     }, label: {
@@ -46,7 +46,6 @@ struct ListOfServicesAreaView: View {
                             Label("Löschen", systemImage: "trash")
                         }
                     }
-                    
                 }
                 .background(Color.appBackground)
                 .scrollContentBackground(.hidden)
@@ -56,11 +55,7 @@ struct ListOfServicesAreaView: View {
                 .onDisappear{
                     objektVM.cancelAreaListener()
                 }
-                
             }
-            
-
-            
         }
         .navigationBarBackButtonHidden(true)
     }

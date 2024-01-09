@@ -23,7 +23,7 @@ class ObjektViewModel: ObservableObject {
     @Published var showAddAreaSheet = false
     @Published var showAddSpaceSheet = false
     @Published var objektID = ""
-    @Published var spaceID = ""
+    @Published var areaID = ""
     @Published var areaTitle = ""
     
     @Published var objekt = Objekt(name: "", adress: Adress(street: "", housenumber: "", postalCode: "", city: ""), mail: "")
@@ -137,7 +137,7 @@ class ObjektViewModel: ObservableObject {
         
     }
     
-    func createArea(with id: String, area: Area){
+    func createArea(area: Area){
         do{
             try FirebaseManager.shared.database.collection("area").addDocument(from: area)
         }catch let error{
@@ -145,7 +145,7 @@ class ObjektViewModel: ObservableObject {
         }
     }
     
-    func createSpace(with id: String, space: Space){
+    func createSpace(space: Space){
         do{
             try FirebaseManager.shared.database.collection("space").addDocument(from: space)
         }catch let error{
@@ -194,8 +194,8 @@ class ObjektViewModel: ObservableObject {
                     print("Fehler beim laden der Areas")
                     return
                 }
-                self.areaList = documents.compactMap{ queryDocument -> Area? in
-                    return try? queryDocument.data(as: Area.self)
+                self.spaceList = documents.compactMap{ queryDocument -> Space? in
+                    return try? queryDocument.data(as: Space.self)
                 }
             }
     }

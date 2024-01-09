@@ -11,11 +11,13 @@ struct AddAreaView: View {
     
     @EnvironmentObject var objektVM: ObjektViewModel
     
+    var objekt: Objekt
+    
     var body: some View {
         
         NavigationStack{
             VStack(spacing: 0 ){
-                CustomHeaderBack(title: "LV BEREICH ERSTELLEN"){
+                CustomHeaderBack(title: objekt.name){
                     
                     Button(action: {
                         objektVM.showAddAreaSheet = true
@@ -24,28 +26,37 @@ struct AddAreaView: View {
                     })
                 }
                 .sheet(isPresented: $objektVM.showAddAreaSheet){
-                    AddAreaSheet()
+                    AddAreaSheet(objektID: objekt.id ?? "")
                         .presentationDetents([.height(350)])
                         .environmentObject(objektVM)
                 }
                 .background(.appBackground)
                 .onAppear{
-                    objektVM.fetchArea(objektID: objektVM.objektID)
+                    objektVM.fetchArea(objektID: objekt.id ?? "")
                 }
                 .onDisappear{
                     objektVM.cancelAreaListener()
                 }
                 
                 List(objektVM.areaList, id: \.id){ area in
-                    NavigationLink(destination: AddSpaceView().environmentObject(objektVM)){
+                    NavigationLink(destination: AddSpaceView(areaID: area.id ?? "", objektName: objekt.name).environmentObject(objektVM)){
                         VStack(alignment: .leading) {
                             Text(area.title)
                                 .font(.custom(FontStrings.appFontBlack, size: 22))
                                 .foregroundStyle(Color.appBlue)
                             
-                            Text("Anzahl der Räume (Spaces)")
+                            Text("Anzahl der Räume (\(objektVM.spaceList.count))")
                                 .font(.custom(FontStrings.appFontBold, size: 16))
                                 .foregroundStyle(Color.appBlue)
+                        }
+                    }
+                    .swipeActions {
+                        Button(role: .destructive) {
+                            withAnimation {
+                                objektVM.deleteArea(with: String(area.id ?? ""))
+                            }
+                        } label: {
+                            Label("Löschen", systemImage: "trash")
                         }
                     }
                     
@@ -60,5 +71,5 @@ struct AddAreaView: View {
 }
 
 #Preview {
-    AddAreaView()
+    AddAreaView(objekt: Objekt(name: "", adress: Adress(street: "", housenumber: "", postalCode: "", city: ""), mail: ""))
 }

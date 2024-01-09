@@ -11,56 +11,58 @@ struct UpdateObjektInfoSheet: View {
     
     @EnvironmentObject var objektVM: ObjektViewModel
     
+    @Binding var objekt: Objekt
+    
     var body: some View {
         ScrollView{
-            TextField("Objektname", text: $objektVM.objekt.name)
+            TextField("Objektname", text: $objekt.name)
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
                 .padding(.top, Values.middlePadding)
             
-            TextField("Straße", text: $objektVM.objekt.adress.street)
+            TextField("Straße", text: $objekt.adress.street)
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
                 .padding(.top, Values.middlePadding)
             
-            TextField("Hausnummer", text: $objektVM.objekt.adress.housenumber)
+            TextField("Hausnummer", text: $objekt.adress.housenumber)
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
             
-            TextField("Postleitzahl", text: $objektVM.objekt.adress.postalCode)
+            TextField("Postleitzahl", text: $objekt.adress.postalCode)
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
             
-            TextField("Stadt", text: $objektVM.objekt.adress.city)
+            TextField("Stadt", text: $objekt.adress.city)
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
             
-            TextField("Mail", text: $objektVM.objekt.mail)
+            TextField("Mail", text: $objekt.mail)
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
             
             TextField("Kontaktperson", text: Binding(
-                get: {self.objektVM.objekt.contactPerson ?? ""},
+                get: {self.objekt.contactPerson ?? ""},
                 set: {
-                    self.objektVM.objekt.contactPerson = $0
+                    self.objekt.contactPerson = $0
                 }
             ))
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
             
             TextField("Objektleiter", text: Binding(
-                get: {self.objektVM.objekt.objectManager ?? ""},
+                get: {self.objekt.objectManager ?? ""},
                 set: {
-                    self.objektVM.objekt.objectManager = $0
+                    self.objekt.objectManager = $0
                 }
             ))
                 .formItemStyle(with: .appBlue)
                 .padding(.horizontal, Values.middlePadding)
             
             TextField("Reinigungskraft", text: Binding(
-                get: {self.objektVM.objekt.cleaningPerson ?? ""},
+                get: {self.objekt.cleaningPerson ?? ""},
                 set: {
-                    self.objektVM.objekt.cleaningPerson = $0
+                    self.objekt.cleaningPerson = $0
                 }
             ))
                 .formItemStyle(with: .appBlue)
@@ -80,9 +82,9 @@ struct UpdateObjektInfoSheet: View {
     
     func saveObjekt(){
         
-        let objekt = Objekt(name: objektVM.objekt.name, adress: Adress(street: objektVM.objekt.adress.street, housenumber: objektVM.objekt.adress.housenumber, postalCode: objektVM.objekt.adress.postalCode, city: objektVM.objekt.adress.city), mail: objektVM.objekt.mail, contactPerson: objektVM.objekt.contactPerson, cleaningPerson: objektVM.objekt.cleaningPerson, objectManager: objektVM.objekt.objectManager)
+        let objekt = Objekt(name: objekt.name, adress: Adress(street: objekt.adress.street, housenumber: objekt.adress.housenumber, postalCode: objekt.adress.postalCode, city: objekt.adress.city, lon: objekt.adress.lon, lat: objekt.adress.lat), mail: objekt.mail, contactPerson: objekt.contactPerson, cleaningPerson: objekt.cleaningPerson, objectManager: objekt.objectManager)
         
-        objektVM.updateObjektInformations(with: self.objektVM.objekt.id ?? "", data: objekt)
+        objektVM.updateObjektInformations(with: self.objekt.id ?? "", data: objekt)
         objektVM.cancelObjekt()
     }
     
@@ -90,5 +92,5 @@ struct UpdateObjektInfoSheet: View {
 }
 
 #Preview {
-    UpdateObjektInfoSheet()
+    UpdateObjektInfoSheet(objekt: .constant(Objekt(name: "", adress: Adress(street: "", housenumber: "", postalCode: "", city: ""), mail: "")))
 }

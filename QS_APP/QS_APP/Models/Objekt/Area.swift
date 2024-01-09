@@ -8,10 +8,9 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-struct Area: Codable{
+struct Area: Codable, Identifiable{
     @DocumentID var id: String?
     
     var objektID: String
     var title: String
-    var space: [Space]?
 }

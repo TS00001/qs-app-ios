@@ -28,7 +28,7 @@ struct ObjektView: View {
                         .presentationDetents([.height(550)])
                 }
                 List(objektVM.objektList, id: \.id){ objekt in
-                    NavigationLink(destination: ObjektDetailView().environmentObject(objektVM)){
+                    NavigationLink(destination: ObjektDetailView(objekt: objekt).environmentObject(objektVM)){
                         HStack{
                             VStack{
                                 Image(systemName: Values.objektIcon)
@@ -60,18 +60,19 @@ struct ObjektView: View {
                             Label("Löschen", systemImage: "trash")
                         }
                     }
-                    .simultaneousGesture(TapGesture().onEnded{
-                        objektVM.objekt = objekt
-                    })
+//                    .simultaneousGesture(TapGesture().onEnded{
+//                        objektVM.objekt = objekt
+//                    })
+                    .onAppear{
+                        objektVM.fetchObjekt()
+                    }
+                    .onDisappear{
+                        objektVM.cancelListener()
+                    }
                 }
                 .background(Color.appBackground)
                 .scrollContentBackground(.hidden)
-                .onAppear{
-                    objektVM.fetchObjekt()
-                }
-                .onDisappear{
-                    objektVM.cancelListener()
-                }
+                
             }
             .background(Color.appBackground)
         }

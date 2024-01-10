@@ -92,14 +92,6 @@ struct AddObjektSheet: View {
                     TextField("Stadt", text: $city)
                         .formItemStyle(with: .appBlue)
                         .padding(.horizontal, Values.middlePadding)
-                    
-                    HStack(spacing: 40){
-                        StandardButton(label: "Abbrechen", color: .appRed, fontColor: .appBackground, action: cancelObjekt)
-                        
-                        StandardButton(label: "Speichern", color: .appBackground, fontColor: .appBlue, action: saveObjekt)
-                    }
-                    .padding(.top, Values.middlePadding)
-                    .padding(Values.middlePadding)
                 }
                 .overlay(VStack{
                     if searchText.count > 2 {
@@ -128,13 +120,21 @@ struct AddObjektSheet: View {
                             }
                             .listRowBackground(Color.appBackground)
                         }
-                        .padding(.top, -35)
-                        .padding(.horizontal, -6)
+                        .padding(.top, -50)
+                        .padding(.horizontal, -4)
                         .background(.opacity(0.0))
                         .scrollContentBackground(.hidden)
                     }
                 })
             }
+            
+            HStack(spacing: 40){
+                StandardButton(label: "Abbrechen", color: .appRed, fontColor: .appBackground, action: cancelObjekt)
+                
+                StandardButton(label: "Speichern", color: .appBackground, fontColor: .appBlue, action: saveObjekt)
+            }
+            .padding(.top, Values.middlePadding)
+            .padding(Values.middlePadding)
         }
         .padding(.top, Values.middlePadding)
         .background(Color.appBlue)

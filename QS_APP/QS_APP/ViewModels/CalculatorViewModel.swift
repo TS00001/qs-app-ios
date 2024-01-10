@@ -26,17 +26,18 @@ class CalculatorViewModel: ObservableObject {
     @Published var showCalculatorSheet = false
     
     let multipliers = [220.0, 160.0, 80.0, 300.0]
+    let multiplierTitles: [Double: String] = [
+            220.0: "Büro",
+            160.0: "Treppe",
+            80.0: "Sanitär",
+            300.0: "Flur"
+        ]
     
     @Published var result = Result(roomDescription: "", quadratmeter: 0.0, hours: 0.0)
     @Published var offer = Offer(resultID: "", totalHours: 0.0, totalQuadratmeter: 0.0)
     
     private var listener: ListenerRegistration?
-    
     private var resultListener: ListenerRegistration?
-    
-//    init(){
-//        result = Result(roomDescription: "", quadratmeter: 0.0, hours: 0.0)
-//    }
     
     func createOffer(offer: Offer){
         do{
@@ -83,17 +84,21 @@ class CalculatorViewModel: ObservableObject {
         
         switch multiplier {
         case 220.0:
-            return "table.furniture"
+            return "1.circle.fill"
         case 160.0:
-            return "figure.stairs"
+            return "2.circle.fill"
         case 80.0:
-            return "shower.handheld"
+            return "3.circle.fill"
         case 300.0:
-            return "chair.lounge"
+            return "4.circle.fill"
         default:
             return ""
         }
     }
+    
+    func titleForMultiplier(_ multiplier: Double) -> String {
+           return multiplierTitles[multiplier] ?? "n/a"
+       }
     
     func formattedResult(_ value: Double? = nil) -> String {
         if let resultValue = value {
@@ -113,18 +118,9 @@ class CalculatorViewModel: ObservableObject {
         }
     }
     
-//    func calculateTotal(){
-//        let offer = Offer(offer: self.resultList, total: self.total)
-//        createOffer(offer: offer)
-//    }
-    
     func calculateTotal() {
-        
         addQuadratmeter()
         addHours()
-
-//        self.totalHours = 0.0
-//        self.totalQuadratmeter = 0.0
        }
     
     func addHours(){

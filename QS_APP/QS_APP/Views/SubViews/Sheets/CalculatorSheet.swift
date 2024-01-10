@@ -41,14 +41,15 @@ struct CalculatorSheet: View {
                 .padding(.top, Values.middlePadding)
                 .padding(.bottom, Values.majorPadding)
                 .shadow(radius: Values.minorShadow)
-                .keyboardType(.numberPad)
+//                .keyboardType(.numberPad)
             
-            Spacer()
+//            Spacer()
             
             Text("WÄHLE EINEN FAKTOR FÜR DIE BERECHNUNG AUS!")
                 .font(.custom(FontStrings.appFontBlack, size: Values.appSubtitle))
                 .bold()
                 .foregroundStyle(Color.appBlue)
+//                .frame(alignment: .center)
                 .frame(maxWidth: .infinity, alignment: .center)
                 .multilineTextAlignment(.center)
                 .padding(.bottom, Values.middlePadding)
@@ -70,6 +71,12 @@ struct CalculatorSheet: View {
                                 .foregroundColor(calculatorVM.selectedMultiplier == multiplier ? .appBackground : .gray)
                                 .clipShape(RoundedRectangle(cornerRadius: 5))
                                 .shadow(radius: 2)
+                            
+                            Text(calculatorVM.titleForMultiplier(multiplier))
+                                .font(.custom(FontStrings.appFontBold, size: 16))
+                                .foregroundColor(calculatorVM.selectedMultiplier == multiplier ? .appBlue : .gray)
+                                                
+                                               
                         }
                         .frame(maxWidth: .infinity, alignment: .center)
                         .padding(.horizontal, Values.middlePadding)
@@ -77,8 +84,6 @@ struct CalculatorSheet: View {
                     
                 }
             }
-            
-            Spacer()
             
             StandardButton(label: "BERECHNEN", color: .appBlue, fontColor: .appBackground){
                 calculatorVM.calculateResult()
@@ -89,6 +94,7 @@ struct CalculatorSheet: View {
             }
             .padding(Values.middlePadding)
         }
+        .background(Color.appBackground)
         
     }
     

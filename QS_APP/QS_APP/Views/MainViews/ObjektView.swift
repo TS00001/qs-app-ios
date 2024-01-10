@@ -25,7 +25,7 @@ struct ObjektView: View {
                 .sheet(isPresented: $objektVM.showAddObjektSheet) {
                     AddObjektSheet(showAddObjektSheet: $objektVM.showAddObjektSheet)
                         .environmentObject(objektVM)
-                        .presentationDetents([.height(550)])
+//                        .presentationDetents([.height(550)])
                 }
                 List(objektVM.objektList, id: \.id){ objekt in
                     NavigationLink(destination: ObjektDetailView(objekt: objekt).environmentObject(objektVM)){

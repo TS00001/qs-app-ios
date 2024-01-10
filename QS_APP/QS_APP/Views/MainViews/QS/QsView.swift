@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct QsView: View {
+    
+    @EnvironmentObject var objektVM: ObjektViewModel
+    
+//    @Binding var objekt: Objekt
+    
     var body: some View {
         
         VStack{

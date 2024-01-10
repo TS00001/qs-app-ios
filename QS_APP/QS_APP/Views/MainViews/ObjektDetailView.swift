@@ -16,7 +16,7 @@ struct ObjektDetailView: View {
     var body: some View {
         NavigationStack{
             VStack(spacing: 0){
-                CustomHeaderBack(title: self.objekt.name){
+                CustomHeaderBack(title: self.objekt.name.uppercased()){
                     
                     Button(action: {
                         objektVM.showUpdateObjektInformations = true
@@ -36,7 +36,7 @@ struct ObjektDetailView: View {
                         AdressItem(title: "Adresse", street: "\(objekt.adress.street) \(objekt.adress.housenumber)", postalCode: objekt.adress.postalCode, city: objekt.adress.city)
                             .padding(.top, Values.minorPadding)
                         
-                        ObjektDataItem(title: "Ansprechpartner"){
+                        ObjektDataItem(title: "Mail"){
                             Text(objekt.mail)
                                 .itemSubtitleModi()
                         }

@@ -12,7 +12,6 @@ import Firebase
 struct QS_APPApp: App {
     
     @StateObject var authenticationVM = AuthenticationViewModel()
-    
     @StateObject var homeVM = HomeViewModel()
     
     init(){
@@ -21,7 +20,6 @@ struct QS_APPApp: App {
     }
     
     var body: some Scene {
-        
         WindowGroup {
             if authenticationVM.userIsLoggedIn{
                 MainView()

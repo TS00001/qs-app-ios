@@ -35,6 +35,7 @@ struct ObjektView: View {
                                     .resizable()
                                     .frame(width: 40, height: 40)
                                     .foregroundStyle(Color.appBlue)
+                                    .opacity(0.7)
                             }
                             VStack(alignment: .leading){
                                 Text(objekt.name)
@@ -48,6 +49,7 @@ struct ObjektView: View {
                                         .font(.custom(FontStrings.appFontBold, size: 16))
                                         .foregroundStyle(Color.appBlue)
                                 }
+                                .opacity(0.7)
                             }
                         }
                     }

@@ -15,7 +15,7 @@ struct QsOverviewItem: View {
         
         VStack(spacing: 0){
             HStack{
-                Text("QS AUSWERTUNG GESAMT")
+                Text("QS DURCHSCHNITT")
                     .font(.custom(FontStrings.appFontBlack, size: Values.appSubtitle))
                     .foregroundStyle(Color.appBackground)
                     .frame(maxWidth: .infinity, alignment: .leading)

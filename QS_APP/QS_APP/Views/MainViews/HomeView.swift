@@ -39,7 +39,7 @@ struct HomeView: View {
                     NavigationLink(destination: QsView().environmentObject(objektVM)){
                         HStack{
                             VStack{
-                                Image(systemName: Values.objektIcon)
+                                Image(systemName: Values.qsIcon)
                                     .resizable()
                                     .frame(width: 40, height: 40)
                                     .foregroundStyle(Color.appBlue)
@@ -49,7 +49,6 @@ struct HomeView: View {
                                 Text(objekt.name)
                                     .font(.custom(FontStrings.appFontBlack, size: 20))
                                     .foregroundStyle(Color.appBlue)
-//                                    .padding(.bottom, 1)
                                 HStack{
                                     
                                     Text("\(objekt.adress.street) \(objekt.adress.housenumber),")

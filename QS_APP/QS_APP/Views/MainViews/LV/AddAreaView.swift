@@ -17,7 +17,7 @@ struct AddAreaView: View {
         
         NavigationStack{
             VStack(spacing: 0 ){
-                CustomHeaderBack(title: objekt.name){
+                CustomHeaderBack(title: objekt.name.uppercased()){
                     
                     Button(action: {
                         objektVM.showAddAreaSheet = true

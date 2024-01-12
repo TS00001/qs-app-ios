@@ -56,15 +56,8 @@ struct ObjektDetailView: View {
                                 .itemSubtitleModi()
                         }
                         
-                        TitleComponent(title: "LEISTUNGSVERZEICHNIS"){
-                            NavigationLink(destination: AddAreaView(objekt: objekt).environmentObject(objektVM)){
-                                IconComponente(icon: Values.editIcon)
-                            }
-                            .navigationBarBackButtonHidden(true)
-                            
-                        }
-                        NavigationLink(destination: ListOfServicesAreaView().environmentObject(objektVM)){
-                            LvItem(title: "Leistungsverzeichnis BLOCK A")
+                        NavigationLink(destination: ListOfServicesAreaView(objekt: objekt).environmentObject(objektVM)){
+                            LvItem(title: "Leistungsverzeichnis")
                         }
                         
                         TitleComponent(title: "REINIGUNGSTAGE"){
